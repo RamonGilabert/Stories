@@ -114,6 +114,7 @@
 		2937A9A91CC6A85600BAAFCE /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
+				2937A9B21CC6A8BB00BAAFCE /* Views */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -121,6 +122,7 @@
 		2937A9AA1CC6A86100BAAFCE /* Finale */ = {
 			isa = PBXGroup;
 			children = (
+				2937A9AF1CC6A8A900BAAFCE /* Views */,
 			);
 			path = Finale;
 			sourceTree = "<group>";
@@ -128,6 +130,7 @@
 		2937A9AB1CC6A86D00BAAFCE /* Engine */ = {
 			isa = PBXGroup;
 			children = (
+				2937A9AE1CC6A8A300BAAFCE /* Views */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 		2937A9AC1CC6A87600BAAFCE /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				2937A9B01CC6A8AF00BAAFCE /* Views */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -142,8 +146,44 @@
 		2937A9AD1CC6A87E00BAAFCE /* Story */ = {
 			isa = PBXGroup;
 			children = (
+				2937A9B11CC6A8B500BAAFCE /* Views */,
 			);
 			path = Story;
+			sourceTree = "<group>";
+		};
+		2937A9AE1CC6A8A300BAAFCE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2937A9AF1CC6A8A900BAAFCE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2937A9B01CC6A8AF00BAAFCE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2937A9B11CC6A8B500BAAFCE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2937A9B21CC6A8BB00BAAFCE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		4BA83F6D10AAB55A6CB738FC /* Pods */ = {
