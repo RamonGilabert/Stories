@@ -11,6 +11,8 @@
 		2937A98C1CC6A3E700BAAFCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2937A98B1CC6A3E700BAAFCE /* ViewController.swift */; };
 		2937A9A01CC6A6AD00BAAFCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2937A99C1CC6A6AD00BAAFCE /* Assets.xcassets */; };
 		2937A9A11CC6A6AD00BAAFCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2937A99D1CC6A6AD00BAAFCE /* LaunchScreen.storyboard */; };
+		2937A9A51CC6A7AC00BAAFCE /* Brandon_bld.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2937A9A31CC6A7AC00BAAFCE /* Brandon_bld.otf */; };
+		2937A9A61CC6A7AC00BAAFCE /* Monaco.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2937A9A41CC6A7AC00BAAFCE /* Monaco.ttf */; };
 		8F4E30BFEABF17F9EC03599B /* Pods_Stories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5EEBE4B3E0E5C24881061B /* Pods_Stories.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +23,8 @@
 		2937A99C1CC6A6AD00BAAFCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2937A99E1CC6A6AD00BAAFCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2937A99F1CC6A6AD00BAAFCE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2937A9A31CC6A7AC00BAAFCE /* Brandon_bld.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_bld.otf; sourceTree = "<group>"; };
+		2937A9A41CC6A7AC00BAAFCE /* Monaco.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Monaco.ttf; sourceTree = "<group>"; };
 		4E5EEBE4B3E0E5C24881061B /* Pods_Stories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6237324DE4E4A02943F19DA1 /* Pods-Stories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stories.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stories/Pods-Stories.release.xcconfig"; sourceTree = "<group>"; };
 		DF69EFBDCE7980C4931FA796 /* Pods-Stories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stories.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stories/Pods-Stories.debug.xcconfig"; sourceTree = "<group>"; };
@@ -69,6 +73,12 @@
 			children = (
 				2937A9891CC6A3E700BAAFCE /* AppDelegate.swift */,
 				2937A98B1CC6A3E700BAAFCE /* ViewController.swift */,
+				2937A9AD1CC6A87E00BAAFCE /* Story */,
+				2937A9AC1CC6A87600BAAFCE /* Menu */,
+				2937A9AB1CC6A86D00BAAFCE /* Engine */,
+				2937A9AA1CC6A86100BAAFCE /* Finale */,
+				2937A9A91CC6A85600BAAFCE /* Welcome */,
+				2937A9A71CC6A81D00BAAFCE /* Library */,
 				2937A99B1CC6A6AD00BAAFCE /* Resources */,
 			);
 			path = Stories;
@@ -77,11 +87,63 @@
 		2937A99B1CC6A6AD00BAAFCE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2937A9A31CC6A7AC00BAAFCE /* Brandon_bld.otf */,
+				2937A9A41CC6A7AC00BAAFCE /* Monaco.ttf */,
 				2937A99C1CC6A6AD00BAAFCE /* Assets.xcassets */,
 				2937A99D1CC6A6AD00BAAFCE /* LaunchScreen.storyboard */,
 				2937A99F1CC6A6AD00BAAFCE /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		2937A9A71CC6A81D00BAAFCE /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				2937A9A81CC6A84700BAAFCE /* Constants */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		2937A9A81CC6A84700BAAFCE /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		2937A9A91CC6A85600BAAFCE /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		2937A9AA1CC6A86100BAAFCE /* Finale */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Finale;
+			sourceTree = "<group>";
+		};
+		2937A9AB1CC6A86D00BAAFCE /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		2937A9AC1CC6A87600BAAFCE /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		2937A9AD1CC6A87E00BAAFCE /* Story */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Story;
 			sourceTree = "<group>";
 		};
 		4BA83F6D10AAB55A6CB738FC /* Pods */ = {
@@ -156,6 +218,8 @@
 			files = (
 				2937A9A01CC6A6AD00BAAFCE /* Assets.xcassets in Resources */,
 				2937A9A11CC6A6AD00BAAFCE /* LaunchScreen.storyboard in Resources */,
+				2937A9A51CC6A7AC00BAAFCE /* Brandon_bld.otf in Resources */,
+				2937A9A61CC6A7AC00BAAFCE /* Monaco.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
