@@ -1,0 +1,11 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+pod 'Ripple',            :git => 'https://github.com/RamonGilabert/Ripple.git'
+pod 'Morgan',            :git => 'https://github.com/RamonGilabert/Morgan.git'
+pod 'Transition',        :git => 'https://github.com/hyperoslo/Transition'
+pod 'Hue'
+pod 'Sugar'
+
+target 'Stories'

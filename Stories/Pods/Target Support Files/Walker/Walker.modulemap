@@ -1,0 +1,6 @@
+framework module Walker {
+  umbrella header "Walker-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Morgan {
+  umbrella header "Morgan-umbrella.h"
+
+  export *
+  module * { export * }
+}
