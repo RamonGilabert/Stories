@@ -26,9 +26,8 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string></string>
 		<string>Monaco.ttf</string>
-		<string>Brandon_bold.otf</string>
+		<string>Brandon_bld.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

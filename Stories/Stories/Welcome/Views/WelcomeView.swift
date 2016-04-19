@@ -8,6 +8,7 @@ class WelcomeView: UIView {
     static let smallStar: CGFloat = 1
     static let mediumStar: CGFloat = 2
     static let bigStar: CGFloat = 3
+    static let welcomeOffset: CGFloat = UIScreen.mainScreen().bounds.height / 1.425
 
     struct Shadow {
       static let moon: CGFloat = 30
@@ -27,20 +28,18 @@ class WelcomeView: UIView {
     return view
   }()
 
-  lazy var welcomeView: WriteView = {
-    let view = WriteView()
-    return view
-  }()
+  lazy var writeView: WriteView = WriteView(font: Font.Welcome.title, text: Text.Welcome.title)
 
   var stars: [UIView] = []
 
   override init(frame: CGRect) {
     super.init(frame: frame)
 
-    addSubview(moon)
+    [moon, writeView].forEach { addSubview($0) }
 
     prepareStars()
     setupConstraints()
+    setupFrames()
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -56,6 +55,12 @@ class WelcomeView: UIView {
       moon.centerXAnchor.constraintEqualToAnchor(centerXAnchor),
       moon.topAnchor.constraintEqualToAnchor(topAnchor, constant: Dimensions.topOffset)
       ])
+  }
+
+  func setupFrames() {
+    writeView.frame.origin = CGPoint(
+      x: (UIScreen.mainScreen().bounds.width - WriteView.Dimensions.Cursor.width) / 2,
+      y: Dimensions.welcomeOffset)
   }
 
   // MARK: - Helper methods

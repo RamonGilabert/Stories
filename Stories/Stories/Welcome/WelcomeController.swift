@@ -17,6 +17,12 @@ class WelcomeController: GeneralController {
     setupConstraints()
   }
 
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+
+    welcomeView.writeView.startAnimation()
+  }
+
   // MARK: - Constraints
 
   func setupConstraints() {

@@ -11,6 +11,6 @@ struct Font {
   }
 
   struct Welcome {
-    static let title = UIFont(name: Brandon.bold, size: 40)
+    static let title = UIFont(name: Brandon.bold, size: 40)!
   }
 }
