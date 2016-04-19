@@ -11,6 +11,8 @@ struct Color {
   struct General {
     static let button = UIColor.whiteColor()
     static let buttonShadow = UIColor.whiteColor().alpha(0.8)
+    static let text = UIColor.whiteColor()
+    static let clear = UIColor.clearColor()
   }
 
   struct Welcome {

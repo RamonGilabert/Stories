@@ -8,7 +8,8 @@ class WelcomeView: UIView {
     static let smallStar: CGFloat = 1
     static let mediumStar: CGFloat = 2
     static let bigStar: CGFloat = 3
-    static let welcomeOffset: CGFloat = UIScreen.mainScreen().bounds.height / 1.425
+    static let welcomeOffset: CGFloat = UIScreen.mainScreen().bounds.height / 1.4
+    static let writeOffset: CGFloat = 90
 
     struct Shadow {
       static let moon: CGFloat = 30
@@ -16,7 +17,7 @@ class WelcomeView: UIView {
     }
   }
 
-  static let starNumber = 30
+  static let starNumber = 50
 
   lazy var moon: UIView = {
     let view = UIView()
@@ -28,7 +29,7 @@ class WelcomeView: UIView {
     return view
   }()
 
-  lazy var writeView: WriteView = WriteView(font: Font.Welcome.title, text: Text.Welcome.title)
+  lazy var writeView: WriteView = WriteView(font: Font.Welcome.title, string: Text.Welcome.title)
 
   var stars: [UIView] = []
 
@@ -58,8 +59,9 @@ class WelcomeView: UIView {
   }
 
   func setupFrames() {
+    writeView.frame.size.width = UIScreen.mainScreen().bounds.width - Dimensions.writeOffset
     writeView.frame.origin = CGPoint(
-      x: (UIScreen.mainScreen().bounds.width - WriteView.Dimensions.Cursor.width) / 2,
+      x: Dimensions.writeOffset / 2,
       y: Dimensions.welcomeOffset)
   }
 
