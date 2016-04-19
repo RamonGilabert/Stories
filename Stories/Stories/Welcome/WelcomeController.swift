@@ -11,6 +11,10 @@ class WelcomeController: GeneralController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    view.addSubview(welcomeView)
+
+    setupConstraints()
   }
 
   // MARK: - Constraints

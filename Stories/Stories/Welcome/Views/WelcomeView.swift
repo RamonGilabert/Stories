@@ -3,7 +3,7 @@ import UIKit
 class WelcomeView: UIView {
 
   struct Dimensions {
-    static let moon: CGFloat = 180
+    static let moon: CGFloat = 200
     static let topOffset: CGFloat = 95
     static let smallStar: CGFloat = 1
     static let mediumStar: CGFloat = 2
@@ -15,11 +15,14 @@ class WelcomeView: UIView {
     }
   }
 
-  static let starNumber = 15
+  static let starNumber = 30
 
   lazy var moon: UIView = {
     let view = UIView()
     view.translatesAutoresizingMaskIntoConstraints = false
+    view.layer.cornerRadius = Dimensions.moon / 2
+    view.backgroundColor = Color.Welcome.moon
+    view.shadow(Color.Welcome.moonShadow, radius: 30)
 
     return view
   }()
@@ -28,6 +31,11 @@ class WelcomeView: UIView {
 
   override init(frame: CGRect) {
     super.init(frame: frame)
+
+    addSubview(moon)
+
+    prepareStars()
+    setupConstraints()
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -57,8 +65,10 @@ class WelcomeView: UIView {
       let size = sizes[index]
 
       star.frame = CGRect(x: CGFloat(arc4random_uniform(UInt32(screenSize.width))),
-                          y: CGFloat(arc4random_uniform(UInt32(screenSize.height / 2))),
+                          y: CGFloat(arc4random_uniform(UInt32(screenSize.height / 1.75))),
                           width: size, height: size)
+      star.backgroundColor = Color.Welcome.star
+      star.layer.cornerRadius = size / 2
       star.shadow(Color.Welcome.starShadow, radius: 15)
 
       stars.append(star)
