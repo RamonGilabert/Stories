@@ -17,6 +17,7 @@ class WriteView: UIView {
   lazy var cursor: UIView = {
     let view = UIView()
     view.backgroundColor = Color.Engine.Text.cursor
+    view.alpha = 0
 
     return view
   }()
@@ -56,7 +57,10 @@ class WriteView: UIView {
 
   func startAnimation() {
     cursor(0.4)
-    changeText()
+
+    delay(1.2) {
+      self.changeText()
+    }
   }
 
   func cursor(duration: NSTimeInterval) {
@@ -87,8 +91,10 @@ class WriteView: UIView {
   // MARK: - Frames
 
   func setupFrames() {
-    cursor.frame = CGRect(
-      x: 0, y: 0, width: Dimensions.Cursor.width, height: Dimensions.Cursor.height)
+    let width = UIScreen.mainScreen().bounds.width - WelcomeView.Dimensions.writeOffset
+    
+    cursor.frame.size = CGSize(width: Dimensions.Cursor.width, height: Dimensions.Cursor.height)
+    cursor.frame.origin = CGPoint(x: (width - cursor.frame.size.width) / 2, y: 0)
     text.center = center
   }
 }

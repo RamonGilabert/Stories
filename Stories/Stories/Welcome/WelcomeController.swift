@@ -17,10 +17,16 @@ class WelcomeController: GeneralController {
     setupConstraints()
   }
 
-  override func viewDidAppear(animated: Bool) {
-    super.viewDidAppear(animated)
+  override func viewWillAppear(animated: Bool) {
+    welcomeView.prepareAnimation()
+  }
 
-    welcomeView.writeView.startAnimation()
+  // MARK: - Animations
+
+  func animate() {
+    welcomeView.animate(completion: {
+      self.welcomeView.writeView.startAnimation()
+    })
   }
 
   // MARK: - Constraints

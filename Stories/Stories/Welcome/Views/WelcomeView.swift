@@ -1,4 +1,5 @@
 import UIKit
+import Walker
 
 class WelcomeView: UIView {
 
@@ -45,6 +46,25 @@ class WelcomeView: UIView {
   
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
+  }
+
+  // MARK: - Animations
+
+  func prepareAnimation(enter: Bool = true) {
+    moon.transform = CGAffineTransformMakeTranslation(0, -500)
+    writeView.alpha = 0
+  }
+
+  func animate(enter: Bool = true, completion: () -> ()) {
+    UIView.animateWithDuration(0.4, animations: {
+      self.writeView.alpha = 1
+    })
+
+    spring(moon, spring: 50, friction: 60, mass: 50, animations: {
+      $0.transform = CGAffineTransformIdentity
+    }).finally({
+      completion()
+    })
   }
 
   // MARK: - Constraints

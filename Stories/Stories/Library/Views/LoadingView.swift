@@ -4,7 +4,7 @@ class LoadingView: UIView {
 
   struct Dimensions {
     static let moon: CGFloat = 200
-    static let topOffset: CGFloat = 95
+    static let topOffset: CGFloat = 236
 
     struct Shadow {
       static let moon: CGFloat = 30
@@ -16,7 +16,7 @@ class LoadingView: UIView {
     view.translatesAutoresizingMaskIntoConstraints = false
     view.layer.cornerRadius = Dimensions.moon / 2
     view.backgroundColor = Color.Welcome.moon
-    view.shadow(Color.Welcome.moonShadow, radius: 30)
+    view.shadow(Color.Welcome.moonShadow, radius: 20)
 
     return view
   }()
@@ -24,6 +24,7 @@ class LoadingView: UIView {
   lazy var gradientLayer: CAGradientLayer = {
     let layer = CAGradientLayer()
     layer.colors = [Color.Background.top.CGColor, Color.Background.bottom.CGColor]
+    layer.frame = UIScreen.mainScreen().bounds
 
     return layer
   }()
@@ -31,8 +32,8 @@ class LoadingView: UIView {
   override init(frame: CGRect) {
     super.init(frame: frame)
 
-    addSubview(moon)
     layer.addSublayer(gradientLayer)
+    addSubview(moon)
 
     setupConstraints()
   }
@@ -48,7 +49,7 @@ class LoadingView: UIView {
       moon.widthAnchor.constraintEqualToConstant(Dimensions.moon),
       moon.heightAnchor.constraintEqualToConstant(Dimensions.moon),
       moon.centerXAnchor.constraintEqualToAnchor(centerXAnchor),
-      moon.centerYAnchor.constraintEqualToAnchor(centerYAnchor)
+      moon.topAnchor.constraintEqualToAnchor(topAnchor, constant: Dimensions.topOffset)
       ])
   }
 }
