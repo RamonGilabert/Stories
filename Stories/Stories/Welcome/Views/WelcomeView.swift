@@ -8,7 +8,7 @@ class WelcomeView: UIView {
     static let smallStar: CGFloat = 1
     static let mediumStar: CGFloat = 2
     static let bigStar: CGFloat = 3
-    static let welcomeOffset: CGFloat = UIScreen.mainScreen().bounds.height / 1.4
+    static let welcomeOffset: CGFloat = UIScreen.mainScreen().bounds.height / 1.375
     static let writeOffset: CGFloat = 90
 
     struct Shadow {

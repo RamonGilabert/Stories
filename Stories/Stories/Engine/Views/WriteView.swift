@@ -105,7 +105,7 @@ extension WriteView: UITextViewDelegate {
     textView.frame.origin.x = (frame.width - textView.frame.width) / 2
 
     frame.size.height = size.height
-    cursor.frame.origin.x = textView.frame.maxX + 7
+    cursor.frame.origin.x = textView.frame.maxX + 5
     cursor.center.y = textView.center.y - 1
   }
 }

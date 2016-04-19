@@ -5,6 +5,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   lazy var welcomeController: WelcomeController = WelcomeController()
 
+  lazy var loadingView: LoadingView = LoadingView()
+
   var window: UIWindow?
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
