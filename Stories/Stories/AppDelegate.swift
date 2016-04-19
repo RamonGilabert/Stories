@@ -1,4 +1,5 @@
 import UIKit
+import Sugar
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     window?.makeKeyAndVisible()
 
-    animate()
+    delay(0.2) { self.animate() }
 
     UIApplication.sharedApplication().statusBarHidden = true
 

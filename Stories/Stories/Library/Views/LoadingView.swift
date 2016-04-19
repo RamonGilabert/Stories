@@ -4,7 +4,7 @@ class LoadingView: UIView {
 
   struct Dimensions {
     static let moon: CGFloat = 200
-    static let topOffset: CGFloat = 236
+    static let topOffset: CGFloat = 195
 
     struct Shadow {
       static let moon: CGFloat = 30
@@ -16,7 +16,7 @@ class LoadingView: UIView {
     view.translatesAutoresizingMaskIntoConstraints = false
     view.layer.cornerRadius = Dimensions.moon / 2
     view.backgroundColor = Color.Welcome.moon
-    view.shadow(Color.Welcome.moonShadow, radius: 20)
+    view.shadow(Color.Welcome.moonShadow, radius: 15)
 
     return view
   }()
