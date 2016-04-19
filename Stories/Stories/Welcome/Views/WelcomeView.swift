@@ -27,6 +27,11 @@ class WelcomeView: UIView {
     return view
   }()
 
+  lazy var welcomeView: WriteView = {
+    let view = WriteView()
+    return view
+  }()
+
   var stars: [UIView] = []
 
   override init(frame: CGRect) {

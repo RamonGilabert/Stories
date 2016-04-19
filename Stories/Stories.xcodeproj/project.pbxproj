@@ -21,7 +21,7 @@
 		2937A9F61CC6AF0B00BAAFCE /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2937A9F81CC6AF0B00BAAFCE /* Localized.strings */; };
 		2937A9FA1CC6AFF000BAAFCE /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2937A9F91CC6AFF000BAAFCE /* WelcomeController.swift */; };
 		2937A9FC1CC6AFFB00BAAFCE /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2937A9FB1CC6AFFB00BAAFCE /* WelcomeView.swift */; };
-		2937AA021CC6B7CA00BAAFCE /* WriteLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2937AA011CC6B7CA00BAAFCE /* WriteLabel.swift */; };
+		2937AA021CC6B7CA00BAAFCE /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2937AA011CC6B7CA00BAAFCE /* WriteView.swift */; };
 		2937AA071CC6B9A500BAAFCE /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2937AA061CC6B9A500BAAFCE /* UIView+Shadow.swift */; };
 		2937AA091CC6BB2B00BAAFCE /* GeneralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2937AA081CC6BB2B00BAAFCE /* GeneralController.swift */; };
 		8F4E30BFEABF17F9EC03599B /* Pods_Stories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5EEBE4B3E0E5C24881061B /* Pods_Stories.framework */; };
@@ -47,7 +47,7 @@
 		2937A9F71CC6AF0B00BAAFCE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localized.strings; sourceTree = "<group>"; };
 		2937A9F91CC6AFF000BAAFCE /* WelcomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		2937A9FB1CC6AFFB00BAAFCE /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
-		2937AA011CC6B7CA00BAAFCE /* WriteLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteLabel.swift; sourceTree = "<group>"; };
+		2937AA011CC6B7CA00BAAFCE /* WriteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
 		2937AA061CC6B9A500BAAFCE /* UIView+Shadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		2937AA081CC6BB2B00BAAFCE /* GeneralController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralController.swift; sourceTree = "<group>"; };
 		4E5EEBE4B3E0E5C24881061B /* Pods_Stories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,7 +189,7 @@
 		2937A9AE1CC6A8A300BAAFCE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2937AA011CC6B7CA00BAAFCE /* WriteLabel.swift */,
+				2937AA011CC6B7CA00BAAFCE /* WriteView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -390,7 +390,7 @@
 				2937A9FC1CC6AFFB00BAAFCE /* WelcomeView.swift in Sources */,
 				2937AA071CC6B9A500BAAFCE /* UIView+Shadow.swift in Sources */,
 				2937AA091CC6BB2B00BAAFCE /* GeneralController.swift in Sources */,
-				2937AA021CC6B7CA00BAAFCE /* WriteLabel.swift in Sources */,
+				2937AA021CC6B7CA00BAAFCE /* WriteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
