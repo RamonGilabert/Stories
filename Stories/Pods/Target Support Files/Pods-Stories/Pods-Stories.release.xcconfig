@@ -1,8 +1,0 @@
-EMBEDDED_CONTENT_CONTAINS_SWIFT = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$CONFIGURATION_BUILD_DIR/Hue" "$CONFIGURATION_BUILD_DIR/Morgan" "$CONFIGURATION_BUILD_DIR/Ripple" "$CONFIGURATION_BUILD_DIR/Sugar" "$CONFIGURATION_BUILD_DIR/Transition" "$CONFIGURATION_BUILD_DIR/Walker"
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/Hue/Hue.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Morgan/Morgan.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Ripple/Ripple.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Sugar/Sugar.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Transition/Transition.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Walker/Walker.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "Hue" -framework "Morgan" -framework "Ripple" -framework "Sugar" -framework "Transition" -framework "Walker"
-OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
-PODS_ROOT = ${SRCROOT}/Pods
