@@ -21,7 +21,10 @@ class WelcomeView: UIView {
     }
   }
 
-  static let starNumber = 50
+  struct Constants {
+    static let starNumber = 50
+    static let mediumAlpha: CGFloat = 0.3
+  }
 
   lazy var moon: UIView = {
     let view = UIView()
@@ -35,13 +38,15 @@ class WelcomeView: UIView {
   }()
 
   lazy var writeView: WriteView = WriteView(font: Font.Welcome.title, string: Text.Welcome.title)
+  lazy var secondWrite: WriteView = WriteView(font: Font.Connecting.title, string: Text.Connecting.second)
 
   var stars: [UIView] = []
+  var initialFrame = CGRectZero
 
   override init(frame: CGRect) {
     super.init(frame: frame)
 
-    [moon, writeView].forEach { addSubview($0) }
+    [moon, writeView, secondWrite].forEach { addSubview($0) }
 
     prepareStars()
     setupConstraints()
@@ -90,12 +95,31 @@ class WelcomeView: UIView {
       self.writeView.font = Font.Connecting.title
       self.writeView.string = Text.Connecting.first
       self.writeView.velocity = 3
-      self.writeView.changeText()
+
+      delay(0.4) {
+        self.writeView.changeText { self.nextWritingView() }
+      }
     }
 
     delay(duration) {
       self.stone()
     }
+  }
+
+  func nextWritingView() {
+    UIView.animateWithDuration(0.4, animations: {
+      self.writeView.transform = CGAffineTransformMakeTranslation(0, 5)
+      }, completion: { _ in
+        spring(self.writeView, spring: 50, friction: 60, mass: 50, animations: {
+          $0.transform = CGAffineTransformMakeTranslation(0, -120)
+          $0.alpha = Constants.mediumAlpha
+        }).finally({
+          self.writeView.cursorAnimation = false
+          self.secondWrite.frame = self.initialFrame
+          self.secondWrite.velocity = 3
+          self.secondWrite.startAnimation()
+        })
+    })
   }
 
   // MARK: - Constraints
@@ -110,10 +134,12 @@ class WelcomeView: UIView {
   }
 
   func setupFrames() {
-    writeView.frame.size.width = UIScreen.mainScreen().bounds.width - Dimensions.writeOffset
     writeView.frame.origin = CGPoint(
       x: Dimensions.writeOffset / 2,
       y: Dimensions.welcomeOffset)
+    writeView.frame.size.width = UIScreen.mainScreen().bounds.width - Dimensions.writeOffset
+
+    initialFrame = writeView.frame
   }
 
   // MARK: - Helper methods
@@ -130,7 +156,7 @@ class WelcomeView: UIView {
     let sizes = [Dimensions.smallStar, Dimensions.mediumStar, Dimensions.bigStar]
     let screenSize = UIScreen.mainScreen().bounds
 
-    for _ in 0..<WelcomeView.starNumber {
+    for _ in 0..<Constants.starNumber {
       let star = UIView()
       let index = Int(arc4random_uniform(UInt32(sizes.count)))
       let size = sizes[index]

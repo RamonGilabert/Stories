@@ -6,7 +6,5 @@
 
 /* Connecting */
 
-"connectingFirstMessage" = "Buscant dispositius al voltant";
-"connectingSecondMessage" = "Dispositiu trobat";
-"connectingThirdMessage" = "Establint connexió";
-"connectingFourthMessage" = "Connectat.";
+"connectingEstablishing" = "Establint connexió...";
+"connectingConnected" = "Connectat.";

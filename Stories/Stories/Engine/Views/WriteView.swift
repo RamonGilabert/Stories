@@ -40,6 +40,7 @@ class WriteView: UIView {
     text.backgroundColor = Color.General.clear
     text.allowsEditingTextAttributes = true
     text.textAlignment = .Center
+    text.userInteractionEnabled = false
 
     return text
   }()
@@ -100,7 +101,7 @@ class WriteView: UIView {
     UIView.animateWithDuration(0.1, animations: {
       self.cursor.alpha = 1 - self.cursor.alpha
     }, completion: { _ in
-      guard self.cursorAnimation else { return }
+      guard self.cursorAnimation else { self.cursor.alpha = 0; return }
 
       delay(duration) { self.cursor(duration) }
     })

@@ -6,7 +6,5 @@
 
 /* Connecting */
 
-"connectingFirstMessage" = "Buscant dispositivos cercanos";
-"connectingSecondMessage" = "Dispositivo encontrado";
-"connectingThirdMessage" = "Establiendo connexión";
-"connectingFourthMessage" = "Connectado.";
+"connectingEstablishing" = "Establiendo connexión...";
+"connectingConnected" = "Connectado.";

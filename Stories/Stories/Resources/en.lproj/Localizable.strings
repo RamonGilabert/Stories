@@ -6,7 +6,5 @@
 
 /* Connecting */
 
-"connectingFirstMessage" = "Looking for peers around...";
-"connectingSecondMessage" = "Peer found";
-"connectingThirdMessage" = "Establishing connection";
-"connectingFourthMessage" = "Connected";
+"connectingEstablishing" = "Establishing connection...";
+"connectingConnected" = "Connected.";
