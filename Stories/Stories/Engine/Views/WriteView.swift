@@ -72,11 +72,11 @@ class WriteView: UIView {
 
   // MARK: - Animations
 
-  func startAnimation() {
+  func startAnimation(completion: (() -> ())? = nil) {
     cursor(0.4)
 
     delay(1.2) {
-      self.changeText()
+      self.changeText(completion)
     }
   }
 
@@ -106,7 +106,7 @@ class WriteView: UIView {
     })
   }
 
-  func changeText() {
+  func changeText(completion: (() -> ())? = nil) {
     if text.text.length < string.length {
       let nextCharacter = string[string.startIndex.advancedBy(text.text.length)]
       let durations = [0.35, 0.2, 0.3, 0.25, 0.15]
@@ -116,8 +116,10 @@ class WriteView: UIView {
       textViewDidChange(text)
 
       delay(durations[index] / Double(velocity)) {
-        self.changeText()
+        self.changeText(completion)
       }
+    } else {
+      completion?()
     }
   }
 
@@ -151,14 +153,14 @@ extension WriteView: UITextViewDelegate {
     textView.frame.origin.x = (frame.width - textView.frame.width) / 2
 
     frame.size.height = size.height < Dimensions.minimumHeight ? Dimensions.minimumHeight : size.height
-    cursor.frame.origin.x = textView.frame.maxX + 5
 
     textView.frame.origin.y = (frame.height - textView.frame.height) / 2
 
-    print(size.height)
     if size.height < Dimensions.minimumHeight {
-      cursor.center.y = textView.center.y - 2
+      cursor.frame.origin.x = textView.frame.maxX + 5
+      cursor.center.y = textView.center.y
     } else {
+      cursor.frame.origin.x = textView.caretRectForPosition(textView.endOfDocument).origin.x + 15
       cursor.frame.origin.y = textView.frame.height - Dimensions.Cursor.height
     }
   }
