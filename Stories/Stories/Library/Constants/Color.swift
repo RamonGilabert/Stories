@@ -13,6 +13,7 @@ struct Color {
     static let buttonShadow = UIColor.whiteColor().alpha(0.8)
     static let text = UIColor.whiteColor()
     static let clear = UIColor.clearColor()
+    static let ripple = UIColor.whiteColor().alpha(0.5)
   }
 
   struct Welcome {

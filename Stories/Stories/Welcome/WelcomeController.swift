@@ -1,4 +1,5 @@
 import UIKit
+import Sugar
 
 class WelcomeController: GeneralController {
 
@@ -26,6 +27,8 @@ class WelcomeController: GeneralController {
   func animate() {
     welcomeView.animate(completion: {
       self.welcomeView.writeView.startAnimation()
+
+      delay(5) { self.welcomeView.connect() }
     })
   }
 

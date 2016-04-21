@@ -1,10 +1,13 @@
 import UIKit
 import Walker
+import Ripple
+import Sugar
 
 class WelcomeView: UIView {
 
   struct Dimensions {
     static let moon: CGFloat = 200
+    static let moonStroke: CGFloat = 3
     static let topOffset: CGFloat = 95
     static let smallStar: CGFloat = 1
     static let mediumStar: CGFloat = 2
@@ -24,7 +27,8 @@ class WelcomeView: UIView {
     let view = UIView()
     view.translatesAutoresizingMaskIntoConstraints = false
     view.layer.cornerRadius = Dimensions.moon / 2
-    view.backgroundColor = Color.Welcome.moon
+    view.layer.borderColor = Color.Welcome.moon.CGColor
+    view.layer.borderWidth = Dimensions.moon / 2
     view.shadow(Color.Welcome.moonShadow, radius: 30)
 
     return view
@@ -67,6 +71,24 @@ class WelcomeView: UIView {
     })
   }
 
+  func connect() {
+    let duration = 0.3
+    let animation = CABasicAnimation(keyPath: "borderWidth")
+
+    animation.fromValue = Dimensions.moon / 2
+    animation.toValue = Dimensions.moonStroke
+    animation.duration = duration
+    animation.removedOnCompletion = false
+    animation.fillMode = kCAFillModeForwards
+    animation.additive = false
+    animation.cumulative = false
+    animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+
+    moon.layer.addAnimation(animation, forKey: "border-animation")
+
+    delay(duration) { self.stone() }
+  }
+
   // MARK: - Constraints
 
   func setupConstraints() {
@@ -86,6 +108,14 @@ class WelcomeView: UIView {
   }
 
   // MARK: - Helper methods
+
+  func stone(duration: NSTimeInterval = 4, multiplier: CGFloat = 1.65, divider: CGFloat = 1.5) {
+    ripple(moon.center,
+           view: self,
+           size: Dimensions.moon,
+           duration: duration, multiplier: multiplier, divider: divider,
+           color: Color.General.ripple)
+  }
 
   func prepareStars() {
     let sizes = [Dimensions.smallStar, Dimensions.mediumStar, Dimensions.bigStar]
