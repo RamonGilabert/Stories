@@ -141,7 +141,7 @@ class WelcomeView: UIView {
     UIView.animateWithDuration(0.6, animations: {
       self.transform = CGAffineTransformMakeScale(1.1, 1.1)
       }, completion: { _ in
-        UIView.animateWithDuration(0.2, animations: {
+        UIView.animateWithDuration(0.3, animations: {
           self.transform = CGAffineTransformMakeScale(0.001, 0.001)
           }, completion: { _ in
             self.delegate?.dismissController()

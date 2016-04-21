@@ -11,6 +11,14 @@ class WelcomeController: GeneralController {
     return view
   }()
 
+  lazy var storyController: StoryController = {
+    let controller = StoryController()
+    controller.modalPresentationStyle = .Custom
+    controller.transitioningDelegate = controller.transition
+
+    return controller
+  }()
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -48,8 +56,6 @@ class WelcomeController: GeneralController {
 extension WelcomeController: WelcomeViewDelegate {
 
   func dismissController() {
-    UIView.animateWithDuration(0.9, animations: {
-      self.welcomeView.transform = CGAffineTransformMakeScale(0.001, 0.001)
-    })
+    presentViewController(storyController, animated: true, completion: nil)
   }
 }
