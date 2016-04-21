@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		292FE24A1CC97E1700E6E491 /* StoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292FE2491CC97E1700E6E491 /* StoryController.swift */; };
+		292FE24C1CC97E2000E6E491 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292FE24B1CC97E2000E6E491 /* StoryView.swift */; };
 		2937A98A1CC6A3E700BAAFCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2937A9891CC6A3E700BAAFCE /* AppDelegate.swift */; };
 		2937A9A01CC6A6AD00BAAFCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2937A99C1CC6A6AD00BAAFCE /* Assets.xcassets */; };
 		2937A9A51CC6A7AC00BAAFCE /* Brandon_bld.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2937A9A31CC6A7AC00BAAFCE /* Brandon_bld.otf */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		292FE2491CC97E1700E6E491 /* StoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryController.swift; sourceTree = "<group>"; };
+		292FE24B1CC97E2000E6E491 /* StoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
 		2937A9861CC6A3E700BAAFCE /* Stories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2937A9891CC6A3E700BAAFCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2937A99C1CC6A6AD00BAAFCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				2937A9B11CC6A8B500BAAFCE /* Views */,
+				292FE2491CC97E1700E6E491 /* StoryController.swift */,
 			);
 			path = Story;
 			sourceTree = "<group>";
@@ -214,6 +219,7 @@
 		2937A9B11CC6A8B500BAAFCE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				292FE24B1CC97E2000E6E491 /* StoryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -393,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2937A9FA1CC6AFF000BAAFCE /* WelcomeController.swift in Sources */,
+				292FE24A1CC97E1700E6E491 /* StoryController.swift in Sources */,
 				2937A9B41CC6A8DF00BAAFCE /* Font.swift in Sources */,
 				2937A9B81CC6A8E700BAAFCE /* Color.swift in Sources */,
 				2937AA0C1CC6DE6B00BAAFCE /* LoadingView.swift in Sources */,
@@ -400,6 +407,7 @@
 				2937A98A1CC6A3E700BAAFCE /* AppDelegate.swift in Sources */,
 				2937A9BA1CC6A8F100BAAFCE /* Image.swift in Sources */,
 				2937A9FC1CC6AFFB00BAAFCE /* WelcomeView.swift in Sources */,
+				292FE24C1CC97E2000E6E491 /* StoryView.swift in Sources */,
 				2937AA071CC6B9A500BAAFCE /* UIView+Shadow.swift in Sources */,
 				2937AA091CC6BB2B00BAAFCE /* GeneralController.swift in Sources */,
 				2937AA021CC6B7CA00BAAFCE /* WriteView.swift in Sources */,

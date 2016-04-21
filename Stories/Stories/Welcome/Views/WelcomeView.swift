@@ -3,6 +3,11 @@ import Walker
 import Ripple
 import Sugar
 
+protocol WelcomeViewDelegate {
+
+  func dismissController()
+}
+
 class WelcomeView: UIView {
 
   struct Dimensions {
@@ -23,7 +28,7 @@ class WelcomeView: UIView {
 
   struct Constants {
     static let starNumber = 50
-    static let mediumAlpha: CGFloat = 0.3
+    static let mediumAlpha: CGFloat = 0.1
   }
 
   lazy var moon: UIView = {
@@ -42,6 +47,7 @@ class WelcomeView: UIView {
 
   var stars: [UIView] = []
   var initialFrame = CGRectZero
+  var delegate: WelcomeViewDelegate?
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -94,7 +100,7 @@ class WelcomeView: UIView {
     writeView.deleteAnimation {
       self.writeView.font = Font.Connecting.title
       self.writeView.string = Text.Connecting.first
-      self.writeView.velocity = 3
+      self.writeView.velocity = 2
 
       delay(0.4) {
         self.writeView.changeText { self.nextWritingView() }
@@ -110,14 +116,35 @@ class WelcomeView: UIView {
     UIView.animateWithDuration(0.4, animations: {
       self.writeView.transform = CGAffineTransformMakeTranslation(0, 5)
       }, completion: { _ in
+        self.writeView.cursorAnimation = false
+
         spring(self.writeView, spring: 50, friction: 60, mass: 50, animations: {
           $0.transform = CGAffineTransformMakeTranslation(0, -120)
           $0.alpha = Constants.mediumAlpha
         }).finally({
-          self.writeView.cursorAnimation = false
-          self.secondWrite.frame = self.initialFrame
-          self.secondWrite.velocity = 3
-          self.secondWrite.startAnimation()
+          delay(0.4) {
+            self.secondWrite.frame = self.initialFrame
+            self.secondWrite.velocity = 1
+            self.secondWrite.startAnimation {
+              self.secondWrite.cursorAnimation = false
+
+              delay(1) {
+                self.dismissView()
+              }
+            }
+          }
+        })
+    })
+  }
+
+  func dismissView() {
+    UIView.animateWithDuration(0.6, animations: {
+      self.transform = CGAffineTransformMakeScale(1.1, 1.1)
+      }, completion: { _ in
+        UIView.animateWithDuration(0.2, animations: {
+          self.transform = CGAffineTransformMakeScale(0.001, 0.001)
+          }, completion: { _ in
+            self.delegate?.dismissController()
         })
     })
   }
