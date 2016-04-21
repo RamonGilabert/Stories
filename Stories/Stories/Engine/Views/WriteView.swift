@@ -63,6 +63,20 @@ class WriteView: UIView {
     }
   }
 
+  func deleteAnimation() {
+    if !text.text.characters.isEmpty {
+      let durations = [0.1, 0.05, 0.0025, 0.15]
+      let index = Int(arc4random_uniform(UInt32(durations.count)))
+
+      text.text = text.text.substringToIndex(text.text.endIndex.predecessor())
+      textViewDidChange(text)
+
+      delay(durations[index]) {
+        self.deleteAnimation()
+      }
+    }
+  }
+
   func cursor(duration: NSTimeInterval) {
     UIView.animateWithDuration(0.1, animations: {
       self.cursor.alpha = 1 - self.cursor.alpha

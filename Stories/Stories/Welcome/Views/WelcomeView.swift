@@ -86,7 +86,10 @@ class WelcomeView: UIView {
 
     moon.layer.addAnimation(animation, forKey: "border-animation")
 
-    delay(duration) { self.stone() }
+    delay(duration) {
+      self.stone()
+      self.writeView.deleteAnimation()
+    }
   }
 
   // MARK: - Constraints
