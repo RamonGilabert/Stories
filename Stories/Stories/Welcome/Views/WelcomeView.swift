@@ -88,6 +88,9 @@ class WelcomeView: UIView {
 
     writeView.deleteAnimation {
       self.writeView.font = Font.Connecting.title
+      self.writeView.string = Text.Connecting.first
+      self.writeView.velocity = 3
+      self.writeView.changeText()
     }
 
     delay(duration) {

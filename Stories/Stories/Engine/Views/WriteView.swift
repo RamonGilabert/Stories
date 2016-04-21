@@ -12,6 +12,12 @@ class WriteView: UIView {
     struct Text {
       static let offset: CGFloat = 80
     }
+
+    static let minimumHeight: CGFloat = 60
+  }
+
+  struct Constants {
+    static let line: CGFloat = 14
   }
 
   lazy var cursor: UIView = {
@@ -23,19 +29,30 @@ class WriteView: UIView {
   }()
 
   lazy var text: UITextView = { [unowned self] in
+    let paragraphStyle = NSMutableParagraphStyle()
+    paragraphStyle.lineSpacing = Constants.line
+
     let text = UITextView()
+    text.typingAttributes = [NSParagraphStyleAttributeName : paragraphStyle]
     text.delegate = self
     text.font = self.font
     text.textColor = Color.General.text
     text.backgroundColor = Color.General.clear
     text.allowsEditingTextAttributes = true
+    text.textAlignment = .Center
 
     return text
   }()
 
-  var font: UIFont
+  var font: UIFont {
+    didSet {
+      text.font = font
+    }
+  }
+  
   var string: String
 
+  var velocity: CGFloat = 1
   var cursorAnimation = true
 
   init(font: UIFont, string: String) {
@@ -72,7 +89,7 @@ class WriteView: UIView {
       textViewDidChange(text)
 
       delay(durations[index]) {
-        self.deleteAnimation()
+        self.deleteAnimation(completion)
       }
     } else {
       completion?()
@@ -98,7 +115,7 @@ class WriteView: UIView {
       text.text.append(nextCharacter)
       textViewDidChange(text)
 
-      delay(durations[index]) {
+      delay(durations[index] / Double(velocity)) {
         self.changeText()
       }
     }
@@ -118,16 +135,31 @@ class WriteView: UIView {
 extension WriteView: UITextViewDelegate {
 
   func textViewDidChange(textView: UITextView) {
+    let paragraphStyle = NSMutableParagraphStyle()
+    paragraphStyle.lineSpacing = Constants.line
+
     let size = text.text.boundingRectWithSize(
-      frame.size, options: NSStringDrawingOptions.UsesLineFragmentOrigin,
-      attributes: [NSFontAttributeName : font], context: nil).size
+      CGSize(width: frame.width, height: CGFloat.max),
+      options: NSStringDrawingOptions.UsesLineFragmentOrigin,
+      attributes: [
+        NSFontAttributeName : font,
+        NSParagraphStyleAttributeName : paragraphStyle
+      ], context: nil).size
 
     textView.sizeToFit()
     textView.frame.size = CGSize(width: size.width + 10, height: size.height)
     textView.frame.origin.x = (frame.width - textView.frame.width) / 2
 
-    frame.size.height = size.height
+    frame.size.height = size.height < Dimensions.minimumHeight ? Dimensions.minimumHeight : size.height
     cursor.frame.origin.x = textView.frame.maxX + 5
-    cursor.center.y = textView.center.y - 1
+
+    textView.frame.origin.y = (frame.height - textView.frame.height) / 2
+
+    print(size.height)
+    if size.height < Dimensions.minimumHeight {
+      cursor.center.y = textView.center.y - 2
+    } else {
+      cursor.frame.origin.y = textView.frame.height - Dimensions.Cursor.height
+    }
   }
 }
