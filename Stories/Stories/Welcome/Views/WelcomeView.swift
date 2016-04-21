@@ -86,9 +86,12 @@ class WelcomeView: UIView {
 
     moon.layer.addAnimation(animation, forKey: "border-animation")
 
+    writeView.deleteAnimation {
+      writeView.font = Font.Welcome.
+    }
+
     delay(duration) {
       self.stone()
-      self.writeView.deleteAnimation()
     }
   }
 

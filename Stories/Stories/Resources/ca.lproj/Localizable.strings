@@ -1,3 +1,12 @@
 // Catalan translations
 
+/* Welcome */
+
 "welcome" = "Benvingut";
+
+/* Connecting */
+
+"connectingFirstMessage" = "Buscant dispositius al voltant";
+"connectingSecondMessage" = "Dispositiu trobat";
+"connectingThirdMessage" = "Establint connexió";
+"connectingFourthMessage" = "Connectat.";

@@ -63,9 +63,9 @@ class WriteView: UIView {
     }
   }
 
-  func deleteAnimation() {
+  func deleteAnimation(completion: (() -> ())? = nil) {
     if !text.text.characters.isEmpty {
-      let durations = [0.1, 0.05, 0.0025, 0.15]
+      let durations = [0.1, 0.15]
       let index = Int(arc4random_uniform(UInt32(durations.count)))
 
       text.text = text.text.substringToIndex(text.text.endIndex.predecessor())
@@ -74,6 +74,8 @@ class WriteView: UIView {
       delay(durations[index]) {
         self.deleteAnimation()
       }
+    } else {
+      completion?()
     }
   }
 

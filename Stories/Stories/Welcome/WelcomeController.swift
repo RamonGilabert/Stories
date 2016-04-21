@@ -28,7 +28,7 @@ class WelcomeController: GeneralController {
     welcomeView.animate(completion: {
       self.welcomeView.writeView.startAnimation()
 
-      delay(5) { self.welcomeView.connect() }
+      delay(4.5) { self.welcomeView.connect() }
     })
   }
 

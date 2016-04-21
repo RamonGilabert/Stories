@@ -1,3 +1,12 @@
 // English translations
 
+/* Welcome */
+
 "welcome" = "Welcome";
+
+/* Connecting */
+
+"connectingFirstMessage" = "Looking for peers around...";
+"connectingSecondMessage" = "Peer found";
+"connectingThirdMessage" = "Establishing connection";
+"connectingFourthMessage" = "Connected";
