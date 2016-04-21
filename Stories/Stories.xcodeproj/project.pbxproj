@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		292FE2461CC9516B00E6E491 /* ConnectingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292FE2451CC9516B00E6E491 /* ConnectingController.swift */; };
+		292FE2481CC9517C00E6E491 /* ConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292FE2471CC9517C00E6E491 /* ConnectionView.swift */; };
 		2937A98A1CC6A3E700BAAFCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2937A9891CC6A3E700BAAFCE /* AppDelegate.swift */; };
 		2937A9A01CC6A6AD00BAAFCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2937A99C1CC6A6AD00BAAFCE /* Assets.xcassets */; };
 		2937A9A51CC6A7AC00BAAFCE /* Brandon_bld.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2937A9A31CC6A7AC00BAAFCE /* Brandon_bld.otf */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		292FE2451CC9516B00E6E491 /* ConnectingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectingController.swift; sourceTree = "<group>"; };
+		292FE2471CC9517C00E6E491 /* ConnectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionView.swift; sourceTree = "<group>"; };
 		2937A9861CC6A3E700BAAFCE /* Stories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2937A9891CC6A3E700BAAFCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2937A99C1CC6A6AD00BAAFCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,6 +81,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		292FE2431CC9511200E6E491 /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				292FE2441CC9515E00E6E491 /* Views */,
+				292FE2451CC9516B00E6E491 /* ConnectingController.swift */,
+			);
+			path = Connection;
+			sourceTree = "<group>";
+		};
+		292FE2441CC9515E00E6E491 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				292FE2471CC9517C00E6E491 /* ConnectionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		2937A97D1CC6A3E700BAAFCE = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				2937A9891CC6A3E700BAAFCE /* AppDelegate.swift */,
+				292FE2431CC9511200E6E491 /* Connection */,
 				2937A9A71CC6A81D00BAAFCE /* Library */,
 				2937A9AD1CC6A87E00BAAFCE /* Story */,
 				2937A9AC1CC6A87600BAAFCE /* Menu */,
@@ -401,7 +423,9 @@
 				2937A9BA1CC6A8F100BAAFCE /* Image.swift in Sources */,
 				2937A9FC1CC6AFFB00BAAFCE /* WelcomeView.swift in Sources */,
 				2937AA071CC6B9A500BAAFCE /* UIView+Shadow.swift in Sources */,
+				292FE2461CC9516B00E6E491 /* ConnectingController.swift in Sources */,
 				2937AA091CC6BB2B00BAAFCE /* GeneralController.swift in Sources */,
+				292FE2481CC9517C00E6E491 /* ConnectionView.swift in Sources */,
 				2937AA021CC6B7CA00BAAFCE /* WriteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
