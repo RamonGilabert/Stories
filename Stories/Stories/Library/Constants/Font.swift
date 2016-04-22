@@ -17,4 +17,9 @@ struct Font {
   struct Connecting {
     static let title = UIFont(name: Monaco.regular, size: 28)!
   }
+
+  struct Story {
+    static let text = UIFont(name: Monaco.regular, size: 24)!
+    static let button = UIFont(name: Monaco.regular, size: 18)!
+  }
 }
