@@ -9,9 +9,11 @@ class EngineView: UIView {
 
   struct Dimensions {
     struct Menu {
-      static let size: CGFloat = 34
+      static let size: CGFloat = 42
       static let shadow: CGFloat = 10
       static let border: CGFloat = 2
+      static let topOffset: CGFloat = 24
+      static let rightOffset: CGFloat = Menu.topOffset
     }
 
     struct Button {
@@ -27,6 +29,8 @@ class EngineView: UIView {
     button.layer.borderWidth = Dimensions.Menu.border
     button.layer.cornerRadius = Dimensions.Menu.size / 2
     button.backgroundColor = Color.Engine.Button.background
+    button.translatesAutoresizingMaskIntoConstraints = false
+    button.shadow(Color.Engine.Button.shadow, radius: 10)
     button.addTarget(self, action: #selector(menuButtonDidPress), forControlEvents: .TouchUpInside)
 
     return button
@@ -48,6 +52,10 @@ class EngineView: UIView {
 
   override init(frame: CGRect) {
     super.init(frame: frame)
+
+    [menu].forEach { addSubview($0) }
+
+    setupConstraints()
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -58,5 +66,16 @@ class EngineView: UIView {
 
   func menuButtonDidPress() {
     delegate?.menuButtonDidPress()
+  }
+
+  // MARK: - Constraints
+
+  func setupConstraints() {
+    NSLayoutConstraint.activateConstraints([
+      menu.widthAnchor.constraintEqualToConstant(Dimensions.Menu.size),
+      menu.heightAnchor.constraintEqualToConstant(Dimensions.Menu.size),
+      menu.topAnchor.constraintEqualToAnchor(topAnchor, constant: Dimensions.Menu.topOffset),
+      menu.rightAnchor.constraintEqualToAnchor(rightAnchor, constant: -Dimensions.Menu.rightOffset)
+      ])
   }
 }

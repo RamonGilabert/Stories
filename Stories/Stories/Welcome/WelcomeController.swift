@@ -11,8 +11,8 @@ class WelcomeController: GeneralController {
     return view
   }()
 
-  lazy var storyController: StoryController = {
-    let controller = StoryController()
+  lazy var engineController: EngineController = {
+    let controller = EngineController()
     controller.modalPresentationStyle = .Custom
     controller.transitioningDelegate = controller.transition
 
@@ -56,6 +56,6 @@ class WelcomeController: GeneralController {
 extension WelcomeController: WelcomeViewDelegate {
 
   func dismissController() {
-    presentViewController(storyController, animated: true, completion: nil)
+    presentViewController(engineController, animated: true, completion: nil)
   }
 }
