@@ -29,5 +29,16 @@ struct Color {
       static let color = UIColor.whiteColor()
       static let cursor = UIColor.whiteColor()
     }
+
+    struct Button {
+      static let general = UIColor.whiteColor()
+      static let shadow = UIColor.whiteColor().alpha(0.8)
+      static let background = UIColor.clearColor()
+    }
+
+    struct Menu {
+      static let general = UIColor.whiteColor()
+      static let shadow = UIColor.whiteColor().alpha(0.8)
+    }
   }
 }
