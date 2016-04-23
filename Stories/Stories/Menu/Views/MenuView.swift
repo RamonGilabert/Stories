@@ -33,11 +33,21 @@ class MenuView: UIView {
       addSubview($0)
     }
 
+    setupTableView()
     setupConstraints()
   }
   
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
+  }
+
+  // MARK: - Setup
+
+  func setupTableView() {
+    tableView.delegate = self
+    tableView.dataSource = self
+    tableView.registerClass(
+      MenuCell.self, forCellReuseIdentifier: MenuCell.reusableIdentifier)
   }
 
   // MARK: - Actions
@@ -58,22 +68,47 @@ class MenuView: UIView {
       menu.widthAnchor.constraintEqualToConstant(EngineView.Dimensions.Menu.size),
       menu.heightAnchor.constraintEqualToConstant(EngineView.Dimensions.Menu.size),
       menu.topAnchor.constraintEqualToAnchor(topAnchor, constant: EngineView.Dimensions.Menu.topOffset),
-      menu.rightAnchor.constraintEqualToAnchor(rightAnchor, constant: -EngineView.Dimensions.Menu.rightOffset)
+      menu.rightAnchor.constraintEqualToAnchor(rightAnchor, constant: -EngineView.Dimensions.Menu.rightOffset),
+
+      tableView.centerXAnchor.constraintEqualToAnchor(centerXAnchor),
+      tableView.centerYAnchor.constraintEqualToAnchor(centerYAnchor),
+      tableView.leftAnchor.constraintEqualToAnchor(leftAnchor, constant: Dimensions.Table.leftOffset),
+      tableView.rightAnchor.constraintEqualToAnchor(rightAnchor, constant: -Dimensions.Table.rightOffset)
       ])
   }
 }
 
 extension MenuView: UITableViewDelegate {
 
+  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    return 80
+  }
+
+  func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    // TODO: Do the animation for the first time.
+  }
 }
 
 extension MenuView: UITableViewDataSource {
 
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 0
+    return MenuViewModel.cells.count
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    return UITableViewCell()
+    guard let cell = tableView.dequeueReusableCellWithIdentifier(MenuCell.reusableIdentifier) as? MenuCell
+      else { return UITableViewCell() }
+
+    cell.configureCell(MenuViewModel.cells[indexPath.row])
+    cell.delegate = self
+
+    return cell
+  }
+}
+
+extension MenuView: MenuCellDelegate {
+
+  func buttonDidPress(title: String) {
+    // TODO: Handle the button press.
   }
 }
