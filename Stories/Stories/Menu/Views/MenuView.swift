@@ -4,33 +4,38 @@ class MenuView: UIView {
 
   struct Dimensions {
     struct Table {
+      static let topOffset: CGFloat = 140
       static let leftOffset: CGFloat = 30
       static let rightOffset: CGFloat = 16
     }
   }
 
-  lazy var blurView: UIVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+  lazy var blurView: UIVisualEffectView = {
+    let view = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+    view.translatesAutoresizingMaskIntoConstraints = false
+
+    return view
+  }()
 
   lazy var menu: UIButton = { [unowned self] in
     let button = UIButton()
     button.backgroundColor = Color.Engine.Button.general
+    button.layer.cornerRadius = EngineView.Dimensions.Menu.size / 2
     button.shadow(Color.Engine.Button.shadow, radius: 10)
     button.addTarget(self, action: #selector(menuButtonDidPress), forControlEvents: .TouchUpInside)
 
     return button
     }()
 
-  lazy var tableView: UITableView = {
-    let tableView = UITableView()
-    return tableView
-  }()
+  lazy var tableView: UITableView = UITableView()
 
   override init(frame: CGRect) {
     super.init(frame: frame)
 
-    [blurView, menu, tableView].forEach {
+    addSubview(blurView)
+    [menu, tableView].forEach {
       $0.translatesAutoresizingMaskIntoConstraints = false
-      addSubview($0)
+      blurView.addSubview($0)
     }
 
     setupTableView()
@@ -46,6 +51,10 @@ class MenuView: UIView {
   func setupTableView() {
     tableView.delegate = self
     tableView.dataSource = self
+    tableView.backgroundColor = Color.General.clear
+    tableView.separatorStyle = .None
+    tableView.contentInset.top = Dimensions.Table.topOffset
+
     tableView.registerClass(
       MenuCell.self, forCellReuseIdentifier: MenuCell.reusableIdentifier)
   }
@@ -70,10 +79,9 @@ class MenuView: UIView {
       menu.topAnchor.constraintEqualToAnchor(topAnchor, constant: EngineView.Dimensions.Menu.topOffset),
       menu.rightAnchor.constraintEqualToAnchor(rightAnchor, constant: -EngineView.Dimensions.Menu.rightOffset),
 
-      tableView.centerXAnchor.constraintEqualToAnchor(centerXAnchor),
-      tableView.centerYAnchor.constraintEqualToAnchor(centerYAnchor),
-      tableView.leftAnchor.constraintEqualToAnchor(leftAnchor, constant: Dimensions.Table.leftOffset),
-      tableView.rightAnchor.constraintEqualToAnchor(rightAnchor, constant: -Dimensions.Table.rightOffset)
+      tableView.widthAnchor.constraintEqualToAnchor(widthAnchor),
+      tableView.topAnchor.constraintEqualToAnchor(topAnchor),
+      tableView.bottomAnchor.constraintEqualToAnchor(bottomAnchor)
       ])
   }
 }

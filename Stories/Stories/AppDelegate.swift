@@ -18,13 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     window = UIWindow()
     window?.frame = UIScreen.mainScreen().bounds
-    window?.rootViewController = welcomeController
-
-    welcomeController.view.addSubview(loadingView)
-
+    window?.rootViewController = EngineController()
+//
+//    welcomeController.view.addSubview(loadingView)
+//
     window?.makeKeyAndVisible()
-
-    delay(0.2) { self.animate() }
+//
+//    delay(0.2) { self.animate() }
 
     UIApplication.sharedApplication().statusBarHidden = true
 

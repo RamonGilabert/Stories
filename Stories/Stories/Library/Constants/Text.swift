@@ -13,11 +13,11 @@ struct Text {
   }
 
   struct Menu {
-    static let story = localizedString("menuFullStory")
-    static let backStory = localizedString("menuBackStory")
-    static let motivation = localizedString("menuReadMotivation")
-    static let end = localizedString("menuWatchTheEnd")
-    static let github = localizedString("menuFindGithub")
-    static let contact = localizedString("menuContact")
+    static let story = localizedString("menuFullStory").uppercaseString
+    static let backStory = localizedString("menuBackStory").uppercaseString
+    static let motivation = localizedString("menuReadMotivation").uppercaseString
+    static let end = localizedString("menuWatchTheEnd").uppercaseString
+    static let github = localizedString("menuFindGithub").uppercaseString
+    static let contact = localizedString("menuContact").uppercaseString
   }
 }

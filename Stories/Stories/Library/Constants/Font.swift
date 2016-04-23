@@ -24,6 +24,6 @@ struct Font {
   }
 
   struct Menu {
-    static let title = UIFont(name: Brandon.bold, size: 28)!
+    static let title = UIFont(name: Brandon.bold, size: 30)!
   }
 }

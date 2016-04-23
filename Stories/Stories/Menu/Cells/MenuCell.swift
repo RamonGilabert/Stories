@@ -13,7 +13,7 @@ class MenuCell: UITableViewCell {
     let button = UIButton()
     button.addTarget(
       self, action: #selector(buttonDidPress), forControlEvents: .TouchUpInside)
-    button.shadow(Color.Menu.shadow, radius: 2)
+    button.shadow(Color.Menu.Button.shadow, radius: 2)
     button.setTitleColor(Color.Menu.general, forState: .Normal)
     button.titleLabel?.font = Font.Menu.title
     button.translatesAutoresizingMaskIntoConstraints = false
@@ -25,6 +25,10 @@ class MenuCell: UITableViewCell {
 
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+    backgroundColor = Color.General.clear
+    selectionStyle = .None
+    addSubview(button)
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -52,7 +56,7 @@ class MenuCell: UITableViewCell {
     NSLayoutConstraint.deactivateConstraints(button.constraints)
     NSLayoutConstraint.activateConstraints([
       button.centerYAnchor.constraintEqualToAnchor(centerYAnchor),
-      button.leftAnchor.constraintEqualToAnchor(leftAnchor)
+      button.leftAnchor.constraintEqualToAnchor(leftAnchor, constant: MenuView.Dimensions.Table.leftOffset)
       ])
   }
 }

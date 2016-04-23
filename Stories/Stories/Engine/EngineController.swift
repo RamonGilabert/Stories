@@ -5,7 +5,7 @@ class EngineController: GeneralController {
 
   lazy var transition: Transition = {
     let transition = Transition() { controller, show in
-      guard let controller = controller as? StoryController else { return }
+      guard let controller = controller as? EngineController else { return }
       controller.view.alpha = show ? 1 : 0
     }
 
@@ -22,6 +22,8 @@ class EngineController: GeneralController {
 
     return view
   }()
+
+  lazy var menuController: MenuController = MenuController()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -54,6 +56,9 @@ class EngineController: GeneralController {
 extension EngineController: EngineViewDelegate {
 
   func menuButtonDidPress() {
-    // TODO: Show the menu.
+    menuController.modalPresentationStyle = .Custom
+    menuController.transitioningDelegate = menuController.transition
+    
+    presentViewController(menuController, animated: true, completion: nil)
   }
 }

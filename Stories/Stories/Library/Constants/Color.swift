@@ -45,5 +45,9 @@ struct Color {
   struct Menu {
     static let general = UIColor.whiteColor()
     static let shadow = UIColor.whiteColor().alpha(0.8)
+
+    struct Button {
+      static let shadow = UIColor.whiteColor().alpha(0.2)
+    }
   }
 }
