@@ -1,5 +1,11 @@
 import UIKit
 
+protocol MenuViewDelegate {
+
+  func buttonDidPress(title: String)
+  func menuButtonDidPress()
+}
+
 class MenuView: UIView {
 
   struct Dimensions {
@@ -29,13 +35,13 @@ class MenuView: UIView {
 
   lazy var tableView: UITableView = UITableView()
 
-  var shouldAnimate = true
+  var delegate: MenuViewDelegate?
 
   override init(frame: CGRect) {
     super.init(frame: frame)
 
     addSubview(blurView)
-    [menu, tableView].forEach {
+    [tableView, menu].forEach {
       $0.translatesAutoresizingMaskIntoConstraints = false
       blurView.addSubview($0)
     }
@@ -64,7 +70,7 @@ class MenuView: UIView {
   // MARK: - Actions
 
   func menuButtonDidPress() {
-    
+    delegate?.menuButtonDidPress()
   }
 
   // MARK: - Constraints
@@ -95,8 +101,6 @@ extension MenuView: UITableViewDelegate {
   }
 
   func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-    guard shouldAnimate else { return }
-
     cell.transform = CGAffineTransformMakeTranslation(-1000, 0)
 
     UIView.animateWithDuration(
@@ -104,10 +108,6 @@ extension MenuView: UITableViewDelegate {
       initialSpringVelocity: 1, options: [], animations: {
       cell.transform = CGAffineTransformIdentity
       }, completion: nil)
-
-    if indexPath.row == MenuViewModel.cells.count - 1 {
-      shouldAnimate = false
-    }
   }
 }
 
@@ -131,6 +131,6 @@ extension MenuView: UITableViewDataSource {
 extension MenuView: MenuCellDelegate {
 
   func buttonDidPress(title: String) {
-    // TODO: Handle the button press.
+    delegate?.buttonDidPress(title)
   }
 }

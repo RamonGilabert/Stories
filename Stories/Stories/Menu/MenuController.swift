@@ -15,9 +15,10 @@ class MenuController: GeneralController {
     return transition
   }()
 
-  lazy var menuView: MenuView = {
+  lazy var menuView: MenuView = { [unowned self] in
     let view = MenuView()
     view.translatesAutoresizingMaskIntoConstraints = false
+    view.delegate = self
     
     return view
   }()
@@ -33,7 +34,7 @@ class MenuController: GeneralController {
 
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
-    menuView.shouldAnimate = true
+    menuView.tableView.reloadData()
   }
 
   // MARK - Constraints
@@ -45,5 +46,31 @@ class MenuController: GeneralController {
       menuView.topAnchor.constraintEqualToAnchor(view.topAnchor),
       menuView.rightAnchor.constraintEqualToAnchor(view.rightAnchor)
       ])
+  }
+}
+
+extension MenuController: MenuViewDelegate {
+
+  func buttonDidPress(title: String) {
+    switch(title) {
+    case Text.Menu.backStory:
+      break
+    case Text.Menu.story:
+      break
+    case Text.Menu.end:
+      break
+    case Text.Menu.motivation:
+      break
+    case Text.Menu.github:
+      break
+    case Text.Menu.contact:
+      break
+    default:
+      menuButtonDidPress()
+    }
+  }
+
+  func menuButtonDidPress() {
+    dismissViewControllerAnimated(true, completion: nil)
   }
 }
