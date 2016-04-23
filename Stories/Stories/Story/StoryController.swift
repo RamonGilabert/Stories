@@ -20,6 +20,21 @@ class StoryController: GeneralController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    view.addSubview(storyView)
+
+    setupConstraints()
+  }
+
+  // MARK: - Constraints
+
+  func setupConstraints() {
+    NSLayoutConstraint.activateConstraints([
+      storyView.widthAnchor.constraintEqualToAnchor(view.widthAnchor),
+      storyView.heightAnchor.constraintEqualToAnchor(view.heightAnchor),
+      storyView.topAnchor.constraintEqualToAnchor(view.topAnchor),
+      storyView.rightAnchor.constraintEqualToAnchor(view.rightAnchor)
+      ])
   }
 }
 

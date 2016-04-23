@@ -20,6 +20,8 @@ class StoryView: UIView {
     return button
   }()
 
+  lazy var tableView: UITableView = UITableView()
+
   var delegate: StoryViewDelegate?
 
   override init(frame: CGRect) {
@@ -30,9 +32,44 @@ class StoryView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
 
+  // MARK: - Setup
+
+  func setupTableView() {
+    tableView.delegate = self
+    tableView.dataSource = self
+    tableView.registerClass(
+      StoryCell.self, forCellReuseIdentifier: StoryCell.reusableIdentifier)
+  }
+
   // MARK: - Action
 
   func menuButtonDidPress() {
     delegate?.menuButtonDidPress()
+  }
+
+  // MARK: - Constraints
+
+  func setupConstraints() {
+    NSLayoutConstraint.activateConstraints([
+      tableView.widthAnchor.constraintEqualToAnchor(widthAnchor),
+      tableView.heightAnchor.constraintEqualToAnchor(heightAnchor),
+      tableView.topAnchor.constraintEqualToAnchor(topAnchor),
+      tableView.rightAnchor.constraintEqualToAnchor(rightAnchor)
+      ])
+  }
+}
+
+extension StoryView: UITableViewDelegate {
+
+}
+
+extension StoryView: UITableViewDataSource {
+
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 0
+  }
+
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    return UITableViewCell()
   }
 }
