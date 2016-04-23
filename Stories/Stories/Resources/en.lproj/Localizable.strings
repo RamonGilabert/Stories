@@ -8,3 +8,12 @@
 
 "connectingEstablishing" = "Establishing connection...";
 "connectingConnected" = "Connected.";
+
+/* Menu */
+
+"menuFullStory" = "Read the full story";
+"menuBackStory" = "Go back to the story";
+"menuReadMotivation" = "Read the motivation";
+"menuWatchTheEnd" = "Watch the end";
+"menuFindGithub" = "Find me in Github";
+"menuContact" = "Contact me";

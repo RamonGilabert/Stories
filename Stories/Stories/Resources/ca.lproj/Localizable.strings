@@ -8,3 +8,12 @@
 
 "connectingEstablishing" = "Establint connexió...";
 "connectingConnected" = "Connectat.";
+
+/* Menu */
+
+"menuFullStory" = "Llegeix tota la història";
+"menuBackStory" = "Torna a la història";
+"menuReadMotivation" = "Llegeix la motivació";
+"menuWatchTheEnd" = "Mira el final";
+"menuFindGithub" = "Troba'm a Github";
+"menuContact" = "Contacta'm";
