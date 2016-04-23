@@ -17,3 +17,11 @@
 "menuWatchTheEnd" = "Mira el final";
 "menuFindGithub" = "Troba'm a Github";
 "menuContact" = "Contacta'm";
+
+/* Contact */
+
+"contactTitle" = "Hola hola!";
+"contactMessage" = "Ens ha agradat la teva applicació\n\n";
+"contactErrorTitle" = "Uuuuups!";
+"contactErrorMessage" = "Sembla que no tens mail configurat al telèfon, però em pots enviar un missatge a ramon.gilabert.llop[at]gmail.com";
+"contactErrorButton" = "Val";

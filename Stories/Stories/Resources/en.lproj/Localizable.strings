@@ -17,3 +17,11 @@
 "menuWatchTheEnd" = "Watch the end";
 "menuFindGithub" = "Find me in Github";
 "menuContact" = "Contact me";
+
+/* Contact */
+
+"contactTitle" = "Hello there!";
+"contactMessage" = "We've liked your application!\n\n";
+"contactErrorTitle" = "Oooops!";
+"contactErrorMessage" = "It seems that you don't have mail configured in your phone, but you can still send me a message to ramon.gilabert.llop[at]gmail.com";
+"contactErrorButton" = "Ok";

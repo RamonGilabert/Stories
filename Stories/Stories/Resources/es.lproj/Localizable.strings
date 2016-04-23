@@ -17,3 +17,12 @@
 "menuWatchTheEnd" = "Mira el final";
 "menuFindGithub" = "Encuéntrame en Github";
 "menuContact" = "Contáctame";
+
+
+/* Contact */
+
+"contactTitle" = "Hola hola!";
+"contactMessage" = "Nos ha gustado tu aplicación\n\n";
+"contactErrorTitle" = "Uuuuups!";
+"contactErrorMessage" = "Parece que no tienes configurada la aplicación de correo, pero me puedes enviar un mensaje a ramon.gilabert.llop[at]gmail.com";
+"contactErrorButton" = "Ok";

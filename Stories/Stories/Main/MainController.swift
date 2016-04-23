@@ -34,11 +34,12 @@ class MainController: GeneralController {
     return controller
   }()
 
-  lazy var mailController: MFMessageComposeViewController = {
-    let controller = MFMessageComposeViewController()
-    controller.recipients = [Constant.email]
-    controller.subject = ""
-    controller.body = ""
+  lazy var mailController: MFMailComposeViewController = { [unowned self] in
+    let controller = MFMailComposeViewController()
+    controller.setToRecipients([Constant.email])
+    controller.setSubject(Text.Contact.title)
+    controller.setMessageBody(Text.Contact.message, isHTML: false)
+    controller.delegate = self
 
     return controller
   }()
@@ -84,18 +85,24 @@ class MainController: GeneralController {
   }
 
   func presentContact() {
-    if MFMessageComposeViewController.canSendText() {
-      presentViewController(mailController, animated: true, completion: nil)
-    } else {
-      presentAlert("", message: "")
-    }
+    MFMailComposeViewController.canSendMail()
+      ? presentViewController(mailController, animated: true, completion: nil)
+      : presentAlert(Text.Contact.title, message: Text.Contact.message)
   }
 
-  func presentAlert(title: String, message: String) {
-    let alertController = UIAlertController(title: "", message: "", preferredStyle: .Alert)
-    let action = UIAlertAction(title: "", style: .Default, handler: nil)
-
+  func presentAlert(title: String, message: String, button: String = Text.Contact.Error.button) {
+    let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+    let action = UIAlertAction(title: title, style: .Default, handler: nil)
+    alertController.addAction(action)
+    
     presentViewController(alertController, animated: true, completion: nil)
+  }
+}
+
+extension MainController: MFMailComposeViewControllerDelegate, UINavigationControllerDelegate {
+
+  func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+    controller.dismissViewControllerAnimated(true, completion: nil)
   }
 }
 
@@ -128,7 +135,7 @@ extension MainController: MenuControllerDelegate {
     case .Github:
       presentGithub()
     case .Contact:
-      break
+      presentContact()
     }
   }
 }

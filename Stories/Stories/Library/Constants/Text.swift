@@ -20,4 +20,15 @@ struct Text {
     static let github = localizedString("menuFindGithub").uppercaseString
     static let contact = localizedString("menuContact").uppercaseString
   }
+
+  struct Contact {
+    static let title = localizedString("contactTitle")
+    static let message = localizedString("contactMessage")
+
+    struct Error {
+      static let title = localizedString("contactErrorTitle")
+      static let message = localizedString("contactErrorMessage")
+      static let button = localizedString("contactErrorButton").uppercaseString
+    }
+  }
 }
