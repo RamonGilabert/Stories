@@ -50,4 +50,12 @@ struct Color {
       static let shadow = UIColor.whiteColor().alpha(0.2)
     }
   }
+
+  struct Story {
+    static let general = UIColor.whiteColor()
+
+    struct Shadow {
+      static let general = UIColor.whiteColor().alpha(0.5)
+    }
+  }
 }

@@ -7,18 +7,25 @@ protocol StoryViewDelegate {
 
 class StoryView: UIView {
 
+  struct Dimensions {
+    struct Table {
+      static let offset: CGFloat = 230
+    }
+  }
+
   lazy var menu: UIButton = { [unowned self] in
     let button = UIButton()
     button.layer.borderColor = Color.Engine.Button.general.CGColor
     button.layer.borderWidth = EngineView.Dimensions.Menu.border
     button.layer.cornerRadius = EngineView.Dimensions.Menu.size / 2
     button.backgroundColor = Color.Engine.Button.background
-    button.translatesAutoresizingMaskIntoConstraints = false
     button.shadow(Color.Engine.Button.shadow, radius: 10)
     button.addTarget(self, action: #selector(menuButtonDidPress), forControlEvents: .TouchUpInside)
 
     return button
   }()
+
+  lazy var headerView: StoryHeaderView = StoryHeaderView(title: "This is my story".uppercaseString)
 
   lazy var tableView: UITableView = UITableView()
 
@@ -26,6 +33,14 @@ class StoryView: UIView {
 
   override init(frame: CGRect) {
     super.init(frame: frame)
+
+    [tableView, headerView, menu].forEach {
+      $0.translatesAutoresizingMaskIntoConstraints = false
+      addSubview($0)
+    }
+
+    setupTableView()
+    setupConstraints()
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -38,6 +53,8 @@ class StoryView: UIView {
     tableView.delegate = self
     tableView.dataSource = self
     tableView.separatorStyle = .None
+    tableView.contentInset.top = Dimensions.Table.offset
+    tableView.backgroundColor = Color.General.clear
 
     tableView.registerClass(
       StoryCell.self, forCellReuseIdentifier: StoryCell.reusableIdentifier)
@@ -54,15 +71,28 @@ class StoryView: UIView {
   func setupConstraints() {
     NSLayoutConstraint.activateConstraints([
       tableView.widthAnchor.constraintEqualToAnchor(widthAnchor),
-      tableView.heightAnchor.constraintEqualToAnchor(heightAnchor),
-      tableView.topAnchor.constraintEqualToAnchor(topAnchor),
-      tableView.rightAnchor.constraintEqualToAnchor(rightAnchor)
+      tableView.topAnchor.constraintEqualToAnchor(headerView.topAnchor),
+      tableView.bottomAnchor.constraintEqualToAnchor(bottomAnchor),
+      tableView.rightAnchor.constraintEqualToAnchor(rightAnchor),
+
+      headerView.widthAnchor.constraintEqualToAnchor(widthAnchor),
+      headerView.heightAnchor.constraintEqualToConstant(Dimensions.Table.offset),
+      headerView.topAnchor.constraintEqualToAnchor(topAnchor),
+      headerView.rightAnchor.constraintEqualToAnchor(rightAnchor),
+
+      menu.widthAnchor.constraintEqualToConstant(EngineView.Dimensions.Menu.size),
+      menu.heightAnchor.constraintEqualToConstant(EngineView.Dimensions.Menu.size),
+      menu.topAnchor.constraintEqualToAnchor(topAnchor, constant: EngineView.Dimensions.Menu.topOffset),
+      menu.rightAnchor.constraintEqualToAnchor(rightAnchor, constant: -EngineView.Dimensions.Menu.rightOffset)
       ])
   }
 }
 
 extension StoryView: UITableViewDelegate {
 
+  func scrollViewDidScroll(scrollView: UIScrollView) {
+    // TODO: Do the animation of the separator.
+  }
 }
 
 extension StoryView: UITableViewDataSource {

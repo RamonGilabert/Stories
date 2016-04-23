@@ -28,7 +28,7 @@ struct Font {
   }
 
   struct Story {
-    static let title = UIFont(name: Brandon.bold, size: 28)!
+    static let title = UIFont(name: Brandon.bold, size: 30)!
     static let letter = UIFont(name: Brandon.bold, size: 87)!
     static let message = UIFont.systemFontOfSize(20)
   }

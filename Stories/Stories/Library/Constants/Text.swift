@@ -31,4 +31,14 @@ struct Text {
       static let button = localizedString("contactErrorButton").uppercaseString
     }
   }
+
+  struct Story {
+    static let title = localizedString("")
+    static let message = localizedString("")
+  }
+
+  struct Motivation {
+    static let title = localizedString("")
+    static let message = localizedString("")
+  }
 }
