@@ -37,6 +37,8 @@ class StoryView: UIView {
   func setupTableView() {
     tableView.delegate = self
     tableView.dataSource = self
+    tableView.separatorStyle = .None
+
     tableView.registerClass(
       StoryCell.self, forCellReuseIdentifier: StoryCell.reusableIdentifier)
   }
