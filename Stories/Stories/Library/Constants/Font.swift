@@ -22,4 +22,8 @@ struct Font {
     static let text = UIFont(name: Monaco.regular, size: 24)!
     static let button = UIFont(name: Monaco.regular, size: 18)!
   }
+
+  struct Menu {
+    static let title = UIFont(name: Brandon.bold, size: 28)!
+  }
 }
