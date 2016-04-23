@@ -125,7 +125,7 @@ extension MainController: MenuControllerDelegate {
   func menuShouldPresentController(controller: MenuController.Controllers) {
     switch(controller) {
     case .Story:
-      break
+      changeRootView(storyController)
     case .Interactive:
       break
     case .Motivation:

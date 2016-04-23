@@ -96,9 +96,7 @@ extension MenuController: MenuViewDelegate {
 
   func menuOpenDidPress(controller: Controllers) {
     dismissViewControllerAnimated(true, completion: {
-      delay(0.3) {
-        self.delegate?.menuShouldPresentController(controller)
-      }
+      delay(0.1) { self.delegate?.menuShouldPresentController(controller) }
     })
   }
 }
