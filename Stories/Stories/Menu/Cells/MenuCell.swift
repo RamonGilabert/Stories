@@ -16,6 +16,7 @@ class MenuCell: UITableViewCell {
     button.shadow(Color.Menu.shadow, radius: 2)
     button.setTitleColor(Color.Menu.general, forState: .Normal)
     button.titleLabel?.font = Font.Menu.title
+    button.translatesAutoresizingMaskIntoConstraints = false
 
     return button
   }()
@@ -33,7 +34,9 @@ class MenuCell: UITableViewCell {
   // MARK: - Configuration
 
   func configureCell(viewModel: MenuViewModel) {
+    button.setTitle(viewModel.title, forState: .Normal)
 
+    setupConstraints()
   }
 
   // MARK: - Action methods
@@ -41,5 +44,15 @@ class MenuCell: UITableViewCell {
   func buttonDidPress() {
     guard let title = button.titleForState(.Normal) else { return }
     delegate?.buttonDidPress(title)
+  }
+
+  // MARK: - Constraints
+
+  func setupConstraints() {
+    NSLayoutConstraint.deactivateConstraints(button.constraints)
+    NSLayoutConstraint.activateConstraints([
+      button.centerYAnchor.constraintEqualToAnchor(centerYAnchor),
+      button.leftAnchor.constraintEqualToAnchor(leftAnchor)
+      ])
   }
 }
