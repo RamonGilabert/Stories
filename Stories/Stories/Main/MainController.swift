@@ -10,7 +10,7 @@ class MainController: GeneralController {
     return controller
   }()
 
-  lazy var engineController: EngineController = {
+  lazy var engineController: EngineController = { [unowned self] in
     let controller = EngineController()
     controller.view.frame = UIScreen.mainScreen().bounds
     controller.delegate = self
@@ -18,9 +18,10 @@ class MainController: GeneralController {
     return controller
   }()
 
-  lazy var menuController: MenuController = {
+  lazy var menuController: MenuController = { [unowned self] in
     let controller = MenuController()
     controller.view.frame = UIScreen.mainScreen().bounds
+    controller.delegate = self
 
     return controller
   }()
@@ -79,5 +80,25 @@ extension MainController: EngineControllerDelegate {
 
   func enginePresentMenu() {
     presentMenu()
+  }
+}
+
+extension MainController: MenuControllerDelegate {
+
+  func menuShouldPresentController(controller: MenuController.Controllers) {
+    switch(controller) {
+    case .Story:
+      break
+    case .Interactive:
+      break
+    case .Motivation:
+      break
+    case .End:
+      break
+    case .Github:
+      break
+    case .Contact:
+      break
+    }
   }
 }
