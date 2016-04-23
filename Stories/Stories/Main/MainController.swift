@@ -2,8 +2,10 @@ import UIKit
 
 class MainController: GeneralController {
 
-  lazy var welcomeController: WelcomeController = {
+  lazy var welcomeController: WelcomeController = { [unowned self] in
     let controller = WelcomeController()
+    controller.delegate = self
+
     return controller
   }()
 
@@ -33,5 +35,13 @@ class MainController: GeneralController {
 
   func animate() {
     welcomeController.animate()
+  }
+}
+
+extension MainController: WelcomeControllerDelegate {
+
+  func presentEngineController() {
+    engineController.view.alpha = 0
+    engineController.animate()
   }
 }

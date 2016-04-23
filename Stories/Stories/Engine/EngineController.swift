@@ -53,6 +53,15 @@ class EngineController: GeneralController {
   }
 }
 
+extension EngineController: Animatable {
+
+  func animate() {
+    UIView.animateWithDuration(0.5, animations: {
+      self.view.alpha = 1
+    })
+  }
+}
+
 extension EngineController: EngineViewDelegate {
 
   func menuButtonDidPress() {

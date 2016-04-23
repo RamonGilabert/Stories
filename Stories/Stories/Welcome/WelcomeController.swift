@@ -1,6 +1,11 @@
 import UIKit
 import Sugar
 
+protocol WelcomeControllerDelegate {
+
+  func presentEngineController()
+}
+
 class WelcomeController: GeneralController {
 
   lazy var welcomeView: WelcomeView = { [unowned self] in
@@ -11,13 +16,7 @@ class WelcomeController: GeneralController {
     return view
   }()
 
-  lazy var engineController: EngineController = {
-    let controller = EngineController()
-    controller.modalPresentationStyle = .Custom
-    controller.transitioningDelegate = controller.transition
-
-    return controller
-  }()
+  var delegate: WelcomeControllerDelegate?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -29,16 +28,6 @@ class WelcomeController: GeneralController {
 
   override func viewWillAppear(animated: Bool) {
     welcomeView.prepareAnimation()
-  }
-
-  // MARK: - Animations
-
-  func animate() {
-    welcomeView.animate(completion: {
-      self.welcomeView.writeView.startAnimation()
-
-      delay(4.5) { self.welcomeView.connect() }
-    })
   }
 
   // MARK: - Constraints
@@ -53,9 +42,20 @@ class WelcomeController: GeneralController {
   }
 }
 
+extension WelcomeController: Animatable {
+
+  func animate() {
+    welcomeView.animate(completion: {
+      self.welcomeView.writeView.startAnimation()
+
+      delay(4.5) { self.welcomeView.connect() }
+    })
+  }
+}
+
 extension WelcomeController: WelcomeViewDelegate {
 
   func dismissController() {
-    presentViewController(engineController, animated: true, completion: nil)
+    delegate?.presentEngineController()
   }
 }
