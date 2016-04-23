@@ -29,6 +29,8 @@ class MenuView: UIView {
 
   lazy var tableView: UITableView = UITableView()
 
+  var shouldAnimate = true
+
   override init(frame: CGRect) {
     super.init(frame: frame)
 
@@ -93,6 +95,8 @@ extension MenuView: UITableViewDelegate {
   }
 
   func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    guard shouldAnimate else { return }
+
     cell.transform = CGAffineTransformMakeTranslation(-1000, 0)
 
     UIView.animateWithDuration(
@@ -100,6 +104,10 @@ extension MenuView: UITableViewDelegate {
       initialSpringVelocity: 1, options: [], animations: {
       cell.transform = CGAffineTransformIdentity
       }, completion: nil)
+
+    if indexPath.row == MenuViewModel.cells.count - 1 {
+      shouldAnimate = false
+    }
   }
 }
 

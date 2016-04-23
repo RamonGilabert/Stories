@@ -53,7 +53,6 @@ class MenuCell: UITableViewCell {
   // MARK: - Constraints
 
   func setupConstraints() {
-    NSLayoutConstraint.deactivateConstraints(button.constraints)
     NSLayoutConstraint.activateConstraints([
       button.centerYAnchor.constraintEqualToAnchor(centerYAnchor),
       button.leftAnchor.constraintEqualToAnchor(leftAnchor, constant: MenuView.Dimensions.Table.leftOffset)

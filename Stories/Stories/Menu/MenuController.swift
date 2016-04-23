@@ -31,6 +31,11 @@ class MenuController: GeneralController {
     setupConstraints()
   }
 
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    menuView.shouldAnimate = true
+  }
+
   // MARK - Constraints
 
   func setupConstraints() {
