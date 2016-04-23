@@ -10,18 +10,6 @@ class StoryController: GeneralController {
     return view
   }()
 
-  lazy var transition: Transition = {
-    let transition = Transition() { controller, show in
-      guard let controller = controller as? StoryController else { return }
-      controller.view.alpha = show ? 1 : 0
-    }
-
-    transition.spring = (0.6, 0.4)
-    transition.animationDuration = 1
-
-    return transition
-  }()
-
   override func viewDidLoad() {
     super.viewDidLoad()
   }
@@ -36,5 +24,14 @@ class StoryController: GeneralController {
     super.viewDidAppear(animated)
 
     // TODO: Perform the animation.
+  }
+}
+
+extension StoryController: Animatable {
+
+  func animate() {
+    UIView.animateWithDuration(0.3, animations: {
+      self.view.alpha = 0
+    })
   }
 }

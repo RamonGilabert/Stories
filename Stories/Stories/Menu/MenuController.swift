@@ -65,7 +65,7 @@ extension MenuController: MenuViewDelegate {
   func buttonDidPress(title: String) {
     switch(title) {
     case Text.Menu.story:
-      delegate?.menuShouldPresentController(.Interactive)
+      delegate?.menuShouldPresentController(.Story)
     case Text.Menu.backStory:
       delegate?.menuShouldPresentController(.Interactive)
     case Text.Menu.end:
@@ -73,9 +73,9 @@ extension MenuController: MenuViewDelegate {
     case Text.Menu.motivation:
       delegate?.menuShouldPresentController(.Motivation)
     case Text.Menu.github:
-      delegate?.menuShouldPresentController(.Github)
+      menuOpenDidPress(.Github)
     case Text.Menu.contact:
-      delegate?.menuShouldPresentController(.Contact)
+      menuOpenDidPress(.Contact)
     default:
       menuButtonDidPress()
     }
@@ -85,5 +85,11 @@ extension MenuController: MenuViewDelegate {
 
   func menuButtonDidPress() {
     dismissViewControllerAnimated(true, completion: nil)
+  }
+
+  func menuOpenDidPress(controller: Controllers) {
+    dismissViewControllerAnimated(true, completion: {
+      self.delegate?.menuShouldPresentController(controller)
+    })
   }
 }
