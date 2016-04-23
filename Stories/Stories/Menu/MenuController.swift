@@ -3,9 +3,14 @@ import Transition
 
 protocol MenuControllerDelegate {
 
+  func menuShouldPresentController(controller: MenuController.Controllers)
 }
 
 class MenuController: GeneralController {
+
+  enum Controllers {
+    case Story, Interactive, Motivation, End, Github, Contact
+  }
 
   lazy var transition: Transition = {
     let transition = Transition() { controller, show in
@@ -59,21 +64,23 @@ extension MenuController: MenuViewDelegate {
 
   func buttonDidPress(title: String) {
     switch(title) {
-    case Text.Menu.backStory:
-      break
     case Text.Menu.story:
-      break
+      delegate?.menuShouldPresentController(.Interactive)
+    case Text.Menu.backStory:
+      delegate?.menuShouldPresentController(.Interactive)
     case Text.Menu.end:
-      break
+      delegate?.menuShouldPresentController(.End)
     case Text.Menu.motivation:
-      break
+      delegate?.menuShouldPresentController(.Motivation)
     case Text.Menu.github:
-      break
+      delegate?.menuShouldPresentController(.Github)
     case Text.Menu.contact:
-      break
+      delegate?.menuShouldPresentController(.Contact)
     default:
       menuButtonDidPress()
     }
+
+    menuButtonDidPress()
   }
 
   func menuButtonDidPress() {
