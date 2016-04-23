@@ -1,6 +1,11 @@
 import UIKit
 import Transition
 
+protocol EngineControllerDelegate {
+
+  func enginePresentMenu()
+}
+
 class EngineController: GeneralController {
 
   lazy var transition: Transition = {
@@ -23,7 +28,7 @@ class EngineController: GeneralController {
     return view
   }()
 
-  lazy var menuController: MenuController = MenuController()
+  var delegate: EngineControllerDelegate?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -65,9 +70,6 @@ extension EngineController: Animatable {
 extension EngineController: EngineViewDelegate {
 
   func menuButtonDidPress() {
-    menuController.modalPresentationStyle = .Custom
-    menuController.transitioningDelegate = menuController.transition
-    
-    presentViewController(menuController, animated: true, completion: nil)
+    delegate?.enginePresentMenu()
   }
 }

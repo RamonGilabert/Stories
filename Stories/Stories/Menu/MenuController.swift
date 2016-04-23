@@ -1,6 +1,10 @@
 import UIKit
 import Transition
 
+protocol MenuControllerDelegate {
+
+}
+
 class MenuController: GeneralController {
 
   lazy var transition: Transition = {
@@ -22,6 +26,8 @@ class MenuController: GeneralController {
     
     return view
   }()
+
+  var delegate: MenuControllerDelegate?
 
   override func viewDidLoad() {
     super.viewDidLoad()
