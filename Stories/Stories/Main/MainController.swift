@@ -1,4 +1,5 @@
 import UIKit
+import MessageUI
 
 class MainController: GeneralController {
 
@@ -29,6 +30,15 @@ class MainController: GeneralController {
   lazy var storyController: StoryController = {
     let controller = StoryController()
     controller.view.frame = UIScreen.mainScreen().bounds
+
+    return controller
+  }()
+
+  lazy var mailController: MFMessageComposeViewController = {
+    let controller = MFMessageComposeViewController()
+    controller.recipients = [Constant.email]
+    controller.subject = ""
+    controller.body = ""
 
     return controller
   }()
@@ -71,6 +81,21 @@ class MainController: GeneralController {
   func presentGithub() {
     guard let URL = NSURL(string: Constant.github) else { return }
     presentViewController(WebsiteController(URL: URL), animated: true, completion: nil)
+  }
+
+  func presentContact() {
+    if MFMessageComposeViewController.canSendText() {
+      presentViewController(mailController, animated: true, completion: nil)
+    } else {
+      presentAlert("", message: "")
+    }
+  }
+
+  func presentAlert(title: String, message: String) {
+    let alertController = UIAlertController(title: "", message: "", preferredStyle: .Alert)
+    let action = UIAlertAction(title: "", style: .Default, handler: nil)
+
+    presentViewController(alertController, animated: true, completion: nil)
   }
 }
 
