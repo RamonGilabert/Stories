@@ -93,7 +93,13 @@ extension MenuView: UITableViewDelegate {
   }
 
   func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-    // TODO: Do the animation for the first time.
+    cell.transform = CGAffineTransformMakeTranslation(-1000, 0)
+
+    UIView.animateWithDuration(
+      0.7, delay: Double(indexPath.row) * 0.115, usingSpringWithDamping: 0.79,
+      initialSpringVelocity: 1, options: [], animations: {
+      cell.transform = CGAffineTransformIdentity
+      }, completion: nil)
   }
 }
 
