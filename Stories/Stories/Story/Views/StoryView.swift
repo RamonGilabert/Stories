@@ -53,6 +53,7 @@ class StoryView: UIView {
     tableView.delegate = self
     tableView.dataSource = self
     tableView.separatorStyle = .None
+    tableView.scrollsToTop = true
     tableView.contentInset.top = Dimensions.Table.offset
     tableView.backgroundColor = Color.General.clear
 

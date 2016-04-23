@@ -27,9 +27,10 @@ class MainController: GeneralController {
     return controller
   }()
 
-  lazy var storyController: StoryController = {
+  lazy var storyController: StoryController = { [unowned self] in
     let controller = StoryController()
     controller.view.frame = UIScreen.mainScreen().bounds
+    controller.delegate = self
 
     return controller
   }()
@@ -116,6 +117,13 @@ extension MainController: WelcomeControllerDelegate {
 extension MainController: EngineControllerDelegate {
 
   func enginePresentMenu() {
+    presentMenu()
+  }
+}
+
+extension MainController: StoryControllerDelegate {
+
+  func storyMenuDidPress() {
     presentMenu()
   }
 }
