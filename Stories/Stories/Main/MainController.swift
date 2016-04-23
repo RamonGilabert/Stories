@@ -67,6 +67,11 @@ class MainController: GeneralController {
 
     presentViewController(menuController, animated: true, completion: nil)
   }
+
+  func presentGithub() {
+    guard let URL = NSURL(string: Constant.github) else { return }
+    presentViewController(WebsiteController(URL: URL), animated: true, completion: nil)
+  }
 }
 
 extension MainController: WelcomeControllerDelegate {
@@ -96,7 +101,7 @@ extension MainController: MenuControllerDelegate {
     case .End:
       break
     case .Github:
-      break
+      presentGithub()
     case .Contact:
       break
     }

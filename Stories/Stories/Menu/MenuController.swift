@@ -1,5 +1,6 @@
 import UIKit
 import Transition
+import Sugar
 
 protocol MenuControllerDelegate {
 
@@ -65,31 +66,39 @@ extension MenuController: MenuViewDelegate {
   func buttonDidPress(title: String) {
     switch(title) {
     case Text.Menu.story:
-      delegate?.menuShouldPresentController(.Story)
+      menuButtonDidPress(.Story)
     case Text.Menu.backStory:
-      delegate?.menuShouldPresentController(.Interactive)
+      menuButtonDidPress(.Interactive)
     case Text.Menu.end:
-      delegate?.menuShouldPresentController(.End)
+      menuButtonDidPress(.End)
     case Text.Menu.motivation:
-      delegate?.menuShouldPresentController(.Motivation)
+      menuButtonDidPress(.Motivation)
     case Text.Menu.github:
       menuOpenDidPress(.Github)
     case Text.Menu.contact:
       menuOpenDidPress(.Contact)
     default:
-      menuButtonDidPress()
+      menuButtonDidPress(nil)
     }
-
-    menuButtonDidPress()
   }
 
   func menuButtonDidPress() {
+    menuButtonDidPress(nil)
+  }
+
+  func menuButtonDidPress(controller: Controllers? = nil) {
+    if let controller = controller {
+      delegate?.menuShouldPresentController(controller)
+    }
+
     dismissViewControllerAnimated(true, completion: nil)
   }
 
   func menuOpenDidPress(controller: Controllers) {
     dismissViewControllerAnimated(true, completion: {
-      self.delegate?.menuShouldPresentController(controller)
+      delay(0.3) {
+        self.delegate?.menuShouldPresentController(controller)
+      }
     })
   }
 }
