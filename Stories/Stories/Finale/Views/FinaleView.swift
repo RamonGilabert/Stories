@@ -1,23 +1,32 @@
 import UIKit
 
+protocol FinaleViewDelegate {
+
+  func resetButtonDidPress()
+}
+
 class FinaleView: UIView {
 
   struct Dimensions {
+    static let landscape: CGFloat = UIScreen.mainScreen().bounds.height / 1.75
+
     struct Title {
       static let widthOffset: CGFloat = 80
-      static let centerOffset: CGFloat = 20
+      static let centerOffset: CGFloat = 30
     }
 
     struct Button {
       static let width: CGFloat = 190
       static let height: CGFloat = 54
-      static let bottomOffset: CGFloat = 100
+      static let bottomOffset: CGFloat = 90
     }
   }
 
   struct Constants {
     static let shadow: CGFloat = 10
   }
+
+  lazy var landscape: LandscapeView = LandscapeView()
 
   lazy var titleLabel: UILabel = {
     let label = UILabel()
@@ -40,10 +49,12 @@ class FinaleView: UIView {
     return button
   }()
 
+  var delegate: FinaleViewDelegate?
+
   override init(frame: CGRect) {
     super.init(frame: frame)
 
-    [titleLabel, button].forEach {
+    [landscape, titleLabel, button].forEach {
       $0.translatesAutoresizingMaskIntoConstraints = false
       addSubview($0)
     }
@@ -58,13 +69,18 @@ class FinaleView: UIView {
   // MARK: - Action methods
 
   func restartButtonDidPress() {
-    // TODO: Handle the delegate.
+    delegate?.resetButtonDidPress()
   }
 
   // MARK: - Constraints
 
   func setupConstraints() {
     NSLayoutConstraint.activateConstraints([
+      landscape.widthAnchor.constraintEqualToAnchor(widthAnchor),
+      landscape.heightAnchor.constraintEqualToConstant(Dimensions.landscape),
+      landscape.centerXAnchor.constraintEqualToAnchor(centerXAnchor),
+      landscape.topAnchor.constraintEqualToAnchor(topAnchor),
+
       titleLabel.widthAnchor.constraintEqualToAnchor(widthAnchor, constant: -Dimensions.Title.widthOffset),
       titleLabel.topAnchor.constraintEqualToAnchor(centerYAnchor, constant: Dimensions.Title.centerOffset),
       titleLabel.centerXAnchor.constraintEqualToAnchor(centerXAnchor),

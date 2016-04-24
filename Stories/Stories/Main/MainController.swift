@@ -3,14 +3,6 @@ import MessageUI
 
 class MainController: GeneralController {
 
-  lazy var welcomeController: WelcomeController = { [unowned self] in
-    let controller = WelcomeController()
-    controller.delegate = self
-    controller.view.frame = UIScreen.mainScreen().bounds
-
-    return controller
-  }()
-
   lazy var engineController: EngineController = { [unowned self] in
     let controller = EngineController()
     controller.view.frame = UIScreen.mainScreen().bounds
@@ -35,9 +27,10 @@ class MainController: GeneralController {
     return controller
   }()
 
-  lazy var finaleController: FinaleController = {
+  lazy var finaleController: FinaleController = { [unowned self] in
     let controller = FinaleController()
     controller.view.frame = UIScreen.mainScreen().bounds
+    controller.delegate = self
 
     return controller
   }()
@@ -52,13 +45,22 @@ class MainController: GeneralController {
     return controller
   }()
 
+  var welcomeController = WelcomeController() {
+    didSet {
+      welcomeController.delegate = self
+      welcomeController.view.frame = UIScreen.mainScreen().bounds
+    }
+  }
+
   var controllers = []
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    welcomeController = WelcomeController()
+
     controllers = [welcomeController, engineController, storyController]
-//    view.addSubview(welcomeController.view)
+    view.addSubview(welcomeController.view)
     view.addSubview(engineController.view)
   }
 
@@ -158,5 +160,14 @@ extension MainController: MenuControllerDelegate {
     case .Contact:
       presentContact()
     }
+  }
+}
+
+extension MainController: FinaleControllerDelegate {
+
+  func finaleResetButtonDidPress() {
+    welcomeController = WelcomeController()
+    
+    changeRootView(welcomeController)
   }
 }

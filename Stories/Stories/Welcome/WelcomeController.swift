@@ -44,9 +44,15 @@ class WelcomeController: GeneralController {
 
 extension WelcomeController: Animatable {
 
-  func prepareAnimate() { }
+  func prepareAnimate() {
+    view.alpha = 0
+  }
 
   func animate() {
+    UIView.animateWithDuration(0.5, animations: {
+      self.view.alpha = 1
+    })
+
     welcomeView.animate(completion: {
       self.welcomeView.writeView.startAnimation()
 
