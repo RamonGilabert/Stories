@@ -34,18 +34,16 @@ struct Text {
 
   struct Story {
     static let firstTitle = String(localizedString("storyTitle").characters.first)
-    static let title = localizedString("storyTitle").substringFromIndex(
-      localizedString("storyTitle").startIndex.successor())
-    static let message = localizedString("storyMessage")
+    static let title = localizedString("storyTitle")
+    static let message = String(localizedString("storyMessage").characters.dropFirst())
     static let conclusion = localizedString("storyConclusion")
     static let footer = localizedString("storyFooter")
   }
 
   struct Motivation {
     static let firstTitle = String(localizedString("motivationTitle").characters.first)
-    static let title = localizedString("motivationTitle").substringFromIndex(
-      localizedString("motivationTitle").startIndex.successor())
-    static let message = localizedString("motivationMessage")
+    static let title = localizedString("motivationTitle")
+    static let message = String(localizedString("motivationMessage").characters.dropFirst())
     static let conclusion = localizedString("motivationConclusion")
     static let footer = localizedString("motivationFooter")
   }

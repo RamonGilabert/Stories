@@ -20,14 +20,14 @@ struct StoryViewModel {
     self.footer = footer
   }
 
-  static let story = StoryViewModel(title: "", cells: [
-    StoryViewModel(letter: Text.Story.firstTitle, text: Text.Story.title),
+  static let story = StoryViewModel(title: Text.Story.title, cells: [
+    StoryViewModel(letter: Text.Story.firstTitle, text: Text.Story.message),
     StoryViewModel(image: Image.Story.main, footer: Text.Story.footer),
     StoryViewModel(text: Text.Story.conclusion),
     ])
 
-  static let motivation = StoryViewModel(title: "", cells: [
-    StoryViewModel(letter: Text.Motivation.firstTitle, text: Text.Motivation.title),
+  static let motivation = StoryViewModel(title: Text.Story.title, cells: [
+    StoryViewModel(letter: Text.Motivation.firstTitle, text: Text.Motivation.message),
     StoryViewModel(image: Image.Motivation.main, footer: Text.Motivation.footer),
     StoryViewModel(text: Text.Motivation.conclusion),
     ])
