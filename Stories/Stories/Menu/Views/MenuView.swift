@@ -36,6 +36,7 @@ class MenuView: UIView {
   lazy var tableView: UITableView = UITableView()
 
   var delegate: MenuViewDelegate?
+  var kind: MenuViewModel.Kind = .Default
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -114,14 +115,14 @@ extension MenuView: UITableViewDelegate {
 extension MenuView: UITableViewDataSource {
 
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return MenuViewModel.cells.count
+    return MenuViewModel.cells(kind).count
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCellWithIdentifier(MenuCell.reusableIdentifier) as? MenuCell
       else { return UITableViewCell() }
 
-    cell.configureCell(MenuViewModel.cells[indexPath.row])
+    cell.configureCell(MenuViewModel.cells(kind)[indexPath.row])
     cell.delegate = self
 
     return cell

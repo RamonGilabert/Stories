@@ -117,6 +117,7 @@ extension MainController: WelcomeControllerDelegate {
 extension MainController: EngineControllerDelegate {
 
   func enginePresentMenu() {
+    menuController.kind = .Default
     presentMenu()
   }
 }
@@ -124,6 +125,7 @@ extension MainController: EngineControllerDelegate {
 extension MainController: StoryControllerDelegate {
 
   func storyMenuDidPress() {
+    menuController.kind = .Story
     presentMenu()
   }
 }

@@ -33,6 +33,12 @@ class MenuController: GeneralController {
     return view
   }()
 
+  var kind: MenuViewModel.Kind = .Default {
+    didSet {
+      menuView.kind = kind
+    }
+  }
+  
   var delegate: MenuControllerDelegate?
 
   override func viewDidLoad() {
