@@ -17,6 +17,10 @@ class StoryHeaderView: UIView {
     }
   }
 
+  struct Constants {
+    static let radius: CGFloat = 1
+  }
+
   lazy var titleLabel: UILabel = {
     let label = UILabel()
     label.font = Font.Story.title
@@ -31,6 +35,7 @@ class StoryHeaderView: UIView {
     let view = UIView()
     view.backgroundColor = Color.Story.general
     view.translatesAutoresizingMaskIntoConstraints = false
+    view.layer.cornerRadius = Constants.radius
     view.shadow(Color.Story.Shadow.general, radius: 10)
 
     return view

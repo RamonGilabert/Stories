@@ -10,7 +10,7 @@ class StoryCell: UITableViewCell {
 
   struct Dimensions {
     struct Letter {
-      static let topOffset: CGFloat = 18
+      static let topOffset: CGFloat = 15
       static let leftOffset: CGFloat = 30
     }
 
@@ -67,7 +67,12 @@ class StoryCell: UITableViewCell {
   func configureCell(viewModel: StoryViewModel) {
     letterLabel.text = viewModel.letter ?? ""
     textView.text = viewModel.text ?? ""
-    textView.sizeToFit()
+
+    [letterLabel, textView].forEach { $0.sizeToFit() }
+
+    let path = UIBezierPath(rect: CGRect(origin: CGPointZero, size:
+      CGSize(width: letterLabel.frame.width, height: letterLabel.frame.height / 2)))
+    textView.textContainer.exclusionPaths = viewModel.letter != nil ? [path] : []
 
     setupConstraints()
   }

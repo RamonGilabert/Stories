@@ -14,7 +14,7 @@ struct StoryViewModel {
   var footer: String?
   var kind: Kind?
 
-  init(title: String = "", cells: [StoryViewModel] = [],
+  init(title: String = "", cells: [StoryViewModel] = [], letter: Bool = false,
        text: String? = nil, image: String? = nil, footer: String? = nil) {
 
     self.title = title
@@ -24,19 +24,19 @@ struct StoryViewModel {
     self.footer = footer
     self.kind = image == nil ? .Text : .Image
 
-    if let text = text, string = text.characters.first {
+    if let text = text, string = text.characters.first where letter {
       self.letter = String(string).uppercaseString
     }
   }
 
   static let story = StoryViewModel(title: Text.Story.title, cells: [
-    StoryViewModel(text: Text.Story.message),
+    StoryViewModel(letter: true, text: Text.Story.message),
     StoryViewModel(image: Image.Story.main, footer: Text.Story.footer),
     StoryViewModel(text: Text.Story.conclusion),
     ])
 
   static let motivation = StoryViewModel(title: Text.Story.title, cells: [
-    StoryViewModel(text: Text.Motivation.message),
+    StoryViewModel(letter: true, text: Text.Motivation.message),
     StoryViewModel(image: Image.Motivation.main, footer: Text.Motivation.footer),
     StoryViewModel(text: Text.Motivation.conclusion),
     ])
