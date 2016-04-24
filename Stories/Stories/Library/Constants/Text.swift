@@ -33,12 +33,16 @@ struct Text {
   }
 
   struct Story {
-    static let title = localizedString("")
-    static let message = localizedString("")
+    static let title = localizedString("storyTitle")
+    static let message = localizedString("storyMessage")
+    static let conclusion = localizedString("storyConclusion")
+    static let footer = localizedString("storyFooter")
   }
 
   struct Motivation {
-    static let title = localizedString("")
-    static let message = localizedString("")
+    static let title = localizedString("motivationTitle")
+    static let message = localizedString("motivationMessage")
+    static let conclusion = localizedString("motivationConclusion")
+    static let footer = localizedString("motivationFooter")
   }
 }
