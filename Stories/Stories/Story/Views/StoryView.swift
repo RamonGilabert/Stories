@@ -18,6 +18,13 @@ class StoryView: UIView {
     }
   }
 
+  struct Constants {
+    static let maximum: CGFloat = 150
+    static let rotation: CGFloat = CGFloat(M_PI_2)
+    static let fontSize: CGFloat = Font.Story.title.pointSize - 4
+    static let origin: CGFloat = -30
+  }
+
   lazy var menu: UIButton = { [unowned self] in
     let button = UIButton()
     button.layer.borderColor = Color.Engine.Button.general.CGColor
@@ -121,7 +128,7 @@ extension StoryView: UITableViewDelegate {
   }
 
   func scrollViewDidScroll(scrollView: UIScrollView) {
-    // TODO: Do the animation of the separator.
+
   }
 }
 
