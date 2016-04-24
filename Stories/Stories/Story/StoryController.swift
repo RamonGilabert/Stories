@@ -32,6 +32,11 @@ class StoryController: GeneralController {
     setupConstraints()
   }
 
+  override func viewDidDisappear(animated: Bool) {
+    super.viewDidDisappear(animated)
+    storyView.shouldAnimate = true
+  }
+
   // MARK: - Constraints
 
   func setupConstraints() {

@@ -24,6 +24,8 @@ class StoryView: UIView {
     static let rotation: CGFloat = CGFloat(M_PI_2)
     static let fontSize: CGFloat = 2
     static let origin: CGFloat = 35
+    static let separator: CGFloat = 45
+    static let opacity: CGFloat = 1
   }
 
   lazy var menu: UIButton = { [unowned self] in
@@ -54,6 +56,7 @@ class StoryView: UIView {
   var delegate: StoryViewDelegate?
   var headerHeight: CGFloat = Dimensions.Table.offset
   var headerConstraint = NSLayoutConstraint()
+  var shouldAnimate = true
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -99,9 +102,16 @@ class StoryView: UIView {
   // MARK: - Helper methods
 
   func reloadHeader() {
-    headerView.titleLabel.font = Font.Story.title
-    headerView.separator.transform = CGAffineTransformIdentity
+    tableView.contentOffset.y = 0
+    scrollViewDidScroll(tableView)
     headerView.titleLabel.text = viewModel.title
+  }
+
+  func scrollValue(constant: CGFloat) -> CGFloat {
+    let offset = tableView.contentOffset.y
+    let maximum = Constants.maximum
+
+    return constant * offset / maximum > constant ? constant : constant * offset / maximum
   }
 
   // MARK: - Constraints
@@ -131,32 +141,30 @@ class StoryView: UIView {
 extension StoryView: UITableViewDelegate {
 
   func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-    // TODO: Perform the animation to show the story.
+    guard indexPath.row == 0 && shouldAnimate else { return }
+
+    cell.alpha = 0
+    cell.transform = CGAffineTransformMakeTranslation(0, 100)
+    
+    shouldAnimate = false
+
+    UIView.animateWithDuration(0.8, animations: {
+      cell.alpha = 1
+      cell.transform = CGAffineTransformIdentity
+    })
   }
 
   func scrollViewDidScroll(scrollView: UIScrollView) {
-    let offset = scrollView.contentOffset.y
-    let maximum = Constants.maximum
-    let rotation = Constants.rotation * offset / maximum > Constants.rotation
-      ? Constants.rotation : Constants.rotation * offset / maximum
-    let font = Constants.fontSize * offset / maximum > Constants.fontSize
-      ? Constants.fontSize : Constants.fontSize * offset / maximum
-    let initialFont = Font.Story.title.pointSize
-    let size = Constants.size * offset / maximum > Constants.size
-      ? Constants.size : Constants.size * offset / maximum
-    let height = Dimensions.Table.offset - size
-    let title = 35 * offset / maximum > 35 ? 35 : 35 * offset / maximum
-    let titleOffset = 65 - title
-    let separator = 45 * offset / maximum > 45 ? 45 : 45 * offset / maximum
-    let separatorOffset = 40 - separator
-    let opacity = 1 * offset / maximum > 1 ? 1 : 1 * offset / maximum
+    let separator = StoryHeaderView.Dimensions.Separator.bottomOffset
+    let height = Dimensions.Table.offset - scrollValue(Constants.size)
+    let separatorOffset = separator - scrollValue(Constants.separator)
 
-    headerView.separator.transform = CGAffineTransformMakeRotation(rotation < 0 ? 0 : rotation)
-    headerView.titleLabel.font = Font.Story.title.fontWithSize(initialFont - font)
+    headerView.separator.transform = CGAffineTransformMakeRotation(scrollValue(Constants.rotation))
+    headerView.titleLabel.font = Font.Story.title.fontWithSize(Font.Story.title.pointSize - scrollValue(Constants.fontSize))
     headerConstraint.constant = height > Dimensions.Table.offset ? Dimensions.Table.offset : height
-    headerView.titleConstraint.constant = titleOffset > 65 ? 65 : titleOffset
-    headerView.separatorConstraint.constant = separatorOffset > 40 ? -40 : -separatorOffset
-    headerView.layer.shadowOpacity = Float(opacity)
+    headerView.titleConstraint.constant = StoryHeaderView.Dimensions.Title.offset - scrollValue(Constants.origin)
+    headerView.separatorConstraint.constant = separatorOffset > separator ? -separator : -separatorOffset
+    headerView.layer.shadowOpacity = Float(scrollValue(Constants.opacity))
 
     setNeedsLayout()
   }
