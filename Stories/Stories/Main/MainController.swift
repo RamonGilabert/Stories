@@ -137,7 +137,7 @@ extension MainController: MenuControllerDelegate {
     case .Story:
       changeRootView(storyController)
     case .Interactive:
-      break
+      changeRootView(engineController)
     case .Motivation:
       break
     case .End:

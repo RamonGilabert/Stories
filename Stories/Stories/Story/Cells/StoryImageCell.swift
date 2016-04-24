@@ -1,25 +1,25 @@
 import UIKit
 
-class StoryCell: UITableViewCell {
+class StoryImageCell: UITableViewCell {
 
-  static let reusableIdentifier = "StoryCellIdentifier"
+  static let reusableIdentifier = "StoryImageCellIdentifier"
 
-  lazy var letterLabel: UILabel = {
-    let label = UILabel()
-    return label
+  lazy var productView: UIImageView = {
+    let imageView = UIImageView()
+    return imageView
   }()
 
-  lazy var textView: UITextView = {
-    let textView = UITextView()
-    return textView
+  lazy var footerLabel: UILabel = {
+    let label = UILabel()
+    return label
   }()
 
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-    [letterLabel, textView].forEach { addSubview($0) }
+    [productView, footerLabel].forEach { addSubview($0) }
   }
-  
+
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
@@ -33,6 +33,6 @@ class StoryCell: UITableViewCell {
   // MARK: - Constraints
 
   func setupConstraints() {
-
+    
   }
 }

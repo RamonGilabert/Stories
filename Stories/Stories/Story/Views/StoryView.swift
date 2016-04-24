@@ -59,6 +59,8 @@ class StoryView: UIView {
 
     tableView.registerClass(
       StoryCell.self, forCellReuseIdentifier: StoryCell.reusableIdentifier)
+    tableView.registerClass(
+      StoryImageCell.self, forCellReuseIdentifier: StoryImageCell.reusableIdentifier)
   }
 
   // MARK: - Action
