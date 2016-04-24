@@ -13,8 +13,8 @@ class StoryImageCell: UITableViewCell {
 
     struct Footer {
       static let widthOffset: CGFloat = 60
-      static let topOffset: CGFloat = 7
-      static let bottomOffset: CGFloat = 10
+      static let topOffset: CGFloat = 12
+      static let bottomOffset: CGFloat = 20
     }
   }
 
@@ -27,6 +27,8 @@ class StoryImageCell: UITableViewCell {
 
   lazy var footerLabel: UILabel = {
     let label = UILabel()
+    label.font = Font.Story.footer
+    label.textColor = Color.Story.general
     label.numberOfLines = 0
     label.textAlignment = .Center
     label.translatesAutoresizingMaskIntoConstraints = false

@@ -4,16 +4,20 @@ class StoryCell: UITableViewCell {
 
   static let reusableIdentifier = "StoryCellIdentifier"
 
+  struct Constants {
+    static let line: CGFloat = 15
+  }
+
   struct Dimensions {
     struct Letter {
-      static let topOffset: CGFloat = 0
+      static let topOffset: CGFloat = 18
       static let leftOffset: CGFloat = 30
     }
 
     struct Text {
       static let widthOffset: CGFloat = 60
       static let topOffset: CGFloat = 0
-      static let leftOffset: CGFloat = 38
+      static let leftOffset: CGFloat = 34
       static let bottomOffset: CGFloat = 10
     }
   }
@@ -29,7 +33,11 @@ class StoryCell: UITableViewCell {
   }()
 
   lazy var textView: UITextView = {
+    let paragraphStyle = NSMutableParagraphStyle()
+    paragraphStyle.lineSpacing = Constants.line
+
     let textView = UITextView()
+    textView.typingAttributes = [NSParagraphStyleAttributeName : paragraphStyle]
     textView.font = Font.Story.message
     textView.textColor = Color.Story.general
     textView.backgroundColor = Color.General.clear
@@ -57,7 +65,7 @@ class StoryCell: UITableViewCell {
   // MARK: - Configuration
 
   func configureCell(viewModel: StoryViewModel) {
-//    letterLabel.text = viewModel.letter
+    letterLabel.text = viewModel.letter ?? ""
     textView.text = viewModel.text ?? ""
     textView.sizeToFit()
 
@@ -68,7 +76,7 @@ class StoryCell: UITableViewCell {
 
   func setupConstraints() {
     NSLayoutConstraint.activateConstraints([
-      letterLabel.topAnchor.constraintEqualToAnchor(topAnchor, constant: Dimensions.Letter.topOffset),
+      letterLabel.topAnchor.constraintEqualToAnchor(topAnchor, constant: -Dimensions.Letter.topOffset),
       letterLabel.leftAnchor.constraintEqualToAnchor(leftAnchor, constant: Dimensions.Letter.leftOffset),
 
       textView.widthAnchor.constraintEqualToAnchor(widthAnchor, constant: -Dimensions.Text.widthOffset),
