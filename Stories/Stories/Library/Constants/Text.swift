@@ -33,16 +33,16 @@ struct Text {
   }
 
   struct Story {
-    static let firstTitle = String(localizedString("storyTitle").characters.first)
-    static let title = localizedString("storyTitle")
+    static let firstTitle = String(localizedString("storyMessage").characters.first).uppercaseString
+    static let title = localizedString("storyTitle").uppercaseString
     static let message = String(localizedString("storyMessage").characters.dropFirst())
     static let conclusion = localizedString("storyConclusion")
     static let footer = localizedString("storyFooter")
   }
 
   struct Motivation {
-    static let firstTitle = String(localizedString("motivationTitle").characters.first)
-    static let title = localizedString("motivationTitle")
+    static let firstTitle = String(localizedString("motivationMessage").characters.first).uppercaseString
+    static let title = localizedString("motivationTitle").uppercaseString
     static let message = String(localizedString("motivationMessage").characters.dropFirst())
     static let conclusion = localizedString("motivationConclusion")
     static let footer = localizedString("motivationFooter")

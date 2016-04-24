@@ -16,6 +16,12 @@ class StoryController: GeneralController {
     return view
   }()
 
+  var kind: StoryView.Kind = .Story {
+    didSet {
+      storyView.kind = kind
+    }
+  }
+
   var delegate: StoryControllerDelegate?
 
   override func viewDidLoad() {

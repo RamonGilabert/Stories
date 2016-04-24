@@ -37,6 +37,7 @@ class StoryView: UIView {
     didSet {
       viewModel = kind == .Story ? StoryViewModel.story : StoryViewModel.motivation
       tableView.reloadData()
+      reloadHeader()
     }
   }
 
@@ -81,6 +82,12 @@ class StoryView: UIView {
     delegate?.menuButtonDidPress()
   }
 
+  // MARK: - Helper methods
+
+  func reloadHeader() {
+    headerView.titleLabel.text = viewModel.title
+  }
+
   // MARK: - Constraints
 
   func setupConstraints() {
@@ -121,6 +128,21 @@ extension StoryView: UITableViewDataSource {
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    return UITableViewCell()
+    guard let kind = viewModel.cells[indexPath.row].kind else { return UITableViewCell() }
+
+    switch(kind) {
+    case .Text:
+      guard let cell = tableView.dequeueReusableCellWithIdentifier(StoryCell.reusableIdentifier) as? StoryCell else { return UITableViewCell() }
+
+      cell.configureCell(viewModel.cells[indexPath.row])
+
+      return cell
+    case .Image:
+      guard let cell = tableView.dequeueReusableCellWithIdentifier(StoryImageCell.reusableIdentifier) as? StoryImageCell else { return UITableViewCell() }
+
+      cell.configureCell(viewModel.cells[indexPath.row])
+
+      return cell
+    }
   }
 }
