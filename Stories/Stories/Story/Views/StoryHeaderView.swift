@@ -13,7 +13,7 @@ class StoryHeaderView: UIView {
     struct Separator {
       static let width: CGFloat = 3
       static let height: CGFloat = 45
-      static let topOffset: CGFloat = 40
+      static let bottomOffset: CGFloat = 40
     }
   }
 
@@ -41,9 +41,23 @@ class StoryHeaderView: UIView {
     return view
   }()
 
+  lazy var gradientLayer: CAGradientLayer = {
+    let layer = CAGradientLayer()
+    layer.colors = [Color.Story.Gradient.bottom.CGColor, Color.Story.Gradient.top.CGColor]
+
+    return layer
+  }()
+
+  var titleConstraint = NSLayoutConstraint()
+  var separatorConstraint = NSLayoutConstraint()
+
   init(title: String) {
     super.init(frame: CGRectZero)
+    
+    shadow(Color.Story.Shadow.header, radius: 10)
 
+    layer.shadowOpacity = 0
+    layer.insertSublayer(gradientLayer, atIndex: 0)
     translatesAutoresizingMaskIntoConstraints = false
     titleLabel.text = title
     [titleLabel, separator].forEach { addSubview($0) }
@@ -55,17 +69,28 @@ class StoryHeaderView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
 
+  override func layoutSubviews() {
+    super.layoutSubviews()
+
+    gradientLayer.frame = bounds
+  }
+
   // MARK: - Constraints
 
   func setupConstraints() {
+    titleConstraint = titleLabel.topAnchor.constraintEqualToAnchor(
+      topAnchor, constant: Dimensions.Title.offset)
+    separatorConstraint = separator.bottomAnchor.constraintEqualToAnchor(
+      bottomAnchor, constant: -Dimensions.Separator.bottomOffset)
+
     NSLayoutConstraint.activateConstraints([
+      titleConstraint,
       titleLabel.centerXAnchor.constraintEqualToAnchor(centerXAnchor),
-      titleLabel.topAnchor.constraintEqualToAnchor(topAnchor, constant: Dimensions.Title.offset),
 
       separator.widthAnchor.constraintEqualToConstant(Dimensions.Separator.width),
       separator.heightAnchor.constraintEqualToConstant(Dimensions.Separator.height),
       separator.centerXAnchor.constraintEqualToAnchor(centerXAnchor),
-      separator.topAnchor.constraintEqualToAnchor(titleLabel.bottomAnchor, constant: Dimensions.Separator.topOffset)
+      separatorConstraint
       ])
   }
 }

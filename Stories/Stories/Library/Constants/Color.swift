@@ -56,6 +56,12 @@ struct Color {
 
     struct Shadow {
       static let general = UIColor.whiteColor().alpha(0.5)
+      static let header = UIColor.blackColor().alpha(0.2)
+    }
+
+    struct Gradient {
+      static let bottom = UIColor.hex("2A3E50")
+      static let top = UIColor.hex("1B252F")
     }
   }
 }
