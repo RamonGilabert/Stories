@@ -67,6 +67,7 @@ struct Color {
 
   struct Finale {
     static let general = UIColor.whiteColor()
+    static let button = UIColor.hex("1B252D")
 
     struct Shadow {
       static let button = UIColor.whiteColor().alpha(0.8)

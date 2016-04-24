@@ -41,3 +41,8 @@
 "story";
 "motivationConclusion" = "Etiam porta sem malesuada magna mollis euismod. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit. Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.";
 "motivationFooter" = "Etiam porta sem malesuada magna mollis euismod.";
+
+/* Finale */
+
+"finaleTitle" = "Gràcies pel seu temps. Tinguem una bona WWDC... Junts.";
+"finaleButton" = "Recomençar";

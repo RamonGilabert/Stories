@@ -44,6 +44,7 @@
 		29E0BBD01CCCBA970046D80B /* StoryImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0BBCF1CCCBA970046D80B /* StoryImageCell.swift */; };
 		29E0BBD21CCD36F90046D80B /* FinaleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0BBD11CCD36F90046D80B /* FinaleController.swift */; };
 		29E0BBD41CCD37080046D80B /* FinaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0BBD31CCD37080046D80B /* FinaleView.swift */; };
+		29E0BBD61CCD675A0046D80B /* TextAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0BBD51CCD675A0046D80B /* TextAttributes.swift */; };
 		8F4E30BFEABF17F9EC03599B /* Pods_Stories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5EEBE4B3E0E5C24881061B /* Pods_Stories.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +91,7 @@
 		29E0BBCF1CCCBA970046D80B /* StoryImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryImageCell.swift; sourceTree = "<group>"; };
 		29E0BBD11CCD36F90046D80B /* FinaleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinaleController.swift; sourceTree = "<group>"; };
 		29E0BBD31CCD37080046D80B /* FinaleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinaleView.swift; sourceTree = "<group>"; };
+		29E0BBD51CCD675A0046D80B /* TextAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAttributes.swift; sourceTree = "<group>"; };
 		4E5EEBE4B3E0E5C24881061B /* Pods_Stories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6237324DE4E4A02943F19DA1 /* Pods-Stories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stories.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stories/Pods-Stories.release.xcconfig"; sourceTree = "<group>"; };
 		DF69EFBDCE7980C4931FA796 /* Pods-Stories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stories.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stories/Pods-Stories.debug.xcconfig"; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				2937A9B31CC6A8DF00BAAFCE /* Font.swift */,
+				29E0BBD51CCD675A0046D80B /* TextAttributes.swift */,
 				2937A9B51CC6A8E300BAAFCE /* Text.swift */,
 				2937A9B71CC6A8E700BAAFCE /* Color.swift */,
 				2937A9B91CC6A8F100BAAFCE /* Image.swift */,
@@ -519,6 +522,7 @@
 				29E0BBCC1CCBE8FA0046D80B /* StoryCell.swift in Sources */,
 				29E0BBCE1CCBEAAB0046D80B /* StoryViewModel.swift in Sources */,
 				2937A9FC1CC6AFFB00BAAFCE /* WelcomeView.swift in Sources */,
+				29E0BBD61CCD675A0046D80B /* TextAttributes.swift in Sources */,
 				292FE24C1CC97E2000E6E491 /* StoryView.swift in Sources */,
 				29E0BBC21CCB9A100046D80B /* Animatable.swift in Sources */,
 				29E0BBB01CCAABB40046D80B /* EngineView.swift in Sources */,

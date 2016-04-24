@@ -47,7 +47,7 @@ struct Text {
   }
 
   struct Finale {
-    static let title = localizedString("")
-    static let button = localizedString("").uppercaseString
+    static let title = localizedString("finaleTitle")
+    static let button = localizedString("finaleButton").uppercaseString
   }
 }
