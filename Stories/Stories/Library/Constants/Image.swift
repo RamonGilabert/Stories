@@ -3,10 +3,10 @@ import UIKit
 struct Image {
 
   struct Story {
-    static let main = ""
+    static let main = "landscape"
   }
 
   struct Motivation {
-    static let main = ""
+    static let main = "landscape"
   }
 }

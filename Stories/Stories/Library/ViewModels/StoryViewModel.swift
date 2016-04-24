@@ -2,12 +2,17 @@ import UIKit
 
 struct StoryViewModel {
 
+  enum Kind {
+    case Text, Image
+  }
+
   var title: String
   var cells: [StoryViewModel]
   var letter: String?
   var text: String?
   var image: String?
   var footer: String?
+  var kind: Kind?
 
   init(title: String = "", cells: [StoryViewModel] = [], letter: String? = nil,
        text: String? = nil, image: String? = nil, footer: String? = nil) {
@@ -18,6 +23,7 @@ struct StoryViewModel {
     self.text = text
     self.image = image
     self.footer = footer
+    self.kind = image == nil ? .Text : .Image
   }
 
   static let story = StoryViewModel(title: Text.Story.title, cells: [

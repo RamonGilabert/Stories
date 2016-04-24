@@ -7,6 +7,10 @@ protocol StoryViewDelegate {
 
 class StoryView: UIView {
 
+  enum Kind {
+    case Story, Motivation
+  }
+
   struct Dimensions {
     struct Table {
       static let offset: CGFloat = 230
@@ -29,6 +33,14 @@ class StoryView: UIView {
 
   lazy var tableView: UITableView = UITableView()
 
+  var kind: Kind = .Story {
+    didSet {
+      viewModel = kind == .Story ? StoryViewModel.story : StoryViewModel.motivation
+      tableView.reloadData()
+    }
+  }
+
+  var viewModel = StoryViewModel.story
   var delegate: StoryViewDelegate?
 
   override init(frame: CGRect) {
@@ -93,6 +105,10 @@ class StoryView: UIView {
 
 extension StoryView: UITableViewDelegate {
 
+  func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    // TODO: Perform the animation to show the story.
+  }
+
   func scrollViewDidScroll(scrollView: UIScrollView) {
     // TODO: Do the animation of the separator.
   }
@@ -101,7 +117,7 @@ extension StoryView: UITableViewDelegate {
 extension StoryView: UITableViewDataSource {
 
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 0
+    return viewModel.cells.count
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
