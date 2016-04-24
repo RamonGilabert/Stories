@@ -102,8 +102,6 @@ class StoryView: UIView {
   // MARK: - Helper methods
 
   func reloadHeader() {
-    tableView.contentOffset.y = 0
-    scrollViewDidScroll(tableView)
     headerView.titleLabel.text = viewModel.title
   }
 
@@ -112,6 +110,21 @@ class StoryView: UIView {
     let maximum = Constants.maximum
 
     return constant * offset / maximum > constant ? constant : constant * offset / maximum
+  }
+
+  func updateLayout() {
+    let separator = StoryHeaderView.Dimensions.Separator.bottomOffset
+    let height = Dimensions.Table.offset - scrollValue(Constants.size)
+    let separatorOffset = separator - scrollValue(Constants.separator)
+
+    headerView.separator.transform = CGAffineTransformMakeRotation(scrollValue(Constants.rotation))
+    headerView.titleLabel.font = Font.Story.title.fontWithSize(Font.Story.title.pointSize - scrollValue(Constants.fontSize))
+    headerConstraint.constant = height > Dimensions.Table.offset ? Dimensions.Table.offset : height
+    headerView.titleConstraint.constant = StoryHeaderView.Dimensions.Title.offset - scrollValue(Constants.origin)
+    headerView.separatorConstraint.constant = separatorOffset > separator ? -separator : -separatorOffset
+    headerView.layer.shadowOpacity = Float(scrollValue(Constants.opacity))
+
+    setNeedsLayout()
   }
 
   // MARK: - Constraints
@@ -155,18 +168,7 @@ extension StoryView: UITableViewDelegate {
   }
 
   func scrollViewDidScroll(scrollView: UIScrollView) {
-    let separator = StoryHeaderView.Dimensions.Separator.bottomOffset
-    let height = Dimensions.Table.offset - scrollValue(Constants.size)
-    let separatorOffset = separator - scrollValue(Constants.separator)
-
-    headerView.separator.transform = CGAffineTransformMakeRotation(scrollValue(Constants.rotation))
-    headerView.titleLabel.font = Font.Story.title.fontWithSize(Font.Story.title.pointSize - scrollValue(Constants.fontSize))
-    headerConstraint.constant = height > Dimensions.Table.offset ? Dimensions.Table.offset : height
-    headerView.titleConstraint.constant = StoryHeaderView.Dimensions.Title.offset - scrollValue(Constants.origin)
-    headerView.separatorConstraint.constant = separatorOffset > separator ? -separator : -separatorOffset
-    headerView.layer.shadowOpacity = Float(scrollValue(Constants.opacity))
-
-    setNeedsLayout()
+    updateLayout()
   }
 }
 

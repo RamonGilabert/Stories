@@ -71,6 +71,7 @@ class MainController: GeneralController {
       view.addSubview(controller.view)
     }
 
+    controller.prepareAnimate()
     controller.animate()
   }
 
@@ -126,7 +127,7 @@ extension MainController: EngineControllerDelegate {
 extension MainController: StoryControllerDelegate {
 
   func storyMenuDidPress() {
-    menuController.kind = .Story
+    menuController.kind = storyController.kind == .Story ? .Story : .Motivation
     presentMenu()
   }
 }

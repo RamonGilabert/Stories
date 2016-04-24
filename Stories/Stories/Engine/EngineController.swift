@@ -60,8 +60,12 @@ class EngineController: GeneralController {
 
 extension EngineController: Animatable {
 
+  func prepareAnimate() {
+    view.alpha = 0
+  }
+
   func animate() {
-    UIView.animateWithDuration(0.5, animations: {
+    UIView.animateWithDuration(0.7, animations: {
       self.view.alpha = 1
     })
   }

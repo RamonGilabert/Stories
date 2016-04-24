@@ -10,7 +10,7 @@ class MenuView: UIView {
 
   struct Dimensions {
     struct Table {
-      static let topOffset: CGFloat = 160
+      static let topOffset: CGFloat = 145
       static let leftOffset: CGFloat = 30
       static let rightOffset: CGFloat = 16
     }
