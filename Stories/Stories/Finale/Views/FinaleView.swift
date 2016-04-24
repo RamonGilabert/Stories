@@ -27,8 +27,8 @@ class FinaleView: UIView {
     return label
   }()
 
-  lazy var button: UIButton = {
-    let button = UIButton()
+  lazy var button: GeneralButton = {
+    let button = GeneralButton()
     button.layer.cornerRadius = Dimensions.Button.height / 2
     button.titleLabel?.font = Font.Finale.button
     button.backgroundColor = Color.Finale.general
