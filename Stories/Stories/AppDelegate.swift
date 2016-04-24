@@ -20,11 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window?.frame = UIScreen.mainScreen().bounds
     window?.rootViewController = mainController
 
-    mainController.view.addSubview(loadingView)
+    //mainController.view.addSubview(loadingView)
 
     window?.makeKeyAndVisible()
 
-    delay(0.2) { self.animate() }
+    //delay(0.2) { self.animate() } TODO: Put back.
 
     UIApplication.sharedApplication().statusBarHidden = true
 

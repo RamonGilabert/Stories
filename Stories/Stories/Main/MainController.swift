@@ -51,7 +51,8 @@ class MainController: GeneralController {
     super.viewDidLoad()
 
     controllers = [welcomeController, engineController, storyController]
-    view.addSubview(welcomeController.view)
+//    view.addSubview(welcomeController.view)
+    view.addSubview(engineController.view)
   }
 
   // MARK: - Animation

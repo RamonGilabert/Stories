@@ -14,6 +14,7 @@ class StoryView: UIView {
   struct Dimensions {
     struct Table {
       static let offset: CGFloat = 230
+      static let bottomOffset: CGFloat = 50
     }
   }
 
@@ -67,8 +68,11 @@ class StoryView: UIView {
     tableView.dataSource = self
     tableView.separatorStyle = .None
     tableView.scrollsToTop = true
-    tableView.contentInset.top = Dimensions.Table.offset
+    tableView.contentInset.bottom = Dimensions.Table.bottomOffset
     tableView.backgroundColor = Color.General.clear
+    tableView.showsVerticalScrollIndicator = false
+    tableView.rowHeight = UITableViewAutomaticDimension
+    tableView.estimatedRowHeight = Dimensions.Table.offset
 
     tableView.registerClass(
       StoryCell.self, forCellReuseIdentifier: StoryCell.reusableIdentifier)
@@ -93,7 +97,7 @@ class StoryView: UIView {
   func setupConstraints() {
     NSLayoutConstraint.activateConstraints([
       tableView.widthAnchor.constraintEqualToAnchor(widthAnchor),
-      tableView.topAnchor.constraintEqualToAnchor(headerView.topAnchor),
+      tableView.topAnchor.constraintEqualToAnchor(headerView.bottomAnchor),
       tableView.bottomAnchor.constraintEqualToAnchor(bottomAnchor),
       tableView.rightAnchor.constraintEqualToAnchor(rightAnchor),
 

@@ -11,6 +11,7 @@ class StoryCell: UITableViewCell {
     }
 
     struct Text {
+      static let widthOffset: CGFloat = 60
       static let topOffset: CGFloat = 0
       static let leftOffset: CGFloat = 38
       static let bottomOffset: CGFloat = 10
@@ -19,16 +20,32 @@ class StoryCell: UITableViewCell {
 
   lazy var letterLabel: UILabel = {
     let label = UILabel()
+    label.font = Font.Story.letter
+    label.textColor = Color.Story.general
+    label.backgroundColor = Color.General.clear
+    label.translatesAutoresizingMaskIntoConstraints = false
+
     return label
   }()
 
   lazy var textView: UITextView = {
     let textView = UITextView()
+    textView.font = Font.Story.message
+    textView.textColor = Color.Story.general
+    textView.backgroundColor = Color.General.clear
+    textView.editable = false
+    textView.selectable = false
+    textView.scrollEnabled = false
+    textView.translatesAutoresizingMaskIntoConstraints = false
+
     return textView
   }()
 
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+    selectionStyle = .None
+    backgroundColor = Color.General.clear
 
     [letterLabel, textView].forEach { addSubview($0) }
   }
@@ -42,6 +59,7 @@ class StoryCell: UITableViewCell {
   func configureCell(viewModel: StoryViewModel) {
 //    letterLabel.text = viewModel.letter
     textView.text = viewModel.text ?? ""
+    textView.sizeToFit()
 
     setupConstraints()
   }
@@ -53,9 +71,10 @@ class StoryCell: UITableViewCell {
       letterLabel.topAnchor.constraintEqualToAnchor(topAnchor, constant: Dimensions.Letter.topOffset),
       letterLabel.leftAnchor.constraintEqualToAnchor(leftAnchor, constant: Dimensions.Letter.leftOffset),
 
+      textView.widthAnchor.constraintEqualToAnchor(widthAnchor, constant: -Dimensions.Text.widthOffset),
       textView.topAnchor.constraintEqualToAnchor(topAnchor, constant: Dimensions.Text.topOffset),
       textView.leftAnchor.constraintEqualToAnchor(leftAnchor, constant: Dimensions.Text.leftOffset),
-      textView.bottomAnchor.constraintEqualToAnchor(bottomAnchor, constant: Dimensions.Text.bottomOffset)
+      textView.bottomAnchor.constraintEqualToAnchor(bottomAnchor, constant: -Dimensions.Text.bottomOffset)
       ])
   }
 }

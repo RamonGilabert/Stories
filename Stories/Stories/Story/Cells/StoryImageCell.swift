@@ -20,16 +20,25 @@ class StoryImageCell: UITableViewCell {
 
   lazy var productView: UIImageView = {
     let imageView = UIImageView()
+    imageView.translatesAutoresizingMaskIntoConstraints = false
+
     return imageView
   }()
 
   lazy var footerLabel: UILabel = {
     let label = UILabel()
+    label.numberOfLines = 0
+    label.textAlignment = .Center
+    label.translatesAutoresizingMaskIntoConstraints = false
+    
     return label
   }()
 
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+    selectionStyle = .None
+    backgroundColor = Color.General.clear
 
     [productView, footerLabel].forEach { addSubview($0) }
   }
@@ -41,7 +50,10 @@ class StoryImageCell: UITableViewCell {
   // MARK: - Configuration
 
   func configureCell(viewModel: StoryViewModel) {
+    productView.image = UIImage(named: viewModel.image ?? "")
+    footerLabel.text = viewModel.footer
 
+    setupConstraints()
   }
 
   // MARK: - Constraints
@@ -54,8 +66,9 @@ class StoryImageCell: UITableViewCell {
       productView.topAnchor.constraintEqualToAnchor(topAnchor, constant: Dimensions.Image.topOffset),
 
       footerLabel.widthAnchor.constraintLessThanOrEqualToAnchor(widthAnchor, constant: -Dimensions.Footer.widthOffset),
+      footerLabel.topAnchor.constraintEqualToAnchor(productView.bottomAnchor, constant: Dimensions.Footer.topOffset),
       footerLabel.centerXAnchor.constraintEqualToAnchor(centerXAnchor),
-      footerLabel.bottomAnchor.constraintEqualToAnchor(bottomAnchor, constant: Dimensions.Footer.bottomOffset)
+      footerLabel.bottomAnchor.constraintEqualToAnchor(bottomAnchor, constant: -Dimensions.Footer.bottomOffset)
       ])
   }
 }
