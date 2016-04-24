@@ -21,14 +21,14 @@ struct StoryViewModel {
   }
 
   static let story = StoryViewModel(title: "", cells: [
-    StoryViewModel(letter: "R", text: ""),
-    StoryViewModel(image: "R", footer: ""),
-    StoryViewModel(letter: "R", text: ""),
+    StoryViewModel(letter: Text.Story.firstTitle, text: Text.Story.title),
+    StoryViewModel(image: Image.Story.main, footer: Text.Story.footer),
+    StoryViewModel(text: Text.Story.conclusion),
     ])
 
   static let motivation = StoryViewModel(title: "", cells: [
-    StoryViewModel(letter: "R", text: ""),
-    StoryViewModel(image: "R", footer: ""),
-    StoryViewModel(letter: "R", text: ""),
+    StoryViewModel(letter: Text.Motivation.firstTitle, text: Text.Motivation.title),
+    StoryViewModel(image: Image.Motivation.main, footer: Text.Motivation.footer),
+    StoryViewModel(text: Text.Motivation.conclusion),
     ])
 }
