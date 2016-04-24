@@ -33,4 +33,9 @@ struct Font {
     static let message = UIFont.systemFontOfSize(20)
     static let footer = UIFont.italicSystemFontOfSize(16)
   }
+
+  struct Finale {
+    static let title = UIFont(name: Monaco.regular, size: 24)!
+    static let button = UIFont(name: Brandon.bold, size: 25)!
+  }
 }

@@ -1,9 +1,11 @@
 import UIKit
 
-class FinaleController: UIViewController {
+class FinaleController: GeneralController {
 
   lazy var finaleView: FinaleView = {
     let view = FinaleView()
+    view.translatesAutoresizingMaskIntoConstraints = false
+    
     return view
   }()
 
@@ -24,5 +26,18 @@ class FinaleController: UIViewController {
       finaleView.topAnchor.constraintEqualToAnchor(view.topAnchor),
       finaleView.leftAnchor.constraintEqualToAnchor(view.leftAnchor)
       ])
+  }
+}
+
+extension FinaleController: Animatable {
+
+  func prepareAnimate() {
+    view.alpha = 0
+  }
+
+  func animate() {
+    UIView.animateWithDuration(0.3, animations: {
+      self.view.alpha = 1
+    })
   }
 }

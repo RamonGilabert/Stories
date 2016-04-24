@@ -37,7 +37,7 @@ class WelcomeView: UIView {
     view.layer.cornerRadius = Dimensions.moon / 2
     view.layer.borderColor = Color.Welcome.moon.CGColor
     view.layer.borderWidth = Dimensions.moon / 2
-    view.shadow(Color.Welcome.moonShadow, radius: 30)
+    view.shadow(Color.Welcome.moonShadow, radius: Dimensions.Shadow.moon)
 
     return view
   }()

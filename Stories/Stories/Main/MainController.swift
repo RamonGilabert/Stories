@@ -35,6 +35,13 @@ class MainController: GeneralController {
     return controller
   }()
 
+  lazy var finaleController: FinaleController = {
+    let controller = FinaleController()
+    controller.view.frame = UIScreen.mainScreen().bounds
+
+    return controller
+  }()
+
   lazy var mailController: MFMailComposeViewController = { [unowned self] in
     let controller = MFMailComposeViewController()
     controller.setToRecipients([Constant.email])
@@ -145,7 +152,7 @@ extension MainController: MenuControllerDelegate {
       storyController.kind = .Motivation
       changeRootView(storyController)
     case .End:
-      break
+      changeRootView(finaleController)
     case .Github:
       presentGithub()
     case .Contact:

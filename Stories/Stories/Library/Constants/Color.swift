@@ -64,4 +64,12 @@ struct Color {
       static let top = UIColor.hex("1B252F")
     }
   }
+
+  struct Finale {
+    static let general = UIColor.whiteColor()
+
+    struct Shadow {
+      static let button = UIColor.whiteColor().alpha(0.8)
+    }
+  }
 }
