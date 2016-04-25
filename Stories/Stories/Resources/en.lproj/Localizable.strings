@@ -46,3 +46,23 @@
 
 "finaleTitle" = "Thank you for your time, let’s have a nice WWDC… Together.";
 "finaleButton" = "Restart";
+
+/* Interactive */
+
+"interactiveFirst" = "Hey, is somebody here?";
+"interactiveFirstOne" = "Yes I'm here!";
+"interactiveFirstTwo" = "Who is this?";
+"interactiveSecond" = "Oh great! Great to hear! Finally! It’s been almost a year since the last time we speak!";
+"interactiveThird" = "You probably don’t remember me! I’m Ramon! How crazy is this? I’ve been waiting you for weeks, and you don’t even remember me, probably!";
+"interactiveFourth" = "I have a lot to tell you, but I’m far away, and this radio that I’m using is kind of wacky! Do you want to hear the story?";
+"interactiveFourthOne" = "Of course!";
+"interactiveFourthTwo" = "Nah. It's fine.";
+"interactiveFive" = "Great! Well this has taken me a long while to figure out, and I’m not even awake enough to tell you the whole story, but I’ll try, this past couple of months have been crazy.";
+"interactiveSix" = "What do you mean you are fine! I’ve been waiting for this for 2 months now, and now you come here and tell me that you are fine?";
+"interactiveSeven" = "Let’s see again, are you sure you don’t want to hear the story?";
+"interactiveSevenOne" = "All right all right!";
+"interactiveSevenTwo" = "Sure...";
+"interactiveEight" = "You don’t seem that happy about the story I’m about to tell you, but anyways…";
+"interactiveNine" = "Great! Well this has taken me a long while to figure out, and I’m not even awake enough to tell you the whole story, but I’ll try, this past couple of months have been crazy.";
+
+
