@@ -1,4 +1,5 @@
 import UIKit
+import Walker
 
 protocol EngineViewDelegate {
 
@@ -87,6 +88,12 @@ class EngineView: UIView {
 
   func rightButtonDidPress() {
     // TODO: Change the buttons and stuff.
+  }
+
+  // MARK: - Animations
+
+  func animateButtons(present: Bool) {
+
   }
 
   // MARK: - Constraints
