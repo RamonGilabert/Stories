@@ -65,10 +65,10 @@ struct Text {
     struct Buttons {
       static let firstOne = localizedString("interactiveFirstOne")
       static let firstTwo = localizedString("interactiveFirstTwo")
-      static let secondOne = localizedString("interactiveFourthOne")
-      static let secondTwo = localizedString("interactiveFourthTwo")
-      static let thirdOne = localizedString("interactiveSevenOne")
-      static let thirdTwo = localizedString("interactiveSevenTwo")
+      static let fourOne = localizedString("interactiveFourthOne")
+      static let fourTwo = localizedString("interactiveFourthTwo")
+      static let sevenOne = localizedString("interactiveSevenOne")
+      static let sevenTwo = localizedString("interactiveSevenTwo")
     }
   }
 }
