@@ -5,6 +5,9 @@ class OptionButton: UIButton {
   override init(frame: CGRect) {
     super.init(frame: frame)
 
+    layer.cornerRadius = EngineView.Dimensions.Button.height / 2
+    layer.borderColor = Color.Engine.Button.general.CGColor
+    layer.borderWidth = 2
     titleLabel?.font = Font.Engine.button
     backgroundColor = Color.Engine.Button.background
     shadow(Color.Engine.Button.shadow, radius: 10)

@@ -63,7 +63,10 @@ class EngineView: UIView {
   override init(frame: CGRect) {
     super.init(frame: frame)
 
-    [menu].forEach { addSubview($0) }
+    [menu, writeView, leftButton, rightButton].forEach {
+      $0.translatesAutoresizingMaskIntoConstraints = false
+      addSubview($0)
+    }
 
     setupConstraints()
   }
@@ -102,12 +105,12 @@ class EngineView: UIView {
 
       leftButton.widthAnchor.constraintEqualToAnchor(widthAnchor, multiplier: 0.5, constant: -Dimensions.Button.offset),
       leftButton.heightAnchor.constraintEqualToConstant(Dimensions.Button.height),
-      leftButton.leftAnchor.constraintEqualToAnchor(leftAnchor, constant: Dimensions.Button.offset / 2),
+      leftButton.leftAnchor.constraintEqualToAnchor(leftAnchor, constant: Dimensions.Button.offset / 1.5),
       leftButton.bottomAnchor.constraintEqualToAnchor(bottomAnchor, constant: -Dimensions.Button.bottom),
 
       rightButton.widthAnchor.constraintEqualToAnchor(widthAnchor, multiplier: 0.5, constant: -Dimensions.Button.offset),
       rightButton.heightAnchor.constraintEqualToConstant(Dimensions.Button.height),
-      rightButton.rightAnchor.constraintEqualToAnchor(rightAnchor, constant: -Dimensions.Button.offset / 2),
+      rightButton.rightAnchor.constraintEqualToAnchor(rightAnchor, constant: -Dimensions.Button.offset / 1.5),
       rightButton.bottomAnchor.constraintEqualToAnchor(bottomAnchor, constant: -Dimensions.Button.bottom)
       ])
   }
