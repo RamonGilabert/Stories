@@ -16,10 +16,16 @@ class EngineView: UIView {
       static let rightOffset: CGFloat = Menu.topOffset
     }
 
+    struct Text {
+      static let offset: CGFloat = 30
+      static let height: CGFloat = 50
+    }
+
     struct Button {
       static let height: CGFloat = 58
       static let offset: CGFloat = 30
       static let shadow: CGFloat = 10
+      static let bottom: CGFloat = 45
     }
   }
 
@@ -38,13 +44,17 @@ class EngineView: UIView {
 
   lazy var writeView: WriteView = WriteView(font: Font.Engine.text, string: "")
 
-  lazy var leftButton: OptionButton = {
+  lazy var leftButton: OptionButton = { [unowned self] in
     let button = OptionButton()
+    button.addTarget(self, action: #selector(leftButtonDidPress), forControlEvents: .TouchUpInside)
+
     return button
   }()
 
-  lazy var rightButton: OptionButton = {
+  lazy var rightButton: OptionButton = { [unowned self] in
     let button = OptionButton()
+    button.addTarget(self, action: #selector(rightButtonDidPress), forControlEvents: .TouchUpInside)
+
     return button
   }()
 
@@ -68,6 +78,14 @@ class EngineView: UIView {
     delegate?.menuButtonDidPress()
   }
 
+  func leftButtonDidPress() {
+    // TODO: Change the buttons and stuff.
+  }
+
+  func rightButtonDidPress() {
+    // TODO: Change the buttons and stuff.
+  }
+
   // MARK: - Constraints
 
   func setupConstraints() {
@@ -75,7 +93,22 @@ class EngineView: UIView {
       menu.widthAnchor.constraintEqualToConstant(Dimensions.Menu.size),
       menu.heightAnchor.constraintEqualToConstant(Dimensions.Menu.size),
       menu.topAnchor.constraintEqualToAnchor(topAnchor, constant: Dimensions.Menu.topOffset),
-      menu.rightAnchor.constraintEqualToAnchor(rightAnchor, constant: -Dimensions.Menu.rightOffset)
+      menu.rightAnchor.constraintEqualToAnchor(rightAnchor, constant: -Dimensions.Menu.rightOffset),
+
+      writeView.widthAnchor.constraintEqualToAnchor(widthAnchor, constant: -Dimensions.Text.offset * 2),
+      writeView.heightAnchor.constraintGreaterThanOrEqualToConstant(Dimensions.Text.height),
+      writeView.centerYAnchor.constraintEqualToAnchor(centerYAnchor),
+      writeView.leftAnchor.constraintEqualToAnchor(leftAnchor, constant: Dimensions.Text.offset),
+
+      leftButton.widthAnchor.constraintEqualToAnchor(widthAnchor, multiplier: 0.5, constant: -Dimensions.Button.offset),
+      leftButton.heightAnchor.constraintEqualToConstant(Dimensions.Button.height),
+      leftButton.leftAnchor.constraintEqualToAnchor(leftAnchor, constant: Dimensions.Button.offset / 2),
+      leftButton.bottomAnchor.constraintEqualToAnchor(bottomAnchor, constant: -Dimensions.Button.bottom),
+
+      rightButton.widthAnchor.constraintEqualToAnchor(widthAnchor, multiplier: 0.5, constant: -Dimensions.Button.offset),
+      rightButton.heightAnchor.constraintEqualToConstant(Dimensions.Button.height),
+      rightButton.rightAnchor.constraintEqualToAnchor(rightAnchor, constant: -Dimensions.Button.offset / 2),
+      rightButton.bottomAnchor.constraintEqualToAnchor(bottomAnchor, constant: -Dimensions.Button.bottom)
       ])
   }
 }
