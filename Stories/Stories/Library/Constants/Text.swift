@@ -50,4 +50,25 @@ struct Text {
     static let title = localizedString("finaleTitle")
     static let button = localizedString("finaleButton").uppercaseString
   }
+
+  struct Interactive {
+    static let one = localizedString("interactiveFirst")
+    static let two = localizedString("interactiveSecond")
+    static let three = localizedString("interactiveThird")
+    static let four = localizedString("interactiveFourth")
+    static let five = localizedString("interactiveFive")
+    static let six = localizedString("interactiveSix")
+    static let seven = localizedString("interactiveSeven")
+    static let eight = localizedString("interactiveEight")
+    static let nine = localizedString("interactiveNine")
+
+    struct Buttons {
+      static let firstOne = localizedString("interactiveFirstOne")
+      static let firstTwo = localizedString("interactiveFirstTwo")
+      static let secondOne = localizedString("interactiveFourthOne")
+      static let secondTwo = localizedString("interactiveFourthTwo")
+      static let thirdOne = localizedString("interactiveSevenOne")
+      static let thirdTwo = localizedString("interactiveSevenTwo")
+    }
+  }
 }
