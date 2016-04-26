@@ -101,7 +101,7 @@ class WriteView: UIView {
       text.text = text.text.substringToIndex(text.text.endIndex.predecessor())
       textViewDidChange(text)
 
-      delay(durations[index]) {
+      delay(durations[index] / Double(velocity)) {
         self.deleteAnimation(completion)
       }
     } else {
@@ -152,6 +152,7 @@ extension WriteView: UITextViewDelegate {
   func textViewDidChange(textView: UITextView) {
     let paragraphStyle = NSMutableParagraphStyle()
     paragraphStyle.lineSpacing = Constants.line
+    paragraphStyle.alignment = centerAlign ? .Center : .Left
 
     let size = text.text.boundingRectWithSize(
       CGSize(width: frame.width, height: CGFloat.max),
@@ -161,8 +162,7 @@ extension WriteView: UITextViewDelegate {
         NSParagraphStyleAttributeName : paragraphStyle
       ], context: nil).size
 
-    textView.sizeToFit()
-    textView.frame.size = CGSize(width: size.width + 10, height: size.height)
+    textView.frame.size = CGSize(width: size.width + 10, height: size.height + 10)
     textView.frame.origin.x = centerAlign ? (frame.width - textView.frame.width) / 2 : 0
 
     frame.size.height = size.height < Dimensions.minimumHeight ? Dimensions.minimumHeight : size.height
@@ -177,6 +177,6 @@ extension WriteView: UITextViewDelegate {
       cursor.frame.origin.y = textView.frame.height - Dimensions.Cursor.height
     }
 
-    delegate?.writeViewDidUpdateText(textView.frame.height)
+    delegate?.writeViewDidUpdateText(frame.size.height)
   }
 }

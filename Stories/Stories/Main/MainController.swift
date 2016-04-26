@@ -131,6 +131,10 @@ extension MainController: EngineControllerDelegate {
     menuController.kind = .Default
     presentMenu()
   }
+
+  func enginePresentFinale() {
+    changeRootView(finaleController)
+  }
 }
 
 extension MainController: StoryControllerDelegate {

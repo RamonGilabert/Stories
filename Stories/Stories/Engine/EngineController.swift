@@ -4,6 +4,7 @@ import Transition
 protocol EngineControllerDelegate {
 
   func enginePresentMenu()
+  func enginePresentFinale()
 }
 
 class EngineController: GeneralController {
@@ -34,7 +35,6 @@ class EngineController: GeneralController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
     view.addSubview(engineView)
 
     setupConstraints()
@@ -42,13 +42,17 @@ class EngineController: GeneralController {
 
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
+
+    story = Engine.initialTexts
+    buttons = Engine.initialButtons
+    engineView.prepareButtons()
   }
 
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
 
     if let text = story.first {
-      engineView.animateText(text + text + text + text + text)
+      engineView.animateText(text, Engine.buttons(text))
     }
   }
 
@@ -81,5 +85,16 @@ extension EngineController: EngineViewDelegate {
 
   func menuButtonDidPress() {
     delegate?.enginePresentMenu()
+  }
+
+  func textDidEndDisplaying() {
+    story.removeFirst()
+
+    if let text = story.first where !story.isEmpty {
+      print(Engine.buttons(text))
+      engineView.changeText(text)
+    } else {
+      delegate?.enginePresentFinale()
+    }
   }
 }

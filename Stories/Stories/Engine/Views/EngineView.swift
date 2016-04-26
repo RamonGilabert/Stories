@@ -5,6 +5,7 @@ import Sugar
 protocol EngineViewDelegate {
 
   func menuButtonDidPress()
+  func textDidEndDisplaying()
 }
 
 class EngineView: UIView {
@@ -20,7 +21,7 @@ class EngineView: UIView {
 
     struct Text {
       static let offset: CGFloat = 30
-      static let centralOffset: CGFloat = 50
+      static let centralOffset: CGFloat = 60
       static let height: CGFloat = 50
     }
 
@@ -30,6 +31,11 @@ class EngineView: UIView {
       static let shadow: CGFloat = 10
       static let bottom: CGFloat = 45
     }
+  }
+
+  struct Constants {
+    static let velocity: CGFloat = 3
+    static let transform: CGFloat = 150
   }
 
   lazy var menu: UIButton = { [unowned self] in
@@ -50,7 +56,7 @@ class EngineView: UIView {
     view.text.textAlignment = .Left
     view.centerAlign = false
     view.delegate = self
-    view.velocity = 3
+    view.velocity = Constants.velocity
 
     return view
   }()
@@ -94,25 +100,77 @@ class EngineView: UIView {
   }
 
   func leftButtonDidPress() {
+    animateButtons(false)
     // TODO: Change the buttons and stuff.
   }
 
   func rightButtonDidPress() {
+    animateButtons(false)
     // TODO: Change the buttons and stuff.
   }
 
   // MARK: - Animations
 
-  func animateButtons(present: Bool) {
+  func animateButtons(present: Bool, _ first: String = "", _ second: String = "") {
+    closeDistilleries()
 
+    if first != "" {
+      leftButton.setTitle(first, forState: .Normal)
+      rightButton.setTitle(second, forState: .Normal)
+    }
+
+    spring(leftButton, delay: present ? 0 : 0.15, spring: 50, friction: 60, mass: 50) {
+      $0.transform = present ? CGAffineTransformIdentity : CGAffineTransformMakeTranslation(0, Constants.transform)
+    }
+
+    spring(rightButton, delay: present ? 0.15 : 0, spring: 50, friction: 60, mass: 50) {
+      $0.transform = present ? CGAffineTransformIdentity : CGAffineTransformMakeTranslation(0, Constants.transform)
+    }
   }
 
-  func animateText(string: String) {
+  func animateText(string: String, _ buttons: [String] = []) {
     writeView.string = string
+    writeView.velocity = Constants.velocity
 
     delay(0.4) {
-      self.writeView.startAnimation()
+      self.writeView.startAnimation {
+        self.performTextChange(string, buttons)
+      }
     }
+  }
+
+  func changeText(string: String, buttons: [String] = []) {
+    writeView.string = string
+    writeView.velocity = Constants.velocity
+
+    delay(0.4) {
+      self.writeView.changeText {
+        self.performTextChange(string, buttons)
+      }
+    }
+  }
+
+  func performTextChange(string: String, _ buttons: [String] = []) {
+    if buttons.isEmpty {
+      delay(3) {
+        self.writeView.velocity = 15
+        self.writeView.deleteAnimation {
+          self.writeView.velocity = 5
+
+          delay(0.5) {
+            self.delegate?.textDidEndDisplaying()
+          }
+        }
+      }
+    } else if let first = buttons.first, last = buttons.last {
+      self.animateButtons(true, first, last)
+    }
+  }
+
+  // MARK: - Helper methods
+
+  func prepareButtons() {
+    [leftButton, rightButton].forEach { $0.transform = CGAffineTransformMakeTranslation(0, Constants.transform) }
   }
 
   // MARK: - Constraints
@@ -148,5 +206,7 @@ extension EngineView: WriteViewDelegate {
 
   func writeViewDidUpdateText(height: CGFloat) {
     writeConstraint.constant = height
+
+    setNeedsLayout()
   }
 }
