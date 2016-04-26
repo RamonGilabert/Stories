@@ -6,6 +6,7 @@ protocol EngineViewDelegate {
 
   func menuButtonDidPress()
   func textDidEndDisplaying()
+  func buttonDidPress(button: String)
 }
 
 class EngineView: UIView {
@@ -111,13 +112,17 @@ class EngineView: UIView {
   }
 
   func leftButtonDidPress() {
+    guard let text = leftButton.titleForState(.Normal) else { return }
+
     animateButtons(false)
-    // TODO: Change the buttons and stuff.
+    delegate?.buttonDidPress(text)
   }
 
   func rightButtonDidPress() {
+    guard let text = rightButton.titleForState(.Normal) else { return }
+
     animateButtons(false)
-    // TODO: Change the buttons and stuff.
+    delegate?.buttonDidPress(text)
   }
 
   // MARK: - Animations
