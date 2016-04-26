@@ -31,6 +31,7 @@ class EngineController: GeneralController {
 
   var story = Engine.initialTexts
   var buttons = Engine.initialButtons
+  var shouldAnimate = true
   var delegate: EngineControllerDelegate?
 
   override func viewDidLoad() {
@@ -43,6 +44,8 @@ class EngineController: GeneralController {
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
 
+    guard shouldAnimate else { return }
+
     story = Engine.initialTexts
     buttons = Engine.initialButtons
     engineView.prepareButtons()
@@ -51,7 +54,8 @@ class EngineController: GeneralController {
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
 
-    if let text = story.first {
+    if let text = story.first where shouldAnimate {
+      shouldAnimate = false
       engineView.animateText(text, Engine.buttons(text))
     }
   }

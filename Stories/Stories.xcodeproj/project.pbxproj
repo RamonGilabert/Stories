@@ -28,6 +28,7 @@
 		2937AA091CC6BB2B00BAAFCE /* GeneralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2937AA081CC6BB2B00BAAFCE /* GeneralController.swift */; };
 		2937AA0C1CC6DE6B00BAAFCE /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2937AA0B1CC6DE6B00BAAFCE /* LoadingView.swift */; };
 		298955231CCEA0F30010109F /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298955221CCEA0F30010109F /* Engine.swift */; };
+		29BF43FF1CCFFF7700C70373 /* UIView+Stars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BF43FE1CCFFF7700C70373 /* UIView+Stars.swift */; };
 		29E0BBAE1CCAAB8A0046D80B /* EngineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0BBAD1CCAAB8A0046D80B /* EngineController.swift */; };
 		29E0BBB01CCAABB40046D80B /* EngineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0BBAF1CCAABB40046D80B /* EngineView.swift */; };
 		29E0BBB21CCAADCE0046D80B /* OptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0BBB11CCAADCE0046D80B /* OptionButton.swift */; };
@@ -79,6 +80,7 @@
 		2937AA081CC6BB2B00BAAFCE /* GeneralController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralController.swift; sourceTree = "<group>"; };
 		2937AA0B1CC6DE6B00BAAFCE /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		298955221CCEA0F30010109F /* Engine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
+		29BF43FE1CCFFF7700C70373 /* UIView+Stars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Stars.swift"; sourceTree = "<group>"; };
 		29E0BBAD1CCAAB8A0046D80B /* EngineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineController.swift; sourceTree = "<group>"; };
 		29E0BBAF1CCAABB40046D80B /* EngineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineView.swift; sourceTree = "<group>"; };
 		29E0BBB11CCAADCE0046D80B /* OptionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionButton.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				2937AA061CC6B9A500BAAFCE /* UIView+Shadow.swift */,
+				29BF43FE1CCFFF7700C70373 /* UIView+Stars.swift */,
 				29E0BBD91CCD6CD50046D80B /* UIColor+Adjust.swift */,
 			);
 			path = Extensions;
@@ -546,6 +549,7 @@
 				29E0BBCE1CCBEAAB0046D80B /* StoryViewModel.swift in Sources */,
 				2937A9FC1CC6AFFB00BAAFCE /* WelcomeView.swift in Sources */,
 				29E0BBD61CCD675A0046D80B /* TextAttributes.swift in Sources */,
+				29BF43FF1CCFFF7700C70373 /* UIView+Stars.swift in Sources */,
 				292FE24C1CC97E2000E6E491 /* StoryView.swift in Sources */,
 				29E0BBC21CCB9A100046D80B /* Animatable.swift in Sources */,
 				29E0BBB01CCAABB40046D80B /* EngineView.swift in Sources */,

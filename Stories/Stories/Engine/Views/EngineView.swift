@@ -11,6 +11,10 @@ protocol EngineViewDelegate {
 class EngineView: UIView {
 
   struct Dimensions {
+    static let smallStar: CGFloat = 1
+    static let mediumStar: CGFloat = 2
+    static let bigStar: CGFloat = 3
+
     struct Menu {
       static let size: CGFloat = 42
       static let shadow: CGFloat = 10
@@ -31,11 +35,16 @@ class EngineView: UIView {
       static let shadow: CGFloat = 10
       static let bottom: CGFloat = 45
     }
+
+    struct Shadow {
+      static let star: CGFloat = 15
+    }
   }
 
   struct Constants {
     static let velocity: CGFloat = 3
     static let transform: CGFloat = 150
+    static let starNumber = 100
   }
 
   lazy var menu: UIButton = { [unowned self] in
@@ -86,6 +95,8 @@ class EngineView: UIView {
       addSubview($0)
     }
 
+    prepareStars([Dimensions.smallStar, Dimensions.mediumStar, Dimensions.bigStar], Constants.starNumber)
+    
     setupConstraints()
   }
   

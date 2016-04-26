@@ -32,8 +32,6 @@ class LandscapeView: UIView {
     return view
   }()
 
-  var stars: [UIView] = []
-
   override init(frame: CGRect) {
     super.init(frame: frame)
 
@@ -42,34 +40,11 @@ class LandscapeView: UIView {
 
     addSubview(moon)
     setupConstraints()
-    prepareStars()
+    prepareStars([Dimensions.smallStar, Dimensions.mediumStar, Dimensions.bigStar], Constants.starNumber, 1.75)
   }
   
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
-  }
-
-  // MARK: - Helper methods
-
-  func prepareStars() {
-    let sizes = [Dimensions.smallStar, Dimensions.mediumStar, Dimensions.bigStar]
-    let screenSize = UIScreen.mainScreen().bounds
-
-    for _ in 0..<Constants.starNumber {
-      let star = UIView()
-      let index = Int(arc4random_uniform(UInt32(sizes.count)))
-      let size = sizes[index]
-
-      star.frame = CGRect(x: CGFloat(arc4random_uniform(UInt32(screenSize.width))),
-                          y: CGFloat(arc4random_uniform(UInt32(screenSize.height / 1.75))),
-                          width: size, height: size)
-      star.backgroundColor = Color.Welcome.star
-      star.layer.cornerRadius = size / 2
-      star.shadow(Color.Welcome.starShadow, radius: 15)
-
-      stars.append(star)
-      addSubview(star)
-    }
   }
 
   // MARK: - Constraints
