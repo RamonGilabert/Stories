@@ -20,7 +20,7 @@ class EngineView: UIView {
 
     struct Text {
       static let offset: CGFloat = 30
-      static let centralOffset: CGFloat = 60
+      static let centralOffset: CGFloat = 50
       static let height: CGFloat = 50
     }
 
@@ -45,10 +45,11 @@ class EngineView: UIView {
     return button
   }()
 
-  lazy var writeView: WriteView = {
+  lazy var writeView: WriteView = { [unowned self] in
     let view = WriteView(font: Font.Engine.text, string: "")
     view.text.textAlignment = .Left
     view.centerAlign = false
+    view.delegate = self
     view.velocity = 3
 
     return view
@@ -68,6 +69,7 @@ class EngineView: UIView {
     return button
   }()
 
+  var writeConstraint = NSLayoutConstraint()
   var delegate: EngineViewDelegate?
 
   override init(frame: CGRect) {
@@ -116,6 +118,8 @@ class EngineView: UIView {
   // MARK: - Constraints
 
   func setupConstraints() {
+    writeConstraint = writeView.heightAnchor.constraintEqualToConstant(Dimensions.Text.height)
+
     NSLayoutConstraint.activateConstraints([
       menu.widthAnchor.constraintEqualToConstant(Dimensions.Menu.size),
       menu.heightAnchor.constraintEqualToConstant(Dimensions.Menu.size),
@@ -123,7 +127,7 @@ class EngineView: UIView {
       menu.rightAnchor.constraintEqualToAnchor(rightAnchor, constant: -Dimensions.Menu.rightOffset),
 
       writeView.widthAnchor.constraintEqualToAnchor(widthAnchor, constant: -Dimensions.Text.offset * 2),
-      writeView.heightAnchor.constraintGreaterThanOrEqualToConstant(Dimensions.Text.height),
+      writeConstraint,
       writeView.centerYAnchor.constraintEqualToAnchor(centerYAnchor, constant: -Dimensions.Text.centralOffset),
       writeView.leftAnchor.constraintEqualToAnchor(leftAnchor, constant: Dimensions.Text.offset),
 
@@ -137,5 +141,12 @@ class EngineView: UIView {
       rightButton.rightAnchor.constraintEqualToAnchor(rightAnchor, constant: -Dimensions.Button.offset / 1.5),
       rightButton.bottomAnchor.constraintEqualToAnchor(bottomAnchor, constant: -Dimensions.Button.bottom)
       ])
+  }
+}
+
+extension EngineView: WriteViewDelegate {
+
+  func writeViewDidUpdateText(height: CGFloat) {
+    writeConstraint.constant = height
   }
 }

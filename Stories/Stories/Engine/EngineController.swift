@@ -48,7 +48,7 @@ class EngineController: GeneralController {
     super.viewDidAppear(animated)
 
     if let text = story.first {
-      engineView.animateText(text)
+      engineView.animateText(text + text + text + text + text)
     }
   }
 

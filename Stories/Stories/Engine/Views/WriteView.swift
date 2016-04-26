@@ -1,6 +1,11 @@
 import UIKit
 import Sugar
 
+protocol WriteViewDelegate {
+
+  func writeViewDidUpdateText(height: CGFloat)
+}
+
 class WriteView: UIView {
 
   struct Dimensions {
@@ -61,6 +66,7 @@ class WriteView: UIView {
 
   var velocity: CGFloat = 1
   var cursorAnimation = true
+  var delegate: WriteViewDelegate?
 
   init(font: UIFont, string: String) {
     self.font = font
@@ -170,5 +176,7 @@ extension WriteView: UITextViewDelegate {
       cursor.frame.origin.x = textView.caretRectForPosition(textView.endOfDocument).origin.x + 15
       cursor.frame.origin.y = textView.frame.height - Dimensions.Cursor.height
     }
+
+    delegate?.writeViewDidUpdateText(textView.frame.height)
   }
 }
