@@ -1,5 +1,6 @@
 import UIKit
 import Walker
+import Sugar
 
 protocol EngineViewDelegate {
 
@@ -19,6 +20,7 @@ class EngineView: UIView {
 
     struct Text {
       static let offset: CGFloat = 30
+      static let centralOffset: CGFloat = 60
       static let height: CGFloat = 50
     }
 
@@ -43,7 +45,14 @@ class EngineView: UIView {
     return button
   }()
 
-  lazy var writeView: WriteView = WriteView(font: Font.Engine.text, string: "")
+  lazy var writeView: WriteView = {
+    let view = WriteView(font: Font.Engine.text, string: "")
+    view.text.textAlignment = .Left
+    view.centerAlign = false
+    view.velocity = 3
+
+    return view
+  }()
 
   lazy var leftButton: OptionButton = { [unowned self] in
     let button = OptionButton()
@@ -96,6 +105,14 @@ class EngineView: UIView {
 
   }
 
+  func animateText(string: String) {
+    writeView.string = string
+
+    delay(0.4) {
+      self.writeView.startAnimation()
+    }
+  }
+
   // MARK: - Constraints
 
   func setupConstraints() {
@@ -107,7 +124,7 @@ class EngineView: UIView {
 
       writeView.widthAnchor.constraintEqualToAnchor(widthAnchor, constant: -Dimensions.Text.offset * 2),
       writeView.heightAnchor.constraintGreaterThanOrEqualToConstant(Dimensions.Text.height),
-      writeView.centerYAnchor.constraintEqualToAnchor(centerYAnchor),
+      writeView.centerYAnchor.constraintEqualToAnchor(centerYAnchor, constant: -Dimensions.Text.centralOffset),
       writeView.leftAnchor.constraintEqualToAnchor(leftAnchor, constant: Dimensions.Text.offset),
 
       leftButton.widthAnchor.constraintEqualToAnchor(widthAnchor, multiplier: 0.5, constant: -Dimensions.Button.offset),

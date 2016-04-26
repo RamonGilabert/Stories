@@ -50,7 +50,13 @@ class WriteView: UIView {
       text.font = font
     }
   }
-  
+
+  var centerAlign = true {
+    didSet {
+      setupFrames()
+    }
+  }
+
   var string: String
 
   var velocity: CGFloat = 1
@@ -130,7 +136,7 @@ class WriteView: UIView {
     let width = UIScreen.mainScreen().bounds.width - WelcomeView.Dimensions.writeOffset
     
     cursor.frame.size = CGSize(width: Dimensions.Cursor.width, height: Dimensions.Cursor.height)
-    cursor.frame.origin = CGPoint(x: (width - cursor.frame.size.width) / 2, y: 0)
+    cursor.frame.origin = CGPoint(x: centerAlign ? (width - cursor.frame.size.width) / 2 : 0, y: 0)
     text.center = center
   }
 }
@@ -151,7 +157,7 @@ extension WriteView: UITextViewDelegate {
 
     textView.sizeToFit()
     textView.frame.size = CGSize(width: size.width + 10, height: size.height)
-    textView.frame.origin.x = (frame.width - textView.frame.width) / 2
+    textView.frame.origin.x = centerAlign ? (frame.width - textView.frame.width) / 2 : 0
 
     frame.size.height = size.height < Dimensions.minimumHeight ? Dimensions.minimumHeight : size.height
 

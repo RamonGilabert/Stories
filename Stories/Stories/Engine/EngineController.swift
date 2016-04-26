@@ -28,6 +28,8 @@ class EngineController: GeneralController {
     return view
   }()
 
+  var story = Engine.initialTexts
+  var buttons = Engine.initialButtons
   var delegate: EngineControllerDelegate?
 
   override func viewDidLoad() {
@@ -44,6 +46,10 @@ class EngineController: GeneralController {
 
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
+
+    if let text = story.first {
+      engineView.animateText(text)
+    }
   }
 
   // MARK: - Constraints
