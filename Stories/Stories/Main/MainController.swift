@@ -61,7 +61,7 @@ class MainController: GeneralController {
     welcomeController = WelcomeController()
 
     controllers = [welcomeController, engineController, storyController]
-    view.addSubview(welcomeController.view)
+//    view.addSubview(welcomeController.view)
     view.addSubview(engineController.view)
   }
 
@@ -125,6 +125,8 @@ extension MainController: WelcomeControllerDelegate {
     engineController = EngineController()
     engineController.view.frame = UIScreen.mainScreen().bounds
     engineController.delegate = self
+
+    controllers = [welcomeController, engineController, storyController]
 
     changeRootView(engineController)
   }
