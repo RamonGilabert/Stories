@@ -122,6 +122,10 @@ extension MainController: MFMailComposeViewControllerDelegate, UINavigationContr
 extension MainController: WelcomeControllerDelegate {
 
   func presentEngineController() {
+    engineController = EngineController()
+    engineController.view.frame = UIScreen.mainScreen().bounds
+    engineController.delegate = self
+
     changeRootView(engineController)
   }
 }

@@ -173,7 +173,7 @@ class EngineView: UIView {
 
   func performTextChange(string: String, _ buttons: [String] = []) {
     if buttons.isEmpty {
-      delay(3) {
+      delay(4) {
         self.writeView.velocity = 15
         self.writeView.deleteAnimation {
           self.writeView.velocity = 5

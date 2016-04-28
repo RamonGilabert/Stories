@@ -18,7 +18,7 @@ struct Engine {
     (first: Text.Interactive.Buttons.firstOne, second: Text.Interactive.Buttons.firstTwo,
       key: "one", nextFirst: 2, nextSecond: 3),
     (first: Text.Interactive.Buttons.fourOne, second: Text.Interactive.Buttons.fourTwo,
-      key: "four", nextFirst: 5, nextSecond: 6),
+      key: "four", nextFirst: 9, nextSecond: 6),
     (first: Text.Interactive.Buttons.sevenOne, second: Text.Interactive.Buttons.sevenTwo,
       key: "seven", nextFirst: 9, nextSecond: 8)
   ]
@@ -30,14 +30,14 @@ struct Engine {
     for initial in initialButtons {
       if initial.first == button {
         initialIndex = initial.nextFirst
+        break
       } else if initial.second == button {
         initialIndex = initial.nextSecond
+        break
       }
-
-      break
     }
 
-    for _ in 0..<initialIndex { texts.removeFirst() }
+    for _ in 0..<initialIndex - 1 { texts.removeFirst() }
 
     return texts
   }
