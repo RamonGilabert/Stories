@@ -95,13 +95,19 @@ extension EngineController: EngineViewDelegate {
     story.removeFirst()
 
     if let text = story.first where !story.isEmpty {
-      engineView.changeText(text)
+      engineView.changeText(text, buttons: Engine.buttons(text))
     } else {
       delegate?.enginePresentFinale()
     }
   }
 
   func buttonDidPress(button: String) {
-    // TODO: Go to the next text, but choose which one it is.
+    story = Engine.response(button)
+
+    if let text = story.first where !story.isEmpty {
+      engineView.changeText(text, buttons: Engine.buttons(text))
+    } else {
+      delegate?.enginePresentFinale()
+    }
   }
 }

@@ -160,8 +160,13 @@ class EngineView: UIView {
     writeView.velocity = Constants.velocity
 
     delay(0.4) {
-      self.writeView.changeText {
-        self.performTextChange(string, buttons)
+      self.writeView.velocity = 15
+      self.writeView.deleteAnimation {
+        self.writeView.velocity = 5
+
+        self.writeView.changeText {
+          self.performTextChange(string, buttons)
+        }
       }
     }
   }
