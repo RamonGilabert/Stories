@@ -32,12 +32,12 @@ struct StoryViewModel {
   static let story = StoryViewModel(title: Text.Story.title, cells: [
     StoryViewModel(letter: true, text: Text.Story.message),
     StoryViewModel(image: Image.Story.main, footer: Text.Story.footer),
-    StoryViewModel(text: Text.Story.conclusion),
+    StoryViewModel(text: Text.Story.conclusion)
     ])
 
   static let motivation = StoryViewModel(title: Text.Motivation.title, cells: [
     StoryViewModel(letter: true, text: Text.Motivation.message),
     StoryViewModel(image: Image.Motivation.main, footer: Text.Motivation.footer),
-    StoryViewModel(text: Text.Motivation.conclusion),
+    StoryViewModel(text: Text.Motivation.conclusion)
     ])
 }

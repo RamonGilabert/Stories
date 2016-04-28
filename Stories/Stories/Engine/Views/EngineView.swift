@@ -114,7 +114,7 @@ class EngineView: UIView {
   func leftButtonDidPress() {
     guard let text = leftButton.titleForState(.Normal) else { return }
 
-    animateButtons(false)
+    animateButtons(false, left: true)
     delegate?.buttonDidPress(text)
   }
 
@@ -127,7 +127,7 @@ class EngineView: UIView {
 
   // MARK: - Animations
 
-  func animateButtons(present: Bool, _ first: String = "", _ second: String = "") {
+  func animateButtons(present: Bool, _ first: String = "", _ second: String = "", left: Bool = false) {
     closeDistilleries()
 
     if first != "" {
@@ -135,11 +135,11 @@ class EngineView: UIView {
       rightButton.setTitle(second, forState: .Normal)
     }
 
-    spring(leftButton, delay: present ? 0 : 0.15, spring: 50, friction: 60, mass: 50) {
+    spring(leftButton, delay: present || left ? 0 : 0.15, spring: 50, friction: 60, mass: 50) {
       $0.transform = present ? CGAffineTransformIdentity : CGAffineTransformMakeTranslation(0, Constants.transform)
     }
 
-    spring(rightButton, delay: present ? 0.15 : 0, spring: 50, friction: 60, mass: 50) {
+    spring(rightButton, delay: present || left ? 0.15 : 0, spring: 50, friction: 60, mass: 50) {
       $0.transform = present ? CGAffineTransformIdentity : CGAffineTransformMakeTranslation(0, Constants.transform)
     }
   }

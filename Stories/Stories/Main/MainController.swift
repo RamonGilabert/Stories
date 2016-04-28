@@ -1,5 +1,6 @@
 import UIKit
 import MessageUI
+import Walker
 
 class MainController: GeneralController {
 
