@@ -86,7 +86,7 @@
 "interactiveEighteen" = "All right, all right!";
 "interactiveTwenty" = "How do you see this app? Be careful, I’m tracking what you input!";
 "interactiveTwentyOne" = "...";
-"interactiveTwentyTwo" = "Nah! I’m totally kidding, I don’t know what you tap, but I hope you tap in the right button!"
+"interactiveTwentyTwo" = "Nah! I’m totally kidding, I don’t know what you tap, but I hope you tap in the right button!";
 "interactiveTwentyTwoOne" = "It's promising.";
 "interactiveTwentyTwoTwo" = "Dunno yet.";
 "interactiveTwentyThree" = "I mean, I know you just tapped '%@', but I’m not monitoring from home this conversation that we are having…";
