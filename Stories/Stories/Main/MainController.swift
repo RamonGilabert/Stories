@@ -42,7 +42,7 @@ class MainController: GeneralController {
     controller.setToRecipients([Constant.email])
     controller.setSubject(Text.Contact.title)
     controller.setMessageBody(Text.Contact.message, isHTML: false)
-    controller.delegate = self
+    controller.mailComposeDelegate = self
 
     return controller
   }()
