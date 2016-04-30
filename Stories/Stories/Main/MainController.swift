@@ -61,8 +61,7 @@ class MainController: GeneralController {
     welcomeController = WelcomeController()
 
     controllers = [welcomeController, engineController, storyController]
-//    view.addSubview(welcomeController.view)
-    view.addSubview(engineController.view)
+    view.addSubview(welcomeController.view)
   }
 
   // MARK: - Animation
