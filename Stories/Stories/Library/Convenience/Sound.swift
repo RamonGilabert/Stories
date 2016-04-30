@@ -25,7 +25,7 @@ struct Sound {
   }
 
   static func type() {
-    let sounds = [1104, 1105]
+    let sounds: [SystemSoundID] = [1104, 1105]
     let index = Int(arc4random_uniform(UInt32(sounds.count)))
 
     AudioServicesPlaySystemSound(sounds[index])

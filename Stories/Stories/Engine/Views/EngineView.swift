@@ -45,7 +45,7 @@ class EngineView: UIView {
   struct Constants {
     static let velocity: CGFloat = 3
     static let transform: CGFloat = 150
-    static let starNumber = 100
+    static let starNumber = 50
   }
 
   lazy var menu: UIButton = { [unowned self] in
