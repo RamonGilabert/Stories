@@ -20,8 +20,8 @@ class StoryImageCell: UITableViewCell {
     }
   }
 
-  lazy var productView: UIImageView = {
-    let imageView = UIImageView()
+  lazy var productView: PHLivePhotoView = {
+    let imageView = PHLivePhotoView()
     imageView.translatesAutoresizingMaskIntoConstraints = false
 
     return imageView
@@ -40,6 +40,8 @@ class StoryImageCell: UITableViewCell {
     return label
   }()
 
+  var storyModel: StoryViewModel?
+
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
 
@@ -56,10 +58,38 @@ class StoryImageCell: UITableViewCell {
   // MARK: - Configuration
 
   func configureCell(viewModel: StoryViewModel) {
-    productView.image = UIImage(named: viewModel.image ?? "")
+    storyModel = viewModel
     footerLabel.text = viewModel.footer
 
+    preparePhoto()
     setupConstraints()
+  }
+
+  // MARK: - Live photos
+
+  func preparePhoto() {
+    let bundle = NSBundle.mainBundle()
+
+    guard let viewModel = storyModel, modelImage = viewModel.image,
+      image = bundle.URLForResource("\(modelImage)_bundle", withExtension: "JPG"),
+      video = bundle.URLForResource("\(modelImage)_bundle", withExtension: "MOV") else { return }
+
+    PHLivePhoto.requestLivePhotoWithResourceFileURLs(
+      [image, video], placeholderImage: UIImage(named: viewModel.image ?? ""),
+      targetSize: CGSize(width: UIScreen.mainScreen().bounds.width, height: Dimensions.Image.height),
+      contentMode: .AspectFill, resultHandler: { [weak self] livePhoto, information in
+        guard let weakSelf = self, cancelled = information[PHLivePhotoInfoCancelledKey] as? Int
+          where cancelled == 0 else { return }
+        weakSelf.productView.livePhoto = livePhoto
+    })
+  }
+
+  // MARK: - Touches
+
+  override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    super.touchesBegan(touches, withEvent: event)
+
+    productView.startPlaybackWithStyle(.Full)
   }
 
   // MARK: - Constraints

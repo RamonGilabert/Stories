@@ -59,8 +59,8 @@
 		29EDBB3B1CD51F82003E9115 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29EDBB3D1CD51F82003E9115 /* InfoPlist.strings */; };
 		29EDBB421CD51FD2003E9115 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29EDBB441CD51FD2003E9115 /* InfoPlist.strings */; };
 		29EDBB471CD51FEF003E9115 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29EDBB491CD51FEF003E9115 /* InfoPlist.strings */; };
-		29EDBB4D1CD548D9003E9115 /* landscape.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 29EDBB4B1CD548D9003E9115 /* landscape.JPG */; };
-		29EDBB4E1CD548D9003E9115 /* landscape.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 29EDBB4C1CD548D9003E9115 /* landscape.MOV */; };
+		29EDBB4D1CD548D9003E9115 /* landscape_bundle.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 29EDBB4B1CD548D9003E9115 /* landscape_bundle.JPG */; };
+		29EDBB4E1CD548D9003E9115 /* landscape_bundle.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 29EDBB4C1CD548D9003E9115 /* landscape_bundle.MOV */; };
 		8F4E30BFEABF17F9EC03599B /* Pods_Stories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5EEBE4B3E0E5C24881061B /* Pods_Stories.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,8 +122,8 @@
 		29EDBB3C1CD51F82003E9115 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		29EDBB431CD51FD2003E9115 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		29EDBB481CD51FEF003E9115 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		29EDBB4B1CD548D9003E9115 /* landscape.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = landscape.JPG; sourceTree = "<group>"; };
-		29EDBB4C1CD548D9003E9115 /* landscape.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = landscape.MOV; sourceTree = "<group>"; };
+		29EDBB4B1CD548D9003E9115 /* landscape_bundle.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = landscape_bundle.JPG; sourceTree = "<group>"; };
+		29EDBB4C1CD548D9003E9115 /* landscape_bundle.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = landscape_bundle.MOV; sourceTree = "<group>"; };
 		4E5EEBE4B3E0E5C24881061B /* Pods_Stories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6237324DE4E4A02943F19DA1 /* Pods-Stories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stories.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stories/Pods-Stories.release.xcconfig"; sourceTree = "<group>"; };
 		DF69EFBDCE7980C4931FA796 /* Pods-Stories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stories.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stories/Pods-Stories.debug.xcconfig"; sourceTree = "<group>"; };
@@ -431,8 +431,8 @@
 		29EDBB4A1CD548D9003E9115 /* Live */ = {
 			isa = PBXGroup;
 			children = (
-				29EDBB4B1CD548D9003E9115 /* landscape.JPG */,
-				29EDBB4C1CD548D9003E9115 /* landscape.MOV */,
+				29EDBB4B1CD548D9003E9115 /* landscape_bundle.JPG */,
+				29EDBB4C1CD548D9003E9115 /* landscape_bundle.MOV */,
 			);
 			path = Live;
 			sourceTree = "<group>";
@@ -514,13 +514,13 @@
 				29EDBB471CD51FEF003E9115 /* InfoPlist.strings in Resources */,
 				29EDBB3B1CD51F82003E9115 /* InfoPlist.strings in Resources */,
 				2937A9A51CC6A7AC00BAAFCE /* Brandon_bld.otf in Resources */,
-				29EDBB4D1CD548D9003E9115 /* landscape.JPG in Resources */,
+				29EDBB4D1CD548D9003E9115 /* landscape_bundle.JPG in Resources */,
 				29EDBB381CD50F97003E9115 /* menu_item.wav in Resources */,
 				2937A9EC1CC6AEE600BAAFCE /* Localizable.strings in Resources */,
 				2937A9F61CC6AF0B00BAAFCE /* Localizable.strings in Resources */,
 				29EDBB331CD50964003E9115 /* second_typing.wav in Resources */,
 				2937A9E11CC6AD8200BAAFCE /* LaunchScreen.storyboard in Resources */,
-				29EDBB4E1CD548D9003E9115 /* landscape.MOV in Resources */,
+				29EDBB4E1CD548D9003E9115 /* landscape_bundle.MOV in Resources */,
 				29EDBB321CD50964003E9115 /* first_typing.wav in Resources */,
 				2937A9A61CC6A7AC00BAAFCE /* Monaco.ttf in Resources */,
 				29EDBB341CD50964003E9115 /* third_typing.wav in Resources */,
