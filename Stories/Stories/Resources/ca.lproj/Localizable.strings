@@ -15,7 +15,7 @@
 "menuBackStory" = "Torna a la història";
 "menuReadMotivation" = "Llegeix la motivació";
 "menuWatchTheEnd" = "Mira el final";
-"menuFindGithub" = "Troba'm a Github";
+"menuFindGithub" = "Troba'm a GitHub";
 "menuContact" = "Contacta'm";
 
 /* Contact */
@@ -44,7 +44,7 @@
 
 /* Finale */
 
-"finaleTitle" = "Gràcies pel seu temps. Tinguem una bona WWDC... Junts.";
+"finaleTitle" = "Gràcies pel teu temps. Tinguem una bona WWDC... Junts.";
 "finaleButton" = "Recomençar";
 
 /* Interactive */
