@@ -59,11 +59,11 @@
 "interactiveFourthTwo" = "Nah. It's fine.";
 "interactiveFive" = "Great! Well this has taken me a long while to figure out, and I’m not even awake enough to tell you the whole story, but I’ll try, this past couple of months have been crazy.";
 "interactiveSix" = "What do you mean it's fine? I’ve been waiting to tell my story for 2 months now, how can you just 'be fine'!";
-"interactiveSeven" = "Let’s see again, are you sure you don’t want to hear the story?";
+"interactiveSeven" = "Let’s see again, do you want to hear the story?";
 "interactiveSevenOne" = "All right!";
 "interactiveSevenTwo" = "Sure...";
 "interactiveEight" = "You don’t seem that happy about the story it, but anyways...";
-"interactiveNine" = "Great! Well this has been a crazy process and I’m not even awake enough to tell you the whole story, but I’ll make it short, this past couple of months have been crazy.";
+"interactiveNine" = "Great! Well this has been a crazy process and I’m not even awake enough to tell you the whole story, but I’ll make it short. This past couple of months have been crazy.";
 "interactiveNineOne" = "Oh really?";
 "interactiveNineTwo" = "Right.";
 "interactiveTen" = "Yes, really! To be honest, I had too much to do...";
@@ -82,8 +82,8 @@
 "interactiveSeventeen" = "But there’s more! After that, the Raspberry Pi sends it via Bluetooth to a light with an Arduino.";
 "interactiveSeventeenOne" = "Damn!";
 "interactiveSeventeenTwo" = "Nice!";
-"interactiveNineteen" = "Thank you! Thank you! But enough about that, let’s talk WWDC here.";
-"interactiveEighteen" = "All right, all right!";
+"interactiveEighteen" = "Thank you! Thank you! But enough about that, let’s talk WWDC here.";
+"interactiveNineteen" = "All right, all right!";
 "interactiveTwenty" = "How do you see this app? Be careful, I’m tracking what you input!";
 "interactiveTwentyOne" = "...";
 "interactiveTwentyTwo" = "Nah! I’m totally kidding, I don’t know what you tap, but I hope you tap in the right button!";
