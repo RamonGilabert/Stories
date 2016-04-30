@@ -75,8 +75,7 @@ class StoryImageCell: UITableViewCell {
       video = bundle.URLForResource("\(modelImage)_bundle", withExtension: "MOV") else { return }
 
     PHLivePhoto.requestLivePhotoWithResourceFileURLs(
-      [image, video], placeholderImage: UIImage(named: viewModel.image ?? ""),
-      targetSize: CGSize(width: UIScreen.mainScreen().bounds.width, height: Dimensions.Image.height),
+      [image, video], placeholderImage: UIImage(named: viewModel.image ?? ""), targetSize: CGSizeZero,
       contentMode: .AspectFill, resultHandler: { [weak self] livePhoto, information in
         guard let weakSelf = self, cancelled = information[PHLivePhotoInfoCancelledKey] as? Int
           where cancelled == 0 else { return }
