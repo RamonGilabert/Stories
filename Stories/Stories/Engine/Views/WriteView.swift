@@ -128,6 +128,8 @@ class WriteView: UIView {
       text.text.append(nextCharacter)
       textViewDidChange(text)
 
+      Sound.type()
+
       delay(durations[index] / Double(velocity)) {
         self.changeText(completion)
       }

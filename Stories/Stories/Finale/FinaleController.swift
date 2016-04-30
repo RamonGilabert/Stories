@@ -45,7 +45,7 @@ extension FinaleController: Animatable {
   func prepareAnimate() {
     view.alpha = 1
     [finaleView.landscape.moon, finaleView.titleLabel, finaleView.button, finaleView.menu].forEach {
-      $0.transform = CGAffineTransformMakeTranslation(0, -500)
+      $0.transform = CGAffineTransformMakeTranslation(0, -750)
     }
   }
 

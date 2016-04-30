@@ -50,6 +50,10 @@
 		29E0BBD81CCD6A470046D80B /* GeneralButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0BBD71CCD6A470046D80B /* GeneralButton.swift */; };
 		29E0BBDA1CCD6CD50046D80B /* UIColor+Adjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0BBD91CCD6CD50046D80B /* UIColor+Adjust.swift */; };
 		29E0BBDC1CCD6E820046D80B /* LandscapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E0BBDB1CCD6E820046D80B /* LandscapeView.swift */; };
+		29EDBB2D1CD505A6003E9115 /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EDBB2C1CD505A6003E9115 /* Sound.swift */; };
+		29EDBB321CD50964003E9115 /* first_typing.wav in Resources */ = {isa = PBXBuildFile; fileRef = 29EDBB2F1CD50964003E9115 /* first_typing.wav */; };
+		29EDBB331CD50964003E9115 /* second_typing.wav in Resources */ = {isa = PBXBuildFile; fileRef = 29EDBB301CD50964003E9115 /* second_typing.wav */; };
+		29EDBB341CD50964003E9115 /* third_typing.wav in Resources */ = {isa = PBXBuildFile; fileRef = 29EDBB311CD50964003E9115 /* third_typing.wav */; };
 		8F4E30BFEABF17F9EC03599B /* Pods_Stories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5EEBE4B3E0E5C24881061B /* Pods_Stories.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +106,10 @@
 		29E0BBD71CCD6A470046D80B /* GeneralButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralButton.swift; sourceTree = "<group>"; };
 		29E0BBD91CCD6CD50046D80B /* UIColor+Adjust.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Adjust.swift"; sourceTree = "<group>"; };
 		29E0BBDB1CCD6E820046D80B /* LandscapeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandscapeView.swift; sourceTree = "<group>"; };
+		29EDBB2C1CD505A6003E9115 /* Sound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		29EDBB2F1CD50964003E9115 /* first_typing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = first_typing.wav; sourceTree = "<group>"; };
+		29EDBB301CD50964003E9115 /* second_typing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = second_typing.wav; sourceTree = "<group>"; };
+		29EDBB311CD50964003E9115 /* third_typing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = third_typing.wav; sourceTree = "<group>"; };
 		4E5EEBE4B3E0E5C24881061B /* Pods_Stories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6237324DE4E4A02943F19DA1 /* Pods-Stories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stories.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stories/Pods-Stories.release.xcconfig"; sourceTree = "<group>"; };
 		DF69EFBDCE7980C4931FA796 /* Pods-Stories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stories.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stories/Pods-Stories.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +172,7 @@
 		2937A99B1CC6A6AD00BAAFCE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				29EDBB2E1CD50954003E9115 /* Sounds */,
 				2937A9A31CC6A7AC00BAAFCE /* Brandon_bld.otf */,
 				2937A9A41CC6A7AC00BAAFCE /* Monaco.ttf */,
 				2937A9EE1CC6AEE600BAAFCE /* Localizable.strings */,
@@ -298,6 +307,7 @@
 		2937AA031CC6B8EF00BAAFCE /* Convenience */ = {
 			isa = PBXGroup;
 			children = (
+				29EDBB2C1CD505A6003E9115 /* Sound.swift */,
 			);
 			path = Convenience;
 			sourceTree = "<group>";
@@ -388,6 +398,16 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		29EDBB2E1CD50954003E9115 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				29EDBB2F1CD50964003E9115 /* first_typing.wav */,
+				29EDBB301CD50964003E9115 /* second_typing.wav */,
+				29EDBB311CD50964003E9115 /* third_typing.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		4BA83F6D10AAB55A6CB738FC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -463,8 +483,11 @@
 				2937A9A51CC6A7AC00BAAFCE /* Brandon_bld.otf in Resources */,
 				2937A9EC1CC6AEE600BAAFCE /* Localizable.strings in Resources */,
 				2937A9F61CC6AF0B00BAAFCE /* Localizable.strings in Resources */,
+				29EDBB331CD50964003E9115 /* second_typing.wav in Resources */,
 				2937A9E11CC6AD8200BAAFCE /* LaunchScreen.storyboard in Resources */,
+				29EDBB321CD50964003E9115 /* first_typing.wav in Resources */,
 				2937A9A61CC6A7AC00BAAFCE /* Monaco.ttf in Resources */,
+				29EDBB341CD50964003E9115 /* third_typing.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +557,7 @@
 				29E0BBB91CCACE390046D80B /* MenuViewModel.swift in Sources */,
 				2937A9B41CC6A8DF00BAAFCE /* Font.swift in Sources */,
 				29E0BBD81CCD6A470046D80B /* GeneralButton.swift in Sources */,
+				29EDBB2D1CD505A6003E9115 /* Sound.swift in Sources */,
 				2937A9B81CC6A8E700BAAFCE /* Color.swift in Sources */,
 				29E0BBBC1CCB774B0046D80B /* MenuCell.swift in Sources */,
 				2937AA0C1CC6DE6B00BAAFCE /* LoadingView.swift in Sources */,
