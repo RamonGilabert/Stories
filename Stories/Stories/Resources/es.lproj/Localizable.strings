@@ -48,7 +48,7 @@
 /* Contact */
 
 "contactTitle" = "Hola hola!";
-"contactMessage" = "Nos ha gustado tu aplicación\n\n";
+"contactMessage" = "Hey!\n\nNos ha gustado tu aplicación\n\n";
 "contactErrorTitle" = "Uuuuups!";
 "contactErrorMessage" = "Parece que no tienes configurada la aplicación de correo, pero me puedes enviar un mensaje a ramon.gilabert.llop[at]gmail.com";
 "contactErrorButton" = "Ok";
