@@ -55,9 +55,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       mainController.changeRootView(mainController.engineController)
     case Text.Touch.story:
       mainController.storyController.kind = .Story
+      mainController.menuController.dismissViewControllerAnimated(true, completion: nil)
       mainController.changeRootView(mainController.storyController)
     case Text.Touch.motivation:
       mainController.storyController.kind = .Motivation
+      mainController.menuController.dismissViewControllerAnimated(true, completion: nil)
       mainController.changeRootView(mainController.storyController)
     case Text.Touch.menu:
       mainController.presentMenu()

@@ -57,6 +57,9 @@ class EngineView: UIView {
     button.translatesAutoresizingMaskIntoConstraints = false
     button.shadow(Color.Engine.Button.shadow, radius: 10)
     button.addTarget(self, action: #selector(menuButtonDidPress), forControlEvents: .TouchUpInside)
+    button.accessibilityLabel = "Menu"
+    button.accessibilityHint = "Opens up a menu with all the navigation of the app."
+    button.isAccessibilityElement = true
 
     return button
   }()
