@@ -91,12 +91,16 @@ class EngineView: UIView {
   func leftButtonDidPress() {
     guard let text = leftButton.titleForState(.Normal) else { return }
 
+    Sound.item()
+
     animateButtons(false, left: true)
     delegate?.buttonDidPress(text)
   }
 
   func rightButtonDidPress() {
     guard let text = rightButton.titleForState(.Normal) else { return }
+
+    Sound.item()
 
     animateButtons(false)
     delegate?.buttonDidPress(text)

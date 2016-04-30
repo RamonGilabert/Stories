@@ -72,6 +72,8 @@ class FinaleView: UIView {
   // MARK: - Action methods
 
   func restartButtonDidPress() {
+    Sound.item()
+
     delegate?.resetButtonDidPress()
   }
 
