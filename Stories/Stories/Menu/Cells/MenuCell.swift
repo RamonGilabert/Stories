@@ -39,6 +39,9 @@ class MenuCell: UITableViewCell {
 
   func configureCell(viewModel: MenuViewModel) {
     button.setTitle(viewModel.title, forState: .Normal)
+    button.isAccessibilityElement = true
+    button.accessibilityLabel = viewModel.title
+    button.accessibilityHint = viewModel.hint
 
     setupConstraints()
   }
