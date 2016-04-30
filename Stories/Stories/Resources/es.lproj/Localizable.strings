@@ -18,17 +18,6 @@
 "menuFindGithub" = "Encuéntrame en GitHub";
 "menuContact" = "Contáctame";
 
-/* 3D touch */
-
-"storiesTitleTouch" = "Stories";
-"storiesSubtitleTouch" = "La historia interactiva";
-"storyTitleTouch" = "Historia";
-"storySubtitleTouch" = "Mi historia";
-"motivationTitleTouch" = "Motivación";
-"motivationSubtitleTouch" = "Mi motivación";
-"menuTitleTouch" = "Menú";
-"menuSubtitleTouch" = "Ves al menú";
-
 /* Contact */
 
 "contactTitle" = "Hola hola!";

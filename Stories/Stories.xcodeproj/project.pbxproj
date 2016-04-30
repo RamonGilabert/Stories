@@ -56,6 +56,9 @@
 		29EDBB341CD50964003E9115 /* third_typing.wav in Resources */ = {isa = PBXBuildFile; fileRef = 29EDBB311CD50964003E9115 /* third_typing.wav */; };
 		29EDBB361CD50DF9003E9115 /* menu.wav in Resources */ = {isa = PBXBuildFile; fileRef = 29EDBB351CD50DF9003E9115 /* menu.wav */; };
 		29EDBB381CD50F97003E9115 /* menu_item.wav in Resources */ = {isa = PBXBuildFile; fileRef = 29EDBB371CD50F97003E9115 /* menu_item.wav */; };
+		29EDBB3B1CD51F82003E9115 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29EDBB3D1CD51F82003E9115 /* InfoPlist.strings */; };
+		29EDBB421CD51FD2003E9115 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29EDBB441CD51FD2003E9115 /* InfoPlist.strings */; };
+		29EDBB471CD51FEF003E9115 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29EDBB491CD51FEF003E9115 /* InfoPlist.strings */; };
 		8F4E30BFEABF17F9EC03599B /* Pods_Stories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5EEBE4B3E0E5C24881061B /* Pods_Stories.framework */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +117,11 @@
 		29EDBB311CD50964003E9115 /* third_typing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = third_typing.wav; sourceTree = "<group>"; };
 		29EDBB351CD50DF9003E9115 /* menu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = menu.wav; sourceTree = "<group>"; };
 		29EDBB371CD50F97003E9115 /* menu_item.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = menu_item.wav; sourceTree = "<group>"; };
+		29EDBB3C1CD51F82003E9115 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		29EDBB3E1CD51F92003E9115 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		29EDBB3F1CD51F9E003E9115 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		29EDBB431CD51FD2003E9115 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		29EDBB481CD51FEF003E9115 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4E5EEBE4B3E0E5C24881061B /* Pods_Stories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6237324DE4E4A02943F19DA1 /* Pods-Stories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stories.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stories/Pods-Stories.release.xcconfig"; sourceTree = "<group>"; };
 		DF69EFBDCE7980C4931FA796 /* Pods-Stories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stories.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stories/Pods-Stories.debug.xcconfig"; sourceTree = "<group>"; };
@@ -180,11 +188,14 @@
 				2937A9A31CC6A7AC00BAAFCE /* Brandon_bld.otf */,
 				2937A9A41CC6A7AC00BAAFCE /* Monaco.ttf */,
 				2937A9EE1CC6AEE600BAAFCE /* Localizable.strings */,
+				29EDBB3D1CD51F82003E9115 /* InfoPlist.strings */,
 				2937A9F31CC6AEF500BAAFCE /* Localizable.strings */,
 				2937A9F81CC6AF0B00BAAFCE /* Localizable.strings */,
 				2937A9DF1CC6AD8200BAAFCE /* LaunchScreen.storyboard */,
 				2937A99C1CC6A6AD00BAAFCE /* Assets.xcassets */,
 				2937A99F1CC6A6AD00BAAFCE /* Info.plist */,
+				29EDBB441CD51FD2003E9115 /* InfoPlist.strings */,
+				29EDBB491CD51FEF003E9115 /* InfoPlist.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -485,8 +496,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				29EDBB361CD50DF9003E9115 /* menu.wav in Resources */,
+				29EDBB421CD51FD2003E9115 /* InfoPlist.strings in Resources */,
 				2937A9F11CC6AEF500BAAFCE /* Localizable.strings in Resources */,
 				2937A9A01CC6A6AD00BAAFCE /* Assets.xcassets in Resources */,
+				29EDBB471CD51FEF003E9115 /* InfoPlist.strings in Resources */,
+				29EDBB3B1CD51F82003E9115 /* InfoPlist.strings in Resources */,
 				2937A9A51CC6A7AC00BAAFCE /* Brandon_bld.otf in Resources */,
 				29EDBB381CD50F97003E9115 /* menu_item.wav in Resources */,
 				2937A9EC1CC6AEE600BAAFCE /* Localizable.strings in Resources */,
@@ -612,6 +626,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2937A9ED1CC6AEE600BAAFCE /* en */,
+				29EDBB3F1CD51F9E003E9115 /* Base */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -630,6 +645,31 @@
 				2937A9F71CC6AF0B00BAAFCE /* es */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		29EDBB3D1CD51F82003E9115 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29EDBB3C1CD51F82003E9115 /* en */,
+				29EDBB3E1CD51F92003E9115 /* Base */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		29EDBB441CD51FD2003E9115 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29EDBB431CD51FD2003E9115 /* ca */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		29EDBB491CD51FEF003E9115 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29EDBB481CD51FEF003E9115 /* es */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -8,9 +8,9 @@
       <key>UIApplicationShortcutItemIconType</key>
       <string>UIApplicationShortcutIconTypeHome</string>
       <key>UIApplicationShortcutItemTitle</key>
-      <string>Stories</string>
+      <string>storiesTitleTouch</string>
       <key>UIApplicationShortcutItemSubtitle</key>
-      <string>Interactive story</string>
+      <string>storiesSubtitleTouch</string>
       <key>UIApplicationShortcutItemType</key>
       <string>com.RamonGilabert.Stories-stories-shortcut</string>
     </dict>
@@ -18,9 +18,9 @@
       <key>UIApplicationShortcutItemIconType</key>
       <string>UIApplicationShortcutIconTypeMessage</string>
       <key>UIApplicationShortcutItemTitle</key>
-      <string>Story</string>
+      <string>storyTitleTouch</string>
       <key>UIApplicationShortcutItemSubtitle</key>
-      <string>My story</string>
+      <string>storySubtitleTouch</string>
       <key>UIApplicationShortcutItemType</key>
       <string>com.RamonGilabert.Stories-story-shortcut</string>
     </dict>
@@ -28,9 +28,9 @@
       <key>UIApplicationShortcutItemIconType</key>
       <string>UIApplicationShortcutIconTypeTime</string>
       <key>UIApplicationShortcutItemTitle</key>
-      <string>Motivation</string>
+      <string>motivationTitleTouch</string>
       <key>UIApplicationShortcutItemSubtitle</key>
-      <string>My motivation</string>
+      <string>motivationSubtitleTouch</string>
       <key>UIApplicationShortcutItemType</key>
       <string>com.RamonGilabert.Stories-motivation-shortcut</string>
     </dict>
@@ -38,9 +38,9 @@
 			<key>UIApplicationShortcutItemIconType</key>
 			<string>UIApplicationShortcutIconTypeSearch</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Menu</string>
+			<string>menuTitleTouch</string>
 			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>Menu of Stories</string>
+			<string>menuSubtitleTouch</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>com.RamonGilabert.Stories-menu-shortcut</string>
 		</dict>
