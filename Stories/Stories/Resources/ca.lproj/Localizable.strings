@@ -18,6 +18,22 @@
 "menuFindGithub" = "Troba'm a GitHub";
 "menuContact" = "Contacta'm";
 
+/* Accessibility */
+
+"accessibilityMenuTitle" = "Menú";
+"accessibilityMoonTitle" = "Lluna";
+"accessibilityMenuHint" = "En aquest menú seràs capaç de navegar per tota l'aplicació.";
+"accessibilityStoryHint" = "Escolta la meva història en una table view.";
+"accessibilityMotivationHint" = "Escolta la meva motivació en una table view.";
+"accessibilityBackHint" = "Torna a la història interactiva.";
+"accessibilityEndHint" = "Ves al final de la meva història.";
+"accessibilityGitHubHint" = "Ves a la meva conta de GitHub.";
+"accessibilityContactHint" = "Contacta'm via email.";
+"accessibilityContactMoon" = "Aquesta és la lluna, la conductora de tota l'aplicació.";
+"accessibilityFirstOption" = "La primera opció que contesta la pregunta proposada a la meitat de la pantalla.";
+"accessibilitySecondOption" = "La segona opció que contesta la pregunta proposada a la meitat de la pantalla."
+"accessibilityRestart" = "Torna a començar la història interactiva.";
+
 /* 3D touch */
 
 "storiesTitleTouch" = "Stories";

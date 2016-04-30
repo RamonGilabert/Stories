@@ -18,6 +18,22 @@
 "menuFindGithub" = "Find me in GitHub";
 "menuContact" = "Contact me";
 
+/* Accessibility */
+
+"accessibilityMenuTitle" = "Menu";
+"accessibilityMoonTitle" = "Moon";
+"accessibilityMenuHint" = "In this menu you'll be able to navigate across the app.";
+"accessibilityStoryHint" = "Listen my story in a table view.";
+"accessibilityMotivationHint" = "Listen my motivation in a table view.";
+"accessibilityBackHint" = "Go back to the interactive story.";
+"accessibilityEndHint" = "Go to the end of the story.";
+"accessibilityGitHubHint" = "Go to my GitHub account.";
+"accessibilityContactHint" = "Contact me through an email.";
+"accessibilityContactMoon" = "This is the moon, which is the conductor through all the app.";
+"accessibilityFirstOption" = "The first option in the bottom left part of the iPhone to answer the question in the middle.";
+"accessibilitySecondOption" = "The second option in the bottom right part of the iPhone to answer the question in the middle."
+"accessibilityRestart" = "Start over to answer read the story in the app.";
+
 /* 3D touch */
 
 "storiesTitleTouch" = "Stories";

@@ -18,6 +18,22 @@
 "menuFindGithub" = "Encuéntrame en GitHub";
 "menuContact" = "Contáctame";
 
+/* Accessibility */
+
+"accessibilityMenuTitle" = "Menú";
+"accessibilityMoonTitle" = "Luna";
+"accessibilityMenuHint" = "En este menú vas a ser capaç de navegar por la aplicación.";
+"accessibilityStoryHint" = "Escucha mi historia en una table view.";
+"accessibilityMotivationHint" = "Escucha mi motivación en una table view.";
+"accessibilityBackHint" = "Vuelve a la historia interactiva.";
+"accessibilityEndHint" = "Ve al final de la historia.";
+"accessibilityGitHubHint" = "Ve a mi cuenta en GitHub.";
+"accessibilityContactHint" = "Contáctame por email.";
+"accessibilityContactMoon" = "Esta es la luna, la conductora de toda la aplicación.";
+"accessibilityFirstOption" = "La primera opción que responde la pregunta del medio de la pantalla.";
+"accessibilitySecondOption" = "La segunda opción que responde la pregunta del medio de la pantalla."
+"accessibilityRestart" = "Volver a empezar la historia interactiva.";
+
 /* 3D touch */
 
 "storiesTitleTouch" = "Stories";
