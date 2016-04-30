@@ -1,4 +1,6 @@
 import UIKit
+import Photos
+import PhotosUI
 
 class StoryImageCell: UITableViewCell {
 
