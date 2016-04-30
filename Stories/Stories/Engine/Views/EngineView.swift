@@ -26,7 +26,7 @@ class EngineView: UIView {
 
     struct Text {
       static let offset: CGFloat = 30
-      static let centralOffset: CGFloat = 60
+      static let centralOffset: CGFloat = 40
       static let height: CGFloat = 50
     }
 

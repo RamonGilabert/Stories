@@ -2,6 +2,49 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+    <dict>
+      <key>UIApplicationShortcutItemIconType</key>
+      <string>UIApplicationShortcutIconTypeHome</string>
+      <key>UIApplicationShortcutItemTitle</key>
+      <string>Stories</string>
+      <key>UIApplicationShortcutItemSubtitle</key>
+      <string>Interactive story</string>
+      <key>UIApplicationShortcutItemType</key>
+      <string>com.RamonGilabert.Stories-stories-shortcut</string>
+    </dict>
+    <dict>
+      <key>UIApplicationShortcutItemIconType</key>
+      <string>UIApplicationShortcutIconTypeMessage</string>
+      <key>UIApplicationShortcutItemTitle</key>
+      <string>Story</string>
+      <key>UIApplicationShortcutItemSubtitle</key>
+      <string>My story</string>
+      <key>UIApplicationShortcutItemType</key>
+      <string>com.RamonGilabert.Stories-story-shortcut</string>
+    </dict>
+    <dict>
+      <key>UIApplicationShortcutItemIconType</key>
+      <string>UIApplicationShortcutIconTypeTime</string>
+      <key>UIApplicationShortcutItemTitle</key>
+      <string>Motivation</string>
+      <key>UIApplicationShortcutItemSubtitle</key>
+      <string>My motivation</string>
+      <key>UIApplicationShortcutItemType</key>
+      <string>com.RamonGilabert.Stories-motivation-shortcut</string>
+    </dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeSearch</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Menu</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Menu of Stories</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.RamonGilabert.Stories-menu-shortcut</string>
+		</dict>
+	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>CFBundleDevelopmentRegion</key>
