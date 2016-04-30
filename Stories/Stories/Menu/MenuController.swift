@@ -47,6 +47,10 @@ class MenuController: GeneralController {
     gradientLayer.removeFromSuperlayer()
     view.addSubview(menuView)
 
+    menu.layer.borderWidth = 0
+    menu.layer.cornerRadius = Dimensions.Menu.size / 2
+    menu.backgroundColor = Color.Engine.Button.general
+
     setupConstraints()
   }
 
@@ -90,7 +94,7 @@ extension MenuController: MenuViewDelegate {
     }
   }
 
-  func menuButtonDidPress() {
+  override func menuButtonDidPress() {
     menuButtonDidPress(nil)
   }
 

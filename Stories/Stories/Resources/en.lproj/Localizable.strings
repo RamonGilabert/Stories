@@ -29,10 +29,10 @@
 "accessibilityEndHint" = "Go to the end of the story.";
 "accessibilityGitHubHint" = "Go to my GitHub account.";
 "accessibilityContactHint" = "Contact me through an email.";
-"accessibilityContactMoon" = "This is the moon, which is the conductor through all the app.";
-"accessibilityFirstOption" = "The first option in the bottom left part of the iPhone to answer the question in the middle.";
-"accessibilitySecondOption" = "The second option in the bottom right part of the iPhone to answer the question in the middle."
-"accessibilityRestart" = "Start over to answer read the story in the app.";
+"accessibilityMoonHint" = "This is the moon, which is the conductor through all the app.";
+"accessibilityFirstOptionHint" = "The first option in the bottom left part of the iPhone to answer the question in the middle.";
+"accessibilitySecondOptionHint" = "The second option in the bottom right part of the iPhone to answer the question in the middle.";
+"accessibilityRestartHint" = "Start over to answer read the story in the app.";
 
 /* 3D touch */
 

@@ -21,6 +21,27 @@ struct Text {
     static let contact = localizedString("menuContact").uppercaseString
   }
 
+  struct Accessibility {
+    struct Title {
+      static let menu = localizedString("accessibilityMenuTitle")
+      static let moon = localizedString("accessibilityMoonTitle")
+    }
+
+    struct Hint {
+      static let menu = localizedString("accessibilityMenuHint")
+      static let story = localizedString("accessibilityStoryHint")
+      static let motivation = localizedString("accessibilityMotivationHint")
+      static let back = localizedString("accessibilityBackHint")
+      static let end = localizedString("accessibilityEndHint")
+      static let github = localizedString("accessibilityGitHubHint")
+      static let contact = localizedString("accessibilityContactHint")
+      static let moon = localizedString("accessibilityMoonHint")
+      static let firstOption = localizedString("accessibilityFirstOptionHint")
+      static let secondOption = localizedString("accessibilitySecondOptionHint")
+      static let restart = localizedString("accessibilityRestartHint")
+    }
+  }
+
   struct Touch {
     static let stories = localizedString("storiesTitleTouch")
     static let story = localizedString("storyTitleTouch")

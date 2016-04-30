@@ -4,7 +4,6 @@ import Sugar
 
 protocol EngineViewDelegate {
 
-  func menuButtonDidPress()
   func textDidEndDisplaying()
   func buttonDidPress(button: String)
 }
@@ -15,14 +14,6 @@ class EngineView: UIView {
     static let smallStar: CGFloat = 1
     static let mediumStar: CGFloat = 2
     static let bigStar: CGFloat = 3
-
-    struct Menu {
-      static let size: CGFloat = 42
-      static let shadow: CGFloat = 10
-      static let border: CGFloat = 2
-      static let topOffset: CGFloat = 24
-      static let rightOffset: CGFloat = Menu.topOffset
-    }
 
     struct Text {
       static let offset: CGFloat = 30
@@ -47,22 +38,6 @@ class EngineView: UIView {
     static let transform: CGFloat = 150
     static let starNumber = 50
   }
-
-  lazy var menu: UIButton = { [unowned self] in
-    let button = UIButton()
-    button.layer.borderColor = Color.Engine.Button.general.CGColor
-    button.layer.borderWidth = Dimensions.Menu.border
-    button.layer.cornerRadius = Dimensions.Menu.size / 2
-    button.backgroundColor = Color.Engine.Button.background
-    button.translatesAutoresizingMaskIntoConstraints = false
-    button.shadow(Color.Engine.Button.shadow, radius: 10)
-    button.addTarget(self, action: #selector(menuButtonDidPress), forControlEvents: .TouchUpInside)
-    button.accessibilityLabel = "Menu"
-    button.accessibilityHint = "Opens up a menu with all the navigation of the app."
-    button.isAccessibilityElement = true
-
-    return button
-  }()
 
   lazy var writeView: WriteView = { [unowned self] in
     let view = WriteView(font: Font.Engine.text, string: "")
@@ -95,7 +70,7 @@ class EngineView: UIView {
   override init(frame: CGRect) {
     super.init(frame: frame)
 
-    [menu, writeView, leftButton, rightButton].forEach {
+    [writeView, leftButton, rightButton].forEach {
       $0.translatesAutoresizingMaskIntoConstraints = false
       addSubview($0)
     }
@@ -110,10 +85,6 @@ class EngineView: UIView {
   }
 
   // MARK: - Action methods
-
-  func menuButtonDidPress() {
-    delegate?.menuButtonDidPress()
-  }
 
   func leftButtonDidPress() {
     guard let text = leftButton.titleForState(.Normal) else { return }
@@ -206,11 +177,6 @@ class EngineView: UIView {
     writeConstraint = writeView.heightAnchor.constraintEqualToConstant(Dimensions.Text.height)
 
     NSLayoutConstraint.activateConstraints([
-      menu.widthAnchor.constraintEqualToConstant(Dimensions.Menu.size),
-      menu.heightAnchor.constraintEqualToConstant(Dimensions.Menu.size),
-      menu.topAnchor.constraintEqualToAnchor(topAnchor, constant: Dimensions.Menu.topOffset),
-      menu.rightAnchor.constraintEqualToAnchor(rightAnchor, constant: -Dimensions.Menu.rightOffset),
-
       writeView.widthAnchor.constraintEqualToAnchor(widthAnchor, constant: -Dimensions.Text.offset * 2),
       writeConstraint,
       writeView.centerYAnchor.constraintEqualToAnchor(centerYAnchor, constant: -Dimensions.Text.centralOffset),

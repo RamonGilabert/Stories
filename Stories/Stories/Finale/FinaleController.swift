@@ -44,7 +44,7 @@ extension FinaleController: Animatable {
 
   func prepareAnimate() {
     view.alpha = 1
-    [finaleView.landscape.moon, finaleView.titleLabel, finaleView.button, finaleView.menu].forEach {
+    [finaleView.landscape.moon, finaleView.titleLabel, finaleView.button, menu].forEach {
       $0.transform = CGAffineTransformMakeTranslation(0, -750)
     }
   }
@@ -67,7 +67,7 @@ extension FinaleController: Animatable {
       self.finaleView.landscape.stone()
     })
 
-    spring(finaleView.titleLabel, finaleView.menu, delay: 0.2, spring: 50, friction: 60, mass: 50) {
+    spring(finaleView.titleLabel, menu, delay: 0.2, spring: 50, friction: 60, mass: 50) {
       $0.transform = transform
       $1.transform = transform
     }
@@ -84,7 +84,7 @@ extension FinaleController: FinaleViewDelegate {
     animateController(false)
   }
 
-  func menuButtonDidPress() {
+  override func menuButtonDidPress() {
     delegate?.finaleMenuButtonDidPress()
   }
 }

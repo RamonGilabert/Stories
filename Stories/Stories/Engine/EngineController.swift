@@ -64,6 +64,12 @@ class EngineController: GeneralController {
     }
   }
 
+  // MARK: - Action methods
+
+  override func menuButtonDidPress() {
+    delegate?.enginePresentMenu()
+  }
+
   // MARK: - Constraints
 
   func setupConstraints() {
@@ -90,10 +96,6 @@ extension EngineController: Animatable {
 }
 
 extension EngineController: EngineViewDelegate {
-
-  func menuButtonDidPress() {
-    delegate?.enginePresentMenu()
-  }
 
   func textDidEndDisplaying() {
     story.removeFirst()

@@ -73,7 +73,7 @@ extension StoryController: Animatable {
 
 extension StoryController: StoryViewDelegate {
 
-  func menuButtonDidPress() {
+  override func menuButtonDidPress() {
     delegate?.storyMenuDidPress()
   }
 }

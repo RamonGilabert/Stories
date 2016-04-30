@@ -29,10 +29,10 @@
 "accessibilityEndHint" = "Ve al final de la historia.";
 "accessibilityGitHubHint" = "Ve a mi cuenta en GitHub.";
 "accessibilityContactHint" = "Contáctame por email.";
-"accessibilityContactMoon" = "Esta es la luna, la conductora de toda la aplicación.";
-"accessibilityFirstOption" = "La primera opción que responde la pregunta del medio de la pantalla.";
-"accessibilitySecondOption" = "La segunda opción que responde la pregunta del medio de la pantalla."
-"accessibilityRestart" = "Volver a empezar la historia interactiva.";
+"accessibilityMoonHint" = "Esta es la luna, la conductora de toda la aplicación.";
+"accessibilityFirstOptionHint" = "La primera opción que responde la pregunta del medio de la pantalla.";
+"accessibilitySecondOptionHint" = "La segunda opción que responde la pregunta del medio de la pantalla.";
+"accessibilityRestartHint" = "Volver a empezar la historia interactiva.";
 
 /* 3D touch */
 

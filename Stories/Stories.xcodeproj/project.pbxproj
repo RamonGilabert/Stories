@@ -118,8 +118,6 @@
 		29EDBB351CD50DF9003E9115 /* menu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = menu.wav; sourceTree = "<group>"; };
 		29EDBB371CD50F97003E9115 /* menu_item.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = menu_item.wav; sourceTree = "<group>"; };
 		29EDBB3C1CD51F82003E9115 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		29EDBB3E1CD51F92003E9115 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		29EDBB3F1CD51F9E003E9115 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		29EDBB431CD51FD2003E9115 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		29EDBB481CD51FEF003E9115 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4E5EEBE4B3E0E5C24881061B /* Pods_Stories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -626,7 +624,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				2937A9ED1CC6AEE600BAAFCE /* en */,
-				29EDBB3F1CD51F9E003E9115 /* Base */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -651,7 +648,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				29EDBB3C1CD51F82003E9115 /* en */,
-				29EDBB3E1CD51F92003E9115 /* Base */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

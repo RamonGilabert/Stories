@@ -3,7 +3,6 @@ import UIKit
 protocol MenuViewDelegate {
 
   func buttonDidPress(title: String)
-  func menuButtonDidPress()
 }
 
 class MenuView: UIView {
@@ -23,19 +22,6 @@ class MenuView: UIView {
     return view
   }()
 
-  lazy var menu: UIButton = { [unowned self] in
-    let button = UIButton()
-    button.backgroundColor = Color.Engine.Button.general
-    button.layer.cornerRadius = EngineView.Dimensions.Menu.size / 2
-    button.shadow(Color.Engine.Button.shadow, radius: 10)
-    button.addTarget(self, action: #selector(menuButtonDidPress), forControlEvents: .TouchUpInside)
-    button.accessibilityLabel = "Menu"
-    button.accessibilityHint = "Opens up a menu with all the navigation of the app."
-    button.isAccessibilityElement = true
-
-    return button
-    }()
-
   lazy var tableView: UITableView = UITableView()
 
   var delegate: MenuViewDelegate?
@@ -45,7 +31,7 @@ class MenuView: UIView {
     super.init(frame: frame)
 
     addSubview(blurView)
-    [tableView, menu].forEach {
+    [tableView].forEach {
       $0.translatesAutoresizingMaskIntoConstraints = false
       blurView.addSubview($0)
     }
@@ -71,12 +57,6 @@ class MenuView: UIView {
       MenuCell.self, forCellReuseIdentifier: MenuCell.reusableIdentifier)
   }
 
-  // MARK: - Actions
-
-  func menuButtonDidPress() {
-    delegate?.menuButtonDidPress()
-  }
-
   // MARK: - Constraints
 
   func setupConstraints() {
@@ -85,11 +65,6 @@ class MenuView: UIView {
       blurView.heightAnchor.constraintEqualToAnchor(heightAnchor),
       blurView.topAnchor.constraintEqualToAnchor(topAnchor),
       blurView.rightAnchor.constraintEqualToAnchor(rightAnchor),
-
-      menu.widthAnchor.constraintEqualToConstant(EngineView.Dimensions.Menu.size),
-      menu.heightAnchor.constraintEqualToConstant(EngineView.Dimensions.Menu.size),
-      menu.topAnchor.constraintEqualToAnchor(topAnchor, constant: EngineView.Dimensions.Menu.topOffset),
-      menu.rightAnchor.constraintEqualToAnchor(rightAnchor, constant: -EngineView.Dimensions.Menu.rightOffset),
 
       tableView.widthAnchor.constraintEqualToAnchor(widthAnchor),
       tableView.topAnchor.constraintEqualToAnchor(topAnchor),

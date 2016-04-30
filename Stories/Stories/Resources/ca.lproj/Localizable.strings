@@ -29,10 +29,10 @@
 "accessibilityEndHint" = "Ves al final de la meva història.";
 "accessibilityGitHubHint" = "Ves a la meva conta de GitHub.";
 "accessibilityContactHint" = "Contacta'm via email.";
-"accessibilityContactMoon" = "Aquesta és la lluna, la conductora de tota l'aplicació.";
-"accessibilityFirstOption" = "La primera opció que contesta la pregunta proposada a la meitat de la pantalla.";
-"accessibilitySecondOption" = "La segona opció que contesta la pregunta proposada a la meitat de la pantalla."
-"accessibilityRestart" = "Torna a començar la història interactiva.";
+"accessibilityMoonHint" = "Aquesta és la lluna, la conductora de tota l'aplicació.";
+"accessibilityFirstOptionHint" = "La primera opció que contesta la pregunta proposada a la meitat de la pantalla.";
+"accessibilitySecondOptionHint" = "La segona opció que contesta la pregunta proposada a la meitat de la pantalla.";
+"accessibilityRestartHint" = "Torna a començar la història interactiva.";
 
 /* 3D touch */
 
