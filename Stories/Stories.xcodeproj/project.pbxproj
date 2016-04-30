@@ -54,6 +54,8 @@
 		29EDBB321CD50964003E9115 /* first_typing.wav in Resources */ = {isa = PBXBuildFile; fileRef = 29EDBB2F1CD50964003E9115 /* first_typing.wav */; };
 		29EDBB331CD50964003E9115 /* second_typing.wav in Resources */ = {isa = PBXBuildFile; fileRef = 29EDBB301CD50964003E9115 /* second_typing.wav */; };
 		29EDBB341CD50964003E9115 /* third_typing.wav in Resources */ = {isa = PBXBuildFile; fileRef = 29EDBB311CD50964003E9115 /* third_typing.wav */; };
+		29EDBB361CD50DF9003E9115 /* menu.wav in Resources */ = {isa = PBXBuildFile; fileRef = 29EDBB351CD50DF9003E9115 /* menu.wav */; };
+		29EDBB381CD50F97003E9115 /* menu_item.wav in Resources */ = {isa = PBXBuildFile; fileRef = 29EDBB371CD50F97003E9115 /* menu_item.wav */; };
 		8F4E30BFEABF17F9EC03599B /* Pods_Stories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5EEBE4B3E0E5C24881061B /* Pods_Stories.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +112,8 @@
 		29EDBB2F1CD50964003E9115 /* first_typing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = first_typing.wav; sourceTree = "<group>"; };
 		29EDBB301CD50964003E9115 /* second_typing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = second_typing.wav; sourceTree = "<group>"; };
 		29EDBB311CD50964003E9115 /* third_typing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = third_typing.wav; sourceTree = "<group>"; };
+		29EDBB351CD50DF9003E9115 /* menu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = menu.wav; sourceTree = "<group>"; };
+		29EDBB371CD50F97003E9115 /* menu_item.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = menu_item.wav; sourceTree = "<group>"; };
 		4E5EEBE4B3E0E5C24881061B /* Pods_Stories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6237324DE4E4A02943F19DA1 /* Pods-Stories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stories.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stories/Pods-Stories.release.xcconfig"; sourceTree = "<group>"; };
 		DF69EFBDCE7980C4931FA796 /* Pods-Stories.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stories.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stories/Pods-Stories.debug.xcconfig"; sourceTree = "<group>"; };
@@ -401,6 +405,8 @@
 		29EDBB2E1CD50954003E9115 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				29EDBB371CD50F97003E9115 /* menu_item.wav */,
+				29EDBB351CD50DF9003E9115 /* menu.wav */,
 				29EDBB2F1CD50964003E9115 /* first_typing.wav */,
 				29EDBB301CD50964003E9115 /* second_typing.wav */,
 				29EDBB311CD50964003E9115 /* third_typing.wav */,
@@ -478,9 +484,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29EDBB361CD50DF9003E9115 /* menu.wav in Resources */,
 				2937A9F11CC6AEF500BAAFCE /* Localizable.strings in Resources */,
 				2937A9A01CC6A6AD00BAAFCE /* Assets.xcassets in Resources */,
 				2937A9A51CC6A7AC00BAAFCE /* Brandon_bld.otf in Resources */,
+				29EDBB381CD50F97003E9115 /* menu_item.wav in Resources */,
 				2937A9EC1CC6AEE600BAAFCE /* Localizable.strings in Resources */,
 				2937A9F61CC6AF0B00BAAFCE /* Localizable.strings in Resources */,
 				29EDBB331CD50964003E9115 /* second_typing.wav in Resources */,

@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     UIApplication.sharedApplication().statusBarHidden = true
 
+    Sound.prepareSounds()
+
     return true
   }
 

@@ -53,6 +53,8 @@ class MenuController: GeneralController {
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
     menuView.tableView.reloadData()
+
+    Sound.menu()
   }
 
   // MARK - Constraints
@@ -93,6 +95,8 @@ extension MenuController: MenuViewDelegate {
   }
 
   func menuButtonDidPress(controller: Controllers? = nil) {
+    Sound.item()
+    
     if let controller = controller {
       delegate?.menuShouldPresentController(controller)
     }

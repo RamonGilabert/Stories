@@ -4,24 +4,20 @@ import AVFoundation
 struct Sound {
 
   static let bundle = NSBundle.mainBundle()
-  static let firstTyping = NSURL(fileURLWithPath: bundle.pathForResource("first_typing", ofType: "wav") ?? "")
-  static let secondTyping = NSURL(fileURLWithPath: bundle.pathForResource("second_typing", ofType: "wav") ?? "")
-  static let thirdTyping = NSURL(fileURLWithPath: bundle.pathForResource("third_typing", ofType: "wav") ?? "")
+  static let menuURL = NSURL(fileURLWithPath: bundle.pathForResource("menu", ofType: "wav") ?? "")
+  static let menuItemURL = NSURL(fileURLWithPath: bundle.pathForResource("menu_item", ofType: "wav") ?? "")
 
-  static var typings: [AVAudioPlayer] = []
+  static var menuPlayer = AVAudioPlayer()
+  static var itemPlayer = AVAudioPlayer()
 
-  static func prepareTyping() {
-    let sounds = [firstTyping, secondTyping, thirdTyping]
-    var typings: [AVAudioPlayer] = []
+  static func prepareSounds() {
+    do {
+      let menu = try AVAudioPlayer(contentsOfURL: menuURL)
+      menuPlayer = menu
 
-    for sound in sounds {
-      do {
-        let player = try AVAudioPlayer(contentsOfURL: sound)
-        typings.append(player)
-      } catch {  }
-    }
-
-    self.typings = typings
+      let item = try AVAudioPlayer(contentsOfURL: menuItemURL)
+      itemPlayer = item
+    } catch {  }
   }
 
   static func type() {
@@ -29,5 +25,13 @@ struct Sound {
     let index = Int(arc4random_uniform(UInt32(sounds.count)))
 
     AudioServicesPlaySystemSound(sounds[index])
+  }
+
+  static func menu() {
+    menuPlayer.play()
+  }
+
+  static func item() {
+    itemPlayer.play()
   }
 }

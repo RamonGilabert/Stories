@@ -15,7 +15,9 @@ extension UIView {
                           width: size, height: size)
       star.backgroundColor = Color.Welcome.star
       star.layer.cornerRadius = size / 2
-      star.shadow(Color.Welcome.starShadow, radius: 15)
+      star.opaque = true
+      star.clipsToBounds = true
+      star.layer.drawsAsynchronously = true
 
       addSubview(star)
     }
