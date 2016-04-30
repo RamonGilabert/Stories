@@ -105,7 +105,15 @@ extension EngineController: EngineViewDelegate {
     story = Engine.response(button)
 
     if let text = story.first where !story.isEmpty {
-      engineView.changeText(text, buttons: Engine.buttons(text))
+      if button == Text.Interactive.Buttons.twentyTwoOne
+        || button == Text.Interactive.Buttons.twentyTwoTwo {
+        engineView.changeText(String(format: text, button), buttons: Engine.buttons(text))
+      } else if button == Text.Interactive.Buttons.thirtySixOne
+        || button == Text.Interactive.Buttons.thirtySixTwo {
+        delegate?.enginePresentFinale()
+      } else {
+        engineView.changeText(text, buttons: Engine.buttons(text))
+      }
     } else {
       delegate?.enginePresentFinale()
     }
