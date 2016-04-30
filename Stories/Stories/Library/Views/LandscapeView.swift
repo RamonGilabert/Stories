@@ -27,6 +27,9 @@ class LandscapeView: UIView {
     view.layer.cornerRadius = Dimensions.moon / 2
     view.layer.borderColor = Color.Welcome.moon.CGColor
     view.layer.borderWidth = Dimensions.moon / 2
+    view.isAccessibilityElement = true
+    view.accessibilityLabel = Text.Accessibility.Title.moon
+    view.accessibilityHint = Text.Accessibility.Hint.moon
     view.shadow(Color.Welcome.moonShadow, radius: Dimensions.Shadow.moon)
 
     return view

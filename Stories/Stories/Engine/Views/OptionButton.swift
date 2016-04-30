@@ -10,6 +10,7 @@ class OptionButton: UIButton {
     layer.borderWidth = 2
     titleLabel?.font = Font.Engine.button
     backgroundColor = Color.Engine.Button.background
+    isAccessibilityElement = true
     shadow(Color.Engine.Button.shadow, radius: 10)
     setTitleColor(Color.Engine.Button.general, forState: .Normal)
   }

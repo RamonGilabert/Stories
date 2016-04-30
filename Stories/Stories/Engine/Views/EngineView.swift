@@ -51,6 +51,7 @@ class EngineView: UIView {
 
   lazy var leftButton: OptionButton = { [unowned self] in
     let button = OptionButton()
+    button.accessibilityHint = Text.Accessibility.Hint.firstOption
     button.addTarget(self, action: #selector(leftButtonDidPress), forControlEvents: .TouchUpInside)
 
     return button
@@ -58,6 +59,7 @@ class EngineView: UIView {
 
   lazy var rightButton: OptionButton = { [unowned self] in
     let button = OptionButton()
+    button.accessibilityHint = Text.Accessibility.Hint.secondOption
     button.addTarget(self, action: #selector(rightButtonDidPress), forControlEvents: .TouchUpInside)
 
     return button
