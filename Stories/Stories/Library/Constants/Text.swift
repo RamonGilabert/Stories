@@ -21,6 +21,13 @@ struct Text {
     static let contact = localizedString("menuContact").uppercaseString
   }
 
+  struct Touch {
+    static let stories = localizedString("storiesTitleTouch")
+    static let story = localizedString("storyTitleTouch")
+    static let motivation = localizedString("motivationTitleTouch")
+    static let menu = localizedString("menuTitleTouch")
+  }
+
   struct Contact {
     static let title = localizedString("contactTitle")
     static let message = localizedString("contactMessage")

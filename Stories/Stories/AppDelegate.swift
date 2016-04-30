@@ -50,6 +50,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   // MARK: - 3D touch
 
   func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
-    print(shortcutItem)
+    switch(shortcutItem.localizedTitle) {
+    default:
+      break
+    }
   }
 }
