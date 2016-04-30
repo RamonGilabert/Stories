@@ -54,6 +54,10 @@ class EngineController: GeneralController {
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
 
+    if let first = engineView.currentButtons.first, last = engineView.currentButtons.first {
+      engineView.animateButtons(true, first, last)
+    }
+
     if let text = story.first where shouldAnimate {
       shouldAnimate = false
       engineView.animateText(text, Engine.buttons(text))

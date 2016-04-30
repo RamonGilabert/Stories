@@ -3,6 +3,7 @@ import UIKit
 protocol FinaleViewDelegate {
 
   func resetButtonDidPress()
+  func menuButtonDidPress()
 }
 
 class FinaleView: UIView {
@@ -49,12 +50,24 @@ class FinaleView: UIView {
     return button
   }()
 
+  lazy var menu: UIButton = { [unowned self] in
+    let button = UIButton()
+    button.layer.borderColor = Color.Engine.Button.general.CGColor
+    button.layer.borderWidth = EngineView.Dimensions.Menu.border
+    button.layer.cornerRadius = EngineView.Dimensions.Menu.size / 2
+    button.backgroundColor = Color.Engine.Button.background
+    button.shadow(Color.Engine.Button.shadow, radius: 10)
+    button.addTarget(self, action: #selector(menuButtonDidPress), forControlEvents: .TouchUpInside)
+
+    return button
+  }()
+
   var delegate: FinaleViewDelegate?
 
   override init(frame: CGRect) {
     super.init(frame: frame)
 
-    [landscape, titleLabel, button].forEach {
+    [landscape, titleLabel, button, menu].forEach {
       $0.translatesAutoresizingMaskIntoConstraints = false
       addSubview($0)
     }
@@ -70,6 +83,10 @@ class FinaleView: UIView {
 
   func restartButtonDidPress() {
     delegate?.resetButtonDidPress()
+  }
+
+  func menuButtonDidPress() {
+    delegate?.menuButtonDidPress()
   }
 
   // MARK: - Constraints
@@ -88,7 +105,12 @@ class FinaleView: UIView {
       button.widthAnchor.constraintEqualToConstant(Dimensions.Button.width),
       button.heightAnchor.constraintEqualToConstant(Dimensions.Button.height),
       button.centerXAnchor.constraintEqualToAnchor(centerXAnchor),
-      button.bottomAnchor.constraintEqualToAnchor(bottomAnchor, constant: -Dimensions.Button.bottomOffset)
+      button.bottomAnchor.constraintEqualToAnchor(bottomAnchor, constant: -Dimensions.Button.bottomOffset),
+
+      menu.widthAnchor.constraintEqualToConstant(EngineView.Dimensions.Menu.size),
+      menu.heightAnchor.constraintEqualToConstant(EngineView.Dimensions.Menu.size),
+      menu.topAnchor.constraintEqualToAnchor(topAnchor, constant: EngineView.Dimensions.Menu.topOffset),
+      menu.rightAnchor.constraintEqualToAnchor(rightAnchor, constant: -EngineView.Dimensions.Menu.rightOffset)
       ])
   }
 }

@@ -1,6 +1,7 @@
 import UIKit
 import MessageUI
 import Walker
+import Sugar
 
 class MainController: GeneralController {
 
@@ -60,7 +61,7 @@ class MainController: GeneralController {
 
     welcomeController = WelcomeController()
 
-    controllers = [welcomeController, engineController, storyController]
+    controllers = [welcomeController, engineController, storyController, finaleController]
     view.addSubview(welcomeController.view)
   }
 
@@ -81,7 +82,7 @@ class MainController: GeneralController {
     }
 
     controller.prepareAnimate()
-    controller.animate()
+    delay(0.1) { controller.animate() }
   }
 
   func presentMenu() {
@@ -125,7 +126,7 @@ extension MainController: WelcomeControllerDelegate {
     engineController.view.frame = UIScreen.mainScreen().bounds
     engineController.delegate = self
 
-    controllers = [welcomeController, engineController, storyController]
+    controllers = [welcomeController, engineController, storyController, finaleController]
 
     changeRootView(engineController)
   }
@@ -139,6 +140,7 @@ extension MainController: EngineControllerDelegate {
   }
 
   func enginePresentFinale() {
+    menuController.kind = .Default
     changeRootView(finaleController)
   }
 }
@@ -164,6 +166,8 @@ extension MainController: MenuControllerDelegate {
       storyController.kind = .Motivation
       changeRootView(storyController)
     case .End:
+      guard !view.subviews.contains(finaleController.view) else { return }
+      menuController.kind = .Default
       changeRootView(finaleController)
     case .Github:
       presentGithub()
@@ -179,5 +183,9 @@ extension MainController: FinaleControllerDelegate {
     welcomeController = WelcomeController()
     
     changeRootView(welcomeController)
+  }
+
+  func finaleMenuButtonDidPress() {
+    presentMenu()
   }
 }

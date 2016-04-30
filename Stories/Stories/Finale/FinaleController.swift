@@ -5,6 +5,7 @@ import Ripple
 protocol FinaleControllerDelegate {
 
   func finaleResetButtonDidPress()
+  func finaleMenuButtonDidPress()
 }
 
 class FinaleController: GeneralController {
@@ -42,8 +43,8 @@ class FinaleController: GeneralController {
 extension FinaleController: Animatable {
 
   func prepareAnimate() {
-    view.alpha = 0
-    [finaleView.landscape.moon, finaleView.titleLabel, finaleView.button].forEach {
+    view.alpha = 1
+    [finaleView.landscape.moon, finaleView.titleLabel, finaleView.button, finaleView.menu].forEach {
       $0.transform = CGAffineTransformMakeTranslation(0, -500)
     }
   }
@@ -58,11 +59,6 @@ extension FinaleController: Animatable {
     let transform = appear ? CGAffineTransformIdentity : CGAffineTransformMakeTranslation(0, -750)
 
     calm()
-    closeDistilleries()
-
-    UIView.animateWithDuration(appear ? 0.3 : 1, animations: {
-      self.view.alpha = appear ? 1 : 0
-    })
 
     spring(finaleView.landscape.moon, delay: appear ? 0.4 : 0, spring: 50, friction: 60, mass: 50, animations: {
       $0.transform = transform
@@ -71,8 +67,9 @@ extension FinaleController: Animatable {
       self.finaleView.landscape.stone()
     })
 
-    spring(finaleView.titleLabel, delay: 0.2, spring: 50, friction: 60, mass: 50) {
+    spring(finaleView.titleLabel, finaleView.menu, delay: 0.2, spring: 50, friction: 60, mass: 50) {
       $0.transform = transform
+      $1.transform = transform
     }
 
     spring(finaleView.button, delay: appear ? 0 : 0.4, spring: 50, friction: 60, mass: 50) {
@@ -85,5 +82,9 @@ extension FinaleController: FinaleViewDelegate {
 
   func resetButtonDidPress() {
     animateController(false)
+  }
+
+  func menuButtonDidPress() {
+    delegate?.finaleMenuButtonDidPress()
   }
 }

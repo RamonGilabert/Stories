@@ -87,6 +87,7 @@ class EngineView: UIView {
 
   var writeConstraint = NSLayoutConstraint()
   var delegate: EngineViewDelegate?
+  var currentButtons: [String] = []
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -128,8 +129,6 @@ class EngineView: UIView {
   // MARK: - Animations
 
   func animateButtons(present: Bool, _ first: String = "", _ second: String = "", left: Bool = false) {
-    closeDistilleries()
-
     if first != "" {
       leftButton.setTitle(first, forState: .Normal)
       rightButton.setTitle(second, forState: .Normal)
@@ -145,6 +144,7 @@ class EngineView: UIView {
   }
 
   func animateText(string: String, _ buttons: [String] = []) {
+    currentButtons = buttons
     writeView.string = string
     writeView.velocity = Constants.velocity
 
@@ -156,6 +156,7 @@ class EngineView: UIView {
   }
 
   func changeText(string: String, buttons: [String] = []) {
+    currentButtons = buttons
     writeView.string = string
     writeView.velocity = Constants.velocity
 
@@ -172,6 +173,8 @@ class EngineView: UIView {
   }
 
   func performTextChange(string: String, _ buttons: [String] = []) {
+    currentButtons = buttons
+
     if buttons.isEmpty {
       delay(4) {
         self.writeView.velocity = 15

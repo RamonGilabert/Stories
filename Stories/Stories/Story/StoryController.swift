@@ -59,18 +59,12 @@ class StoryController: GeneralController {
 extension StoryController: Animatable {
 
   func prepareAnimate() {
-    closeDistilleries()
-
-    view.alpha = 0
+    view.alpha = 1
     storyView.headerView.titleLabel.transform = CGAffineTransformMakeTranslation(0, -300)
     storyView.headerView.separator.transform = CGAffineTransformMakeTranslation(0, 600)
   }
 
   func animate() {
-    UIView.animateWithDuration(0.7, animations: {
-      self.view.alpha = 1
-    })
-
     spring(storyView.headerView.titleLabel, storyView.headerView.separator, spring: 50, friction: 60, mass: 50, animations: {
       [$0, $1].forEach { $0.transform = CGAffineTransformIdentity }
     })
