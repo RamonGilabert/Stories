@@ -51,6 +51,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
     switch(shortcutItem.localizedTitle) {
+    case Text.Touch.stories:
+      mainController.changeRootView(mainController.engineController)
+    case Text.Touch.story:
+      mainController.storyController.kind = .Story
+      mainController.changeRootView(mainController.storyController)
+    case Text.Touch.motivation:
+      mainController.storyController.kind = .Motivation
+      mainController.changeRootView(mainController.storyController)
+    case Text.Touch.menu:
+      mainController.presentMenu()
     default:
       break
     }
