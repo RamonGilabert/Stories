@@ -20,8 +20,8 @@ class WelcomeController: GeneralController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    view.addSubview(welcomeView)
+    
+    view.insertSubview(welcomeView, belowSubview: menu)
 
     setupConstraints()
   }

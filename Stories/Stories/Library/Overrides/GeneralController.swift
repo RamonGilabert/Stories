@@ -49,7 +49,7 @@ class GeneralController: UIViewController {
     view.layer.cornerRadius = 7
     view.clipsToBounds = true
     view.layer.insertSublayer(gradientLayer, atIndex: 0)
-    view.insertSubview(menu, atIndex: 10)
+    view.addSubview(menu)
     view.addGestureRecognizer(tapGesture)
 
     generalConstraints()

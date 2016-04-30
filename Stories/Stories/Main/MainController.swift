@@ -59,6 +59,7 @@ class MainController: GeneralController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    menu.alpha = 0
     welcomeController = WelcomeController()
 
     controllers = [welcomeController, engineController, storyController, finaleController]

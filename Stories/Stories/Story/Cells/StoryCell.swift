@@ -28,6 +28,8 @@ class StoryCell: UITableViewCell {
     label.textColor = Color.Story.general
     label.backgroundColor = Color.General.clear
     label.translatesAutoresizingMaskIntoConstraints = false
+    label.isAccessibilityElement = true
+    label.accessibilityTraits = UIAccessibilityTraitStaticText
 
     return label
   }()
@@ -45,6 +47,8 @@ class StoryCell: UITableViewCell {
     textView.selectable = false
     textView.scrollEnabled = false
     textView.translatesAutoresizingMaskIntoConstraints = false
+    textView.isAccessibilityElement = true
+    textView.accessibilityTraits = UIAccessibilityTraitStaticText
 
     return textView
   }()

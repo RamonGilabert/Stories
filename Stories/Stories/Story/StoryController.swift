@@ -27,8 +27,8 @@ class StoryController: GeneralController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    view.addSubview(storyView)
+    
+    view.insertSubview(storyView, belowSubview: menu)
 
     setupConstraints()
   }

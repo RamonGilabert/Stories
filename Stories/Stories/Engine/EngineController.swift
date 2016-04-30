@@ -36,7 +36,8 @@ class EngineController: GeneralController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.addSubview(engineView)
+    
+    view.insertSubview(engineView, belowSubview: menu)
 
     setupConstraints()
   }

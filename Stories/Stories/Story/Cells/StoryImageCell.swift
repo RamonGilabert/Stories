@@ -32,6 +32,8 @@ class StoryImageCell: UITableViewCell {
     label.numberOfLines = 0
     label.textAlignment = .Center
     label.translatesAutoresizingMaskIntoConstraints = false
+    label.isAccessibilityElement = true
+    label.accessibilityTraits = UIAccessibilityTraitStaticText
     
     return label
   }()

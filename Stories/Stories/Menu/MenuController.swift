@@ -45,7 +45,7 @@ class MenuController: GeneralController {
     super.viewDidLoad()
 
     gradientLayer.removeFromSuperlayer()
-    view.addSubview(menuView)
+    view.insertSubview(menuView, belowSubview: menu)
 
     menu.layer.borderWidth = 0
     menu.layer.cornerRadius = Dimensions.Menu.size / 2

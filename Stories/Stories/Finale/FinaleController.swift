@@ -22,8 +22,8 @@ class FinaleController: GeneralController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    view.addSubview(finaleView)
+    
+    view.insertSubview(finaleView, belowSubview: menu)
 
     setupConstraints()
   }

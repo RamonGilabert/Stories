@@ -27,6 +27,8 @@ class StoryHeaderView: UIView {
     label.textColor = Color.Story.general
     label.translatesAutoresizingMaskIntoConstraints = false
     label.shadow(Color.Story.Shadow.general, radius: 10)
+    label.isAccessibilityElement = true
+    label.accessibilityTraits = UIAccessibilityTraitStaticText
 
     return label
   }()

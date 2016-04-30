@@ -33,6 +33,8 @@ class FinaleView: UIView {
     let label = UILabel()
     label.attributedText = TextAttributes.monaco(Text.Finale.title)
     label.numberOfLines = 0
+    label.isAccessibilityElement = true
+    label.accessibilityTraits = UIAccessibilityTraitStaticText
 
     return label
   }()

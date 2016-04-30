@@ -46,6 +46,8 @@ class WriteView: UIView {
     text.allowsEditingTextAttributes = true
     text.textAlignment = .Center
     text.userInteractionEnabled = false
+    text.isAccessibilityElement = true
+    text.accessibilityTraits = UIAccessibilityTraitStaticText
 
     return text
   }()
