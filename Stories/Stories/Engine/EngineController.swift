@@ -63,6 +63,11 @@ class EngineController: GeneralController {
     engineView.writeView.paused = false
   }
 
+  override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated)
+    engineView.writeView.paused = true
+  }
+
   // MARK: - Action methods
 
   override func menuButtonDidPress() {
