@@ -22,7 +22,7 @@ class FinaleController: GeneralController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     view.insertSubview(finaleView, belowSubview: menu)
 
     setupConstraints()
@@ -32,8 +32,8 @@ class FinaleController: GeneralController {
     super.viewDidAppear(animated)
 
     let animation = CABasicAnimation(keyPath: "shadowRadius")
-    animation.duration = 0.7;
-    animation.toValue = 5
+    animation.duration = 1.5;
+    animation.toValue = 20
     animation.autoreverses = true
     animation.repeatCount = FLT_MAX
 
