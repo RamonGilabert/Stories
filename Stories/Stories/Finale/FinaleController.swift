@@ -28,18 +28,6 @@ class FinaleController: GeneralController {
     setupConstraints()
   }
 
-  override func viewDidAppear(animated: Bool) {
-    super.viewDidAppear(animated)
-
-    let animation = CABasicAnimation(keyPath: "shadowRadius")
-    animation.duration = 1.5;
-    animation.toValue = 20
-    animation.autoreverses = true
-    animation.repeatCount = FLT_MAX
-
-    menu.layer.addAnimation(animation, forKey: "blur")
-  }
-
   // MARK: - Constraints
 
   func setupConstraints() {
