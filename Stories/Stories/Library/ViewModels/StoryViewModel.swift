@@ -25,6 +25,7 @@ struct StoryViewModel {
     self.kind = image == nil ? .Text : .Image
 
     if let text = text, string = text.characters.first where letter {
+      self.text = String(text.characters.dropFirst())
       self.letter = String(string).uppercaseString
     }
   }

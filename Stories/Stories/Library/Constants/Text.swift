@@ -62,14 +62,14 @@ struct Text {
 
   struct Story {
     static let title = localizedString("storyTitle").uppercaseString
-    static let message = String(localizedString("storyMessage").characters.dropFirst())
+    static let message = localizedString("storyMessage")
     static let conclusion = localizedString("storyConclusion")
     static let footer = localizedString("storyFooter")
   }
 
   struct Motivation {
     static let title = localizedString("motivationTitle").uppercaseString
-    static let message = String(localizedString("motivationMessage").characters.dropFirst())
+    static let message = localizedString("motivationMessage")
     static let conclusion = localizedString("motivationConclusion")
     static let footer = localizedString("motivationFooter")
   }
