@@ -50,25 +50,17 @@ class EngineController: GeneralController {
     story = Engine.initialTexts
     buttons = Engine.initialButtons
     engineView.prepareButtons()
-
-    engineView.writeView.paused = false
-
-    if let text = story.first where !story.isEmpty && story.count != 1 {
-      engineView.changeText(text, buttons: Engine.buttons(text))
-    }
   }
 
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
 
-    if let first = engineView.currentButtons.first, last = engineView.currentButtons.last {
-      engineView.animateButtons(true, first, last)
-    }
-
     if let text = story.first where shouldAnimate {
       shouldAnimate = false
       engineView.animateText(text, Engine.buttons(text))
     }
+
+    engineView.writeView.paused = false
   }
 
   // MARK: - Action methods

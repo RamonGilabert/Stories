@@ -34,7 +34,8 @@ class EngineView: UIView {
   }
 
   struct Constants {
-    static let velocity: CGFloat = 3
+    static let velocity: CGFloat = 5
+    static let delete: CGFloat = 20
     static let transform: CGFloat = 150
     static let starNumber = 50
   }
@@ -141,9 +142,9 @@ class EngineView: UIView {
     writeView.velocity = Constants.velocity
 
     delay(0.4) {
-      self.writeView.velocity = 15
+      self.writeView.velocity = Constants.delete
       self.writeView.deleteAnimation {
-        self.writeView.velocity = 5
+        self.writeView.velocity = Constants.velocity
 
         self.writeView.changeText {
           self.performTextChange(string, buttons)
@@ -157,9 +158,9 @@ class EngineView: UIView {
 
     if buttons.isEmpty {
       delay(4) {
-        self.writeView.velocity = 15
+        self.writeView.velocity = Constants.delete
         self.writeView.deleteAnimation {
-          self.writeView.velocity = 5
+          self.writeView.velocity = Constants.velocity
 
           delay(0.5) {
             self.delegate?.textDidEndDisplaying()

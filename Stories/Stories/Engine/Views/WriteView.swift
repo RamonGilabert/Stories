@@ -64,11 +64,18 @@ class WriteView: UIView {
     }
   }
 
+  var paused = false {
+    didSet {
+      guard !paused else { return }
+      changeText(completion)
+    }
+  }
+
   var string: String
 
   var velocity: CGFloat = 1
   var cursorAnimation = true
-  var paused = false
+  var completion: (() -> ())? = nil
   var delegate: WriteViewDelegate?
 
   init(font: UIFont, string: String) {
@@ -134,7 +141,7 @@ class WriteView: UIView {
       Sound.type()
 
       delay(durations[index] / Double(velocity)) {
-        guard !self.paused else { return }
+        guard !self.paused else { self.completion = completion; return }
         self.changeText(completion)
       }
     } else {
