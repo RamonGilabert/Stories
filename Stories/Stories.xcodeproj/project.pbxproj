@@ -481,6 +481,7 @@
 				TargetAttributes = {
 					2937A9851CC6A3E700BAAFCE = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = SGM42FXP52;
 					};
 				};
 			};
@@ -775,10 +776,12 @@
 			baseConfigurationReference = DF69EFBDCE7980C4931FA796 /* Pods-Stories.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				INFOPLIST_FILE = Stories/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.RamonGilabert.Stories;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ad690b82-2b3b-47bf-9669-8103a6f72c6f";
 			};
 			name = Debug;
 		};
@@ -787,10 +790,12 @@
 			baseConfigurationReference = 6237324DE4E4A02943F19DA1 /* Pods-Stories.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
 				INFOPLIST_FILE = Stories/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.RamonGilabert.Stories;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ad690b82-2b3b-47bf-9669-8103a6f72c6f";
 			};
 			name = Release;
 		};
