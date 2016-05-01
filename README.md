@@ -1,4 +1,4 @@
-![Stories](https://www.github.com)
+![Stories](https://github.com/RamonGilabert/Stories/blob/master/Resources/header.png)
 
 Stories is the application I've done for the WWDC16, with theme of coding, darkness but lights with a moon that guide you through an interactive story full of animations, transitions, design and Swift.
 
@@ -20,4 +20,4 @@ The app is an interactive story that will change based on your answers. With two
 
 ## Credits
 
-![Ramon Gilabert](https://www.twitter.com/RamonGilabert) with ♡.
+[Ramon Gilabert](https://www.twitter.com/RamonGilabert) with ♡.
