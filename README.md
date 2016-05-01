@@ -6,7 +6,7 @@ Stories is the application I've done for the WWDC16, with theme of coding, darkn
 
 The app is an interactive story that will change based on your answers. With two options every now an then appearing after the text types itself. A part from that, you'll be able to select whatever you want to select from a menu that comes beautifully with some animations. Scroll through the story of the app or the motivation behind it.
 
-![Stories](https://www.github.com)
+![Stories](https://github.com/RamonGilabert/Stories/blob/master/Resources/first.png)
 
 ## Featuring
 
