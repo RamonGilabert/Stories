@@ -13,7 +13,7 @@
 
 "menuFullStory" = "Llegeix tota la història";
 "menuBackStory" = "Torna a la història";
-"menuReadMotivation" = "Llegeix la motivació";
+"menuReadMotivation" = "Llegeix el manifest";
 "menuWatchTheEnd" = "Mira el final";
 "menuFindGithub" = "Troba'm a GitHub";
 "menuContact" = "Contacta'm";
@@ -62,7 +62,7 @@
 
 /* Motivation */
 
-"motivationTitle" = "La motivació";
+"motivationTitle" = "El manifest";
 "motivationMessage" = "Durant mesos he estat treballant més de 14 hores al dia en diferents projectes, universitat, feina, projectes personals, tesis, ha sigut un any de bojos, nova ciutat, nova gent, nova cultura.\n\nDes de l'any passat, des del passat Abril quan vaig presentar la passada app, moltes coses han canviat. Ara estic 100% en Swift, he deixat Objective C i he començat molt més seriosament en disseny, he començat a contribuïr cada vegada més en Open Source i finalment, vaig decidir de fer el meu framework d'animacions, que encara està en beta, tot i que aquesta app el fa servir, contribuïr a projectes d'altra gent i estar involucrat cada vegada mes en la indústria...\n\nAmb aquesta app el que mostro és el que més m'agrada, animacions, transicions, Swift en estat pur.\n\nAmb aquest app també mostro la meva evolució des de l'any passat en disseny, més net, clar, fàcil i, en la meva opinió, simple.";
 "motivationConclusion" = "Vaig rebre el missatge de l'scolarship un parell de setmanes endarrera, amb 3 deadlines sobre meu però, tot i així, volia intentar fer-ho de totes maneres, sortir de la meva comfort zone i construir una cosa bonica en unes quantes tardes. Gràcies per la seva atenció i que tingueu una molt bona WWDC.\n\nRamon Gilabert";
 "motivationFooter" = "El paisatge que veia cada tarda quan arribava a casa i havia de fer l'aplicació.";

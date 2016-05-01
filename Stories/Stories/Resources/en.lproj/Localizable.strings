@@ -13,7 +13,7 @@
 
 "menuFullStory" = "Read the full story";
 "menuBackStory" = "Go back to the story";
-"menuReadMotivation" = "Read the motivation";
+"menuReadMotivation" = "Read my manifesto";
 "menuWatchTheEnd" = "Watch the end";
 "menuFindGithub" = "Find me in GitHub";
 "menuContact" = "Contact me";
@@ -62,7 +62,7 @@
 
 /* Motivation */
 
-"motivationTitle" = "The motivation";
+"motivationTitle" = "My manifesto";
 "motivationMessage" = "For months I've been working more than 14 hours a day in different projects, university, work, side, thesis, it's been a crazy ride this year, new city, new people, new culture.\n\nSince last year, since the last April when I presented the app, a lot of stuff has changed. I dived 100% into Swift ditching Objective C, I started to do more and more design, more and more Open Source, I finally decided to do my Open Source animation framework, which is still in beta and being used in this app, started to contribute and help other people, started to be involved more and more into the industry...\n\nWith this app, I show you what I like the most, animations, transitions, Swift in it's pure state.\n\nWith this app I also show you the evolution of my design since last year, cleaner, simpler, easier and, in my opinion, better.";
 "motivationConclusion" = "I got the email of the scholarship a couple of weeks ago, with 3 deadlines on top of me, but still, I wanted to challange myself and explain the story of why, and that is is it. Thank you for your attention and have a really nice WWDC.\n\nRamon Gilabert";
 "motivationFooter" = "The landscape I saw every afternoon when I got home and I had to build the app.";
