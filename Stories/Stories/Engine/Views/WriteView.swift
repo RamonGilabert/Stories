@@ -68,6 +68,7 @@ class WriteView: UIView {
 
   var velocity: CGFloat = 1
   var cursorAnimation = true
+  var paused = false
   var delegate: WriteViewDelegate?
 
   init(font: UIFont, string: String) {
@@ -133,6 +134,7 @@ class WriteView: UIView {
       Sound.type()
 
       delay(durations[index] / Double(velocity)) {
+        guard !self.paused else { return }
         self.changeText(completion)
       }
     } else {

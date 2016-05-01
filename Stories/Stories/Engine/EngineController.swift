@@ -50,6 +50,12 @@ class EngineController: GeneralController {
     story = Engine.initialTexts
     buttons = Engine.initialButtons
     engineView.prepareButtons()
+
+    engineView.writeView.paused = false
+
+    if let text = story.first where !story.isEmpty && story.count != 1 {
+      engineView.changeText(text, buttons: Engine.buttons(text))
+    }
   }
 
   override func viewDidAppear(animated: Bool) {
@@ -68,6 +74,7 @@ class EngineController: GeneralController {
   // MARK: - Action methods
 
   override func menuButtonDidPress() {
+    engineView.writeView.paused = true
     delegate?.enginePresentMenu()
   }
 
